@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Poppins&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+
+            box-sizing: border-box;
+            
+            /* margin : 0 , padding : 0 필수 기본설정 */
+            margin :0;
+            padding:0; 
+
+        }
+
+        header {
+            /* background-color: aqua; */
+            text-align: center;
+        }
+
+        nav {
+            /* hex(16진수) : rgb(#00 00 00) */
+            background-color: #000000;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+            /* 기본글자 크기 16px; */
+            font-size: 14px;
+        }
+
+        /* :hover 마우스 올렸을 때 디자인  */
+        a:hover {
+            color: yellow;
+            text-decoration: dotted;
+        }
+
+        h1 {
+            font-family: 'Poppins', sans-serif;
+            padding-top: 40px;
+            
+        }
+
+        p {
+            padding-bottom: 40px;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Busan IT Academy</h1>
+        <p>부산광역시 수영구에 위치하는 it 교육기관입니다.</p>
+
+    </header>
+    <nav>
+        <a href="https://www.naver.com" target="_blank" alt="네이버" title="네이버">NAVER</a>
+        <a href="https://www.daum.net" target="_self" alt="다음" title="다음">DAUM</a>
+        <a href="https://www.nate.com" target="_parent" alt="네이트" title="네이트">NATE</a>
+    </nav>
+    <img src="./images/jeju1.jpg" alt="jeju1">
+</body>
+
+</html>

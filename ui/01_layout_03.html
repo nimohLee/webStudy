@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃 실습</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+
+        header{
+            background-color: #fff;
+            /* padding-top: 40px;
+            padding-bottom: 40px; */
+            text-align: center;
+            padding : 40px 0 40px 0;
+        }
+
+        section::after{
+            content: "";
+            display: table;
+            clear:both;
+        }
+
+        nav{
+            float:left;
+            height: 150px;
+            background-color: #ccc;
+            width:30%;
+        }
+
+        article{
+            width: 70%;
+            height: 150px;
+            background-color: lightslategray;
+            color : #fff;
+            float:left;
+            padding: 10px 0 0 10px;
+            line-height: 25px;
+        }
+
+        footer{
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        ul li {
+            list-style: none;
+            display: inline-block;
+        }
+
+    </style>
+
+</head>
+<body>
+    <header>헤더</header>
+    
+    <section>
+        <nav>
+            <ul>
+                <li><a href="https://naver.com" target="_blank" alt="네이버" title="네이버">런던</a></li>
+                <li><a href="#">파리</a></li>
+                <li><a href="#">도쿄</a></li>
+                <!-- 링크 비울 때 # 채워놓기 -->
+            </ul>
+
+
+        </nav>
+        <article> ipsum dolor sit amet consectetur adipisicing elit. Eveniet voluptatum velit ratione inventore esse aperiam omnis nostrum delectus suscipit incidunt. Beatae cumque consequuntur nulla dolor reiciendis, ullam quidem quae quibusdam?</article>
+    </section>
+ 
+    <footer>카피라이터</footer>
+</body>
+</html>

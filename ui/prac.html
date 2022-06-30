@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+     
+        .hh:hover {
+            font-size: 2em;
+        }
+
+        .hh:focus~.circle {
+            background-color: yellow;
+            width: 20em;
+            height: 10em;
+            border-radius: 60px;
+            
+        }
+
+        .circle:hover{
+            background-color: aliceblue;
+        }
+
+        .circle {
+            background-color: red;
+            width: 20px;
+            height: 20px;
+            border-radius: 30px;
+            cursor:pointer;
+            transition-duration: 3s;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <h1 class="hh">마우스 올려보세요</h1>
+    <div class="circle"></div>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+    
+        html,body{
+            height: 100%;
+        }
+
+    #menu{
+        display: none;
+    }
+
+    .di{
+        background-color: black;
+        color: white;
+        height: 100%;
+        width: 0px;
+        
+    }
+
+    
+
+    #menu:checked~.h,:checked~.a{
+        color: yellow;
+    }
+    #menu:checked~.di{
+        display :"";
+        width: 100px;
+        transition-duration: 1s;
+        transition-timing-function: ease-out;
+    }
+
+    ul{
+        list-style: none;
+        line-height: 50px;
+        padding-left: 6px;
+        display: none;
+    }
+
+    #menu:checked~.ul{
+        display:contents;
+    }
+
+    </style>
+
+</head>
+
+<body>
+    
+   
+    <input type="checkbox" id="menu"><label for="menu"><i class="fa-solid fa-bars"></i></label>
+    <div class="di">
+        <ul class="ta">
+            <li>메뉴</li>
+            <li>내 정보</li>
+            <li>로그아웃</li>
+        </ul>
+    </div>
+</body>
+
+</html>

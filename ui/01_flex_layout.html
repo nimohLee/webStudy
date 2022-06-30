@@ -27,7 +27,11 @@
   </head>
 
   <body>
-    <nav>
+    <span class="btn">
+      <span onClick="openMenu()">open</span>
+      <span onClick="closeMenu()">close</span>
+    </span>
+    <nav id="menu">
       <div class="menu">
         <ul>
           <li><a href="#">Home</a></li>
@@ -42,5 +46,16 @@
         <span class="search_title">Search</span>
       </div>
     </nav>
+
+    <script>
+      let navLinks = document.getElementById("menu");
+
+      function openMenu() {
+        navLinks.style.display = "block";
+      }
+      function closeMenu() {
+        navLinks.style.display = "none";
+      }
+    </script>
   </body>
 </html>

@@ -7,14 +7,33 @@
   ul {
     flex-direction: column;
   }
+
+  nav {
+    display: block;
+  }
 }
 
-/* 모바일 사이즈 : 400px 작업 */
+@media (min-width: 501px) {
+  nav {
+    display: block;
+  }
+}
+
+/* 모바일 사이즈 : 500px 작업 */
 @media (max-width: 500px) {
   ul {
     flex-direction: column;
   }
   nav {
+    display: none;
     flex-direction: column;
   }
+
+  .btn {
+    display: inline-block;
+  }
+
+  /* .btn:hover ~ nav {
+    display: block;
+  } */
 }

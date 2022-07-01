@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .image-wrap {
+        width: 300px;
+        height: 300px;
+        /* border:선굵기 solid 색깔 */
+        border: 3px solid lawngreen;
+
+        /* div의 크기를 벗어나는 contents는 숨김*/
+        overflow: hidden;
+        box-sizing: border-box;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        transition-duration: 0.4s;
+      }
+
+      img:hover {
+        /* 해당 item을 가로세로 1.3배 크게 */
+        transform: scale(1.5);
+        transition-duration: 0.4s;
+      }
+
+      .btn {
+        margin-top: 20px;
+        border: 0;
+        background-color: #f00;
+        color: white;
+        padding: 20px;
+        border-radius: 5px;
+        font-size: 20px;
+        cursor: pointer;
+        width: 300px;
+      }
+
+      .btn:hover {
+        background-color: rgba(255, 0, 0, 0.5);
+        transition-duration: 0.2s;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="image-wrap"><img src="/images/lemon.jpg" alt="lemon" /></div>
+    <div>
+      <button class="btn">Clik Me!!</button>
+    </div>
+
+    <script>
+      // 1. 동작 만들기
+      function msg(greet) {
+        alert(greet);
+      }
+
+      // 2. Click event(실제 사용은 addEventListener)
+      document.querySelector(".btn").addEventListener("click", () => {
+        msg("안녕하세요");
+      });
+    </script>
+  </body>
+</html>

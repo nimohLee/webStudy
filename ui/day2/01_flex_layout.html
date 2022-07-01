@@ -19,19 +19,20 @@
       referrerpolicy="no-referrer"
     />
 
-    <link rel="stylesheet" href="./css/style.css" />
-
+    <link rel="stylesheet" href="/css/day2_style.css" />
+    <link rel="stylesheet" href="/css/day2_res.css" />
     <title>flex layout example</title>
 
-    <style>
-      /* 반응형 미디어쿼리 작업 */
-      /* 모바일 사이즈 : 400px 작업 */
-    </style>
+    <style></style>
   </head>
 
   <body>
-    <nav>
-      <div class="menu">
+    <span class="btn">
+      <span onClick="openMenu()">open</span>
+      <span onClick="closeMenu()">close</span>
+    </span>
+    <nav id="menu">
+      <span class="menuDiv">
         <ul>
           <li><a href="#">Home</a></li>
           <li><a href="#">About</a></li>
@@ -39,11 +40,22 @@
           <li><a href="#">Company</a></li>
           <li><a href="#">Contact Us</a></li>
         </ul>
-      </div>
-      <div class="search" style="padding-right: 1.2em">
+      </span>
+      <span class="search" style="padding-right: 1em">
         <i class="fa-solid fa-magnifying-glass"></i>
         <span class="search_title">Search</span>
-      </div>
+      </span>
     </nav>
+
+    <script>
+      let navLinks = document.getElementById("menu");
+
+      function openMenu() {
+        navLinks.style.display = "block";
+      }
+      function closeMenu() {
+        navLinks.style.display = "none";
+      }
+    </script>
   </body>
 </html>

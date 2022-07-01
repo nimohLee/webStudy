@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- google font link -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <!-- fontawesome cdn link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <style>
+      /* reset start */
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      a {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      a:hover {
+        color: #fff;
+      }
+
+      ul li {
+        list-style: none;
+      }
+
+      button {
+        border: 0;
+        background-color: transparent;
+        cursor: pointer;
+      }
+
+      /* reset end */
+
+      /* pc style css */
+
+      .navbar-wrap {
+        background-color: #46acc2;
+        display: flex;
+        flex-direction: row;
+        padding-top: 1.2em;
+        padding-bottom: 1.2em;
+        justify-content: space-between;
+      }
+
+      .navbar-left-items {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        /* align-items: ; 세로정렬 */
+        align-items: center;
+      }
+
+      .navbar-toggle {
+        display: none;
+      }
+
+      .white-font-crl {
+        color: #fff;
+      }
+
+      ul {
+        display: flex;
+        flex-direction: row;
+      }
+
+      ul li {
+        margin-right: 3em;
+      }
+
+      .btn {
+        color: #fff;
+        background-color: #fe9b8e;
+        padding: 10px 20px;
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      .btn:hover {
+        background-color: #0c1451;
+        transition-duration: 1s;
+        border-radius: 30%;
+      }
+
+      .navbar-logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo {
+        width: 150px;
+      }
+
+      /* pc style css end */
+
+      /* media query width 600px */
+      @media (max-width: 600px) {
+        .navbar-toggle {
+          display: block;
+        }
+      }
+
+      /* media query width 600px end */
+    </style>
+
+    <title>Responsive Web Navbar</title>
+  </head>
+
+  <body>
+    <div class="navbar-wrap">
+      <div class="navbar-logo white-font-crl">
+        <img src="/images/Samsung_Logo.svg.png" alt="logo" class="logo" />
+      </div>
+      <div class="navbar-toggle"><i class="fas fa-bars"></i></div>
+      <div class="navbar-left-items">
+        <ul class="">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Business</a></li>
+          <li><a href="#">Company</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <button type="button" class="btn">search</button>
+      </div>
+    </div>
+  </body>
+</html>

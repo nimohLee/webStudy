@@ -1,0 +1,129 @@
+@charset 'utf-8';
+
+/* reset start */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+}
+
+body {
+  height: 100;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #fff;
+}
+
+ul li {
+  list-style: none;
+}
+
+button {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.fontWhiteClr {
+  color: #fff;
+}
+
+/* reset end */
+
+/* style start */
+
+.navbar-logo {
+  padding: 5px 0 0 20px;
+}
+
+.logo {
+  width: 150px;
+}
+
+.navbar-wrap {
+  margin: 15px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-menu {
+}
+
+.category {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-weight: 900;
+}
+
+ul li {
+  margin: 0 2em 0 2em;
+  transition-duration: 1s;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+ul li:hover {
+  color: #ff0063;
+  transition-duration: 1s;
+}
+
+.navbar-btn {
+  width: 170px;
+  height: 60px;
+  /* padding: 25px; */
+  background-color: #ff0063;
+  transition-duration: 0.3s;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn {
+  font-size: 17px;
+}
+
+.navbar-btn:hover {
+  background-color: rgb(58, 56, 187);
+  border-radius: 90px;
+  transition-duration: 1s;
+}
+
+main {
+  height: 100vh;
+  background-image: url("/images/pink.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.main {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+}
+
+.sub {
+  width: 50%;
+}
+
+.main-title,
+.main-content,
+.main-description {
+  margin: 3em;
+}
+
+/* style end */

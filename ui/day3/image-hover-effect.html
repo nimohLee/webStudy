@@ -56,14 +56,21 @@
 
     <script>
       // 1. 동작 만들기
-      function msg(greet) {
-        alert(greet);
+      function msg() {
+        alert("hi");
+        console.log("hi");
       }
 
       // 2. Click event(실제 사용은 addEventListener)
+      //   arrow function : 화살표 함수
       document.querySelector(".btn").addEventListener("click", () => {
-        msg("안녕하세요");
+        msg();
       });
+
+      // Anonymous function : 익명함수
+      //   document.querySelector(".btn").addEventListener("mouseover", function () {
+      //     msg();
+      //   });
     </script>
   </body>
 </html>

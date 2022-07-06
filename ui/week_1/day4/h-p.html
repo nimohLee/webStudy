@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>h1~h6, p 예제</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      div {
+      }
+
+      body {
+        font-family: "Roboto", sans-serif;
+      }
+
+      span {
+        background-color: blue;
+      }
+
+      .box-wrap {
+        background-color: #eee;
+      }
+
+      .box {
+        text-align: center;
+        /* background-color: tomato; */
+        width: 1400px;
+        max-width: 100%;
+        padding: 30px 0;
+      }
+      .box > .subtitle {
+        font-size: 24px;
+      }
+      .box > h3 {
+        font-size: 35px;
+        margin: 10px 0;
+      }
+      .box > .content {
+        /* color: #aaa; */
+        color: rgba(0, 0, 0, 0.541);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- h1 ~ h6(중요도 순서 사실상 크기와는 무관(시맨틱 느낌)) 
+        (heading)
+        p
+        paragraph
+    -->
+    <div class="box-wrap">
+      <div class="box">
+        <p class="subtitle">WHAT WE DO</p>
+        <h3>We have the knowledge and experience</h3>
+
+        <p class="content">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere
+          doloribus accusamus nostrum vel optio soluta ducimus ut modi deserunt
+          nobis? Tempora nostrum fugiat porro eaque asperiores aut error modi
+          iste.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

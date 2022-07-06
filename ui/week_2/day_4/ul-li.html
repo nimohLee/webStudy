@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>ul li로 navbar 만들기</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        button{
+            border: 0;
+        }
+
+        body {    
+            font-family: "Poppins", sans-serif;
+           
+        }
+
+        .container {
+            margin: 0 auto;
+            margin-bottom: 30px;
+            max-width: 100%;
+            width: 1200px;
+        }
+
+        ul>li {
+            list-style: none;
+
+
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: rgba(0, 0, 0, 0.6);
+            font-size: 18px;
+            margin-right: 40px;
+            transition: 2s;
+        }
+
+        ul li a:hover {
+            color: red;
+            transition: .3s;
+
+        }
+
+        header,
+        .icons-wrap,
+        ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        header {
+            margin-top: 30px;
+        }
+
+        header h1 {
+            font-size: 25px;
+            text-transform: capitalize;
+        }
+
+
+        .icon {
+            background-color: rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 7px;
+            margin-right: 10px;
+            font-size: 25px;
+            transition-duration: 0.5s;
+            cursor: pointer;
+        }
+
+        .icon:hover {
+            background-color: tomato;
+            color: white;
+        }
+
+
+        .hero{
+            background-image: url("/week_2/images/cook.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            width: 100%;
+            height: 800px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-content{
+            width: 50%;
+            height: 50%;
+            background-color: rgba(221, 219, 219, 0.459);
+        }
+
+        .btn{
+            background-color: transparent; /* 버튼 배경 투명 */
+            font-size: 20px;
+            border:1px solid #000;
+            border-radius: 5px;
+            padding: 8px 16px;
+            transition-duration: .3s;
+            cursor: pointer;
+        }
+
+        .btn:hover{
+            background-color: tomato;
+            color: white;
+            transition-duration: .3s;
+            border:none;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>groco</h1>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Product</a></li>
+                <li><a href="#">Categories</a></li>
+                <li><a href="#">Reviews</a></li>
+                <li><a href="#">Blogs</a></li>
+            </ul>
+            <div class="icons-wrap">
+                <div class="icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                <div class="icon"><i class="fa-solid fa-cart-shopping"></i></div>
+                <div class="icon"><i class="fa-solid fa-user"></i></div>
+            </div>
+    </div>
+    </header>
+    <section class="hero">
+        <div class="hero-content">
+            <button class="btn">Button</button>
+        </div>
+    </section>
+</body>
+
+</html>

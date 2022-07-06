@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>부산IT 웹사이트 로그인</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      input,
+      button {
+        border: 0;
+        outline: 0;
+      }
+
+      .login-box {
+        width: 400px;
+        /* background-color: red; */
+        margin: 200px auto;
+        /*margin : margin-top, auto(중앙정렬)*/
+      }
+
+      input {
+        border: 1px solid #ddd;
+        padding: 5px 8px;
+      }
+
+      button {
+        width: 100%;
+        background-color: tomato;
+        color: #fff;
+        padding: 8px 8px;
+        margin-top: 10px;
+        border-radius: 10px;
+        transition-duration: 0.5s;
+        border: 1px solid transparent;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: transparent;
+        color: tomato;
+        border: 1px solid tomato;
+        transition-duration: 0.5s;
+      }
+    </style>
+  </head>
+
+  <body>
+    <form method="post" action="처리할 파일이름">
+      <div class="login-box">
+        <label for="userid">UserID</label
+        ><input
+          type="text"
+          placeholder="아이디를 입력하세요."
+          required
+          name="userid"
+          id="userid"
+        />
+        <br />
+        <label for="passwd">Password</label
+        ><input
+          type="password"
+          placeholder="비밀번호를 입력하세요."
+          required
+          name="passwd"
+          id="Password"
+        />
+        <br />
+
+        <button type="submit">Login</button>
+      </div>
+    </form>
+  </body>
+</html>

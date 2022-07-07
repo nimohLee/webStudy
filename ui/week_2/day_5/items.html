@@ -1,165 +1,218 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home>상품소개</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
 
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-      body {
-        font-family: "Poppins", sans-serif;
-      }
+        body {
+            font-family: "Poppins", sans-serif;
+        }
 
-      header {
-        margin: 30px 0;
-        text-align: center;
-      }
+        header {
+            margin: 30px 0;
+            text-align: center;
+        }
 
-      section {
-        display: flex;
-        flex-direction: column;
-      }
+        section {
+            display: flex;
+            flex-direction: column;
+        }
 
-      .items-line {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        margin: 0 auto;
-        width: 1200px;
-      }
+        hr{
+            display: none;
+        }
 
-      .item-box {
-        margin: 10px;
-      }
-
-      .item-desc {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-      }
-
-      .item-desc h2 {
-        font-size: 23px;
-      }
-
-      .item-desc p {
-        margin-top: 10px;
-      }
-
-      .item-pay {
-        font-size: 30px;
-        display: flex;
-        align-items: center;
-      }
-
-      .item-pay i {
-        cursor: pointer;
-        transition-duration: 0.2s;
-      }
-
-      .item-pay i:hover {
-        color: darkblue;
-        transition-duration: 0.2s;
-      }
-
-      .image {
-        overflow: hidden;
-      }
-
-      .item-box img {
-        width: 100%;
-        cursor: pointer;
-        transition-duration: 0.3s;
-      }
-
-      .item-box img:hover {
-        transform: scale(1.2);
-        transition-duration: 0.3s;
-      }
-
-      /* mediaQuery : 400px */
-      @media (max-width: 400px) {
         .items-line {
-          flex-direction: column;
-          width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin: 0 auto;
+            width: 1200px;
+        }
+
+        .item-box {
+            margin: 5px;
+            width: 32%;
+        }
+
+        .item-desc {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
         }
 
         .item-desc h2 {
-          font-size: 18px;
+            font-size: 23px;
+        }
+
+        .item-desc p {
+            margin-top: 10px;
+            text-align: right;
+        }
+
+        .item-detail {
+            width: 54%;
+        }
+
+        .item-pay {
+            font-size: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+
+            width: 40%;
+
         }
 
         .item-pay i {
-          font-size: 25px;
-          cursor: pointer;
+            cursor: pointer;
+            transition-duration: 0.2s;
+        }
+
+        .item-pay i:hover {
+            color: darkblue;
+            transition-duration: 0.2s;
         }
 
         .image {
-          width: 100%;
+            overflow: hidden;
         }
-      }
 
-      /* mediaQuery : 400px end */
+        .item-box img {
+            width: 100%;
+            cursor: pointer;
+            transition-duration: 0.3s;
+        }
+
+        .item-box img:hover {
+            transform: scale(1.2);
+            transition-duration: 0.3s;
+        }
+
+        /* mediaQuery : 400px */
+        @media (max-width: 400px) {
+            hr{
+                display: block;
+            }
+            .items-line {
+                flex-direction: column;
+                flex-wrap: nowrap;
+                width: 100%;
+            }
+
+            .item-box {
+                width: 90%;
+                margin: 10px auto;
+            }
+
+            .item-desc h2 {
+                font-size: 18px;
+            }
+
+            .item-pay i {
+                font-size: 25px;
+                cursor: pointer;
+            }
+
+            .image {
+                width: 100%;
+            }
+        }
+
+        /* mediaQuery : 400px end */
     </style>
-  </head>
+</head>
 
-  <body>
+<body>
     <header>
-      <h1>Shop Products</h1>
+        <h1>Shop Products</h1>
     </header>
     <section>
-      <!-- Item Line 1 -->
-      <div class="items-line">
-        <div class="item-box">
-          <div class="image"><img src="/week_2/images/a1.jpg" alt="a1" /></div>
-          <div class="item-desc">
-            <div class="item-detail">
-              <h2>Blue Pants<br /></h2>
-              <p>$74</p>
-            </div>
-            <div class="item-pay"><i class="fa-solid fa-bag-shopping"></i></div>
-          </div>
-        </div>
-        <div class="item-box">
-          <div class="image"><img src="/week_2/images/a2.jpg" alt="a2" /></div>
-          <div class="item-desc">
-            <div class="item-detail">
-              <h2>White Shoes<br /></h2>
-              <p>$55</p>
-            </div>
-            <div class="item-pay"><i class="fa-solid fa-bag-shopping"></i></div>
-          </div>
-        </div>
-        <div class="item-box">
-          <div class="image"><img src="/week_2/images/a3.jpg" alt="a3" /></div>
-          <div class="item-desc">
-            <div class="item-detail">
-              <h2>Gray Shoes<br /></h2>
-              <p>$55</p>
-            </div>
-            <div class="item-pay"><i class="fa-solid fa-bag-shopping"></i></div>
-          </div>
-        </div>
-      </div>
 
-      <!-- Item Line 2 -->
+        <div class="items-line">
+            <div class="item-box">
+                <div class="image"><img src="/week_2/images/a1.jpg" alt="a1" /></div>
+                <div class="item-desc">
+                    <div class="item-detail">
+                        <h2>Blue Pants<br /></h2>
+                        <p>$74</p>
+                    </div>
+                    <div class="item-pay"><i class="fa-solid fa-bag-shopping"></i></div>
+                </div>
+            </div>
+            <hr>
+            <div class="item-box">
+                <div class="image"><img src="/week_2/images/a2.jpg" alt="a2" /></div>
+                <div class="item-desc">
+                    <div class="item-detail">
+                        <h2>White Shoes<br /></h2>
+                        <p>$55</p>
+                    </div>
+                    <div class="item-pay"><i class="fa-solid fa-bag-shopping"></i></div>
+                </div>
+            </div>
+            <hr>
+            <div class="item-box">
+                <div class="image"><img src="/week_2/images/a3.jpg" alt="a3" /></div>
+                <div class="item-desc">
+                    <div class="item-detail">
+                        <h2>Gray Shoes<br /></h2>
+                        <p>$55</p>
+                    </div>
+                    <div class="item-pay"><i class="fa-solid fa-bag-shopping"></i></div>
+                </div>
+            </div>
+            <hr>
+            <div class="item-box">
+                <div class="image"><img src="/week_2/images/a4.jpg" alt="a3" /></div>
+                <div class="item-desc">
+                    <div class="item-detail">
+                        <h2>Nice Bag<br /></h2>
+                        <p>$75</p>
+                    </div>
+                    <div class="item-pay"><i class="fa-solid fa-bag-shopping"></i></div>
+                </div>
+            </div>
+            <hr>
+            <div class="item-box">
+                <div class="image"><img src="/week_2/images/a5.jpg" alt="a3" /></div>
+                <div class="item-desc">
+                    <div class="item-detail">
+                        <h2>Stripe Socks<br /></h2>
+                        <p>$5</p>
+                    </div>
+                    <div class="item-pay"><i class="fa-solid fa-bag-shopping"></i></div>
+                </div>
+            </div>
+            <hr>
+            <div class="item-box">
+                <div class="image"><img src="/week_2/images/a6.jpg" alt="a6" /></div>
+                <div class="item-desc">
+                    <div class="item-detail">
+                        <h2>Blue Jacket<br /></h2>
+                        <p>$115</p>
+                    </div>
+                    <div class="item-pay"><i class="fa-solid fa-bag-shopping"></i></div>
+                </div>
+            </div>
+        </div>
+
+        <!--       
       <div class="items-line">
         <div class="item-box">
           <div class="image">
@@ -192,8 +245,9 @@
             </div>
             <div class="item-pay"><i class="fa-solid fa-bag-shopping"></i></div>
           </div>
-        </div>
-      </div>
+        </div> 
+      </div>-->
     </section>
-  </body>
+</body>
+
 </html>

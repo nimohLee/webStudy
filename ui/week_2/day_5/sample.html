@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    .div-align-center{
+      width: 1200px;
+      margin:0 auto;
+    }
+    .box-wrap{
+      /**********************************/
+      /* flex-direction:row -> column 
+         flex-wrap: wrap -> nowrap */
+      /**********************************/
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      
+    }
+    .box {
+      width: 24%;
+      height: 300px;
+      margin-bottom: 10px;
+      background-color: limegreen;
+    }
+
+
+    @media(max-width:400px){
+     /**********************************/
+      /* flex-direction:row -> column 
+         flex-wrap: wrap -> nowrap */
+      /**********************************/
+      .box-wrap{
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+    }
+    
+    }
+  </style>
+</head>
+
+<body>
+  <!-- flex 설정을 위한(가로배치를 위한) div -->
+  <div class="div-align-center">
+    <div class="box-wrap">
+      <div class="box">이미지</div>
+      <div class="box">이미지</div>
+      <div class="box">이미지</div>
+      <div class="box">이미지</div>
+      <div class="box">이미지</div>
+      <div class="box">이미지</div>
+      <div class="box">이미지</div>
+      <div class="box">이미지</div>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -62,7 +62,6 @@
 
         .item-desc p {
             margin-top: 10px;
-            text-align: right;
         }
 
         .item-detail {
@@ -73,21 +72,30 @@
             font-size: 30px;
             display: flex;
             flex-direction: column;
-            align-items: flex-end;
-
-            width: 40%;
+            justify-content: center;
+            background-color: black;
+            align-items: center;
+            border-radius: 10px;
+            width: 40px;
+            height: 40px;
 
         }
 
         .item-pay i {
             cursor: pointer;
             transition-duration: 0.2s;
+            color: white;
         }
 
         .item-pay i:hover {
-            color: darkblue;
+            color: black;
             transition-duration: 0.2s;
+            
         }
+        .item-pay:hover{
+            background-color: white;
+        }
+
 
         .image {
             overflow: hidden;
@@ -102,6 +110,17 @@
         .item-box img:hover {
             transform: scale(1.2);
             transition-duration: 0.3s;
+            
+        }
+        .old-price{
+            font-size: 14px;
+            color: tomato;
+            font-weight: bold;
+            font-style: italic;
+        }
+        .new-price{
+            font-size: 20px;
+            
         }
 
         /* mediaQuery : 400px */
@@ -127,6 +146,7 @@
             .item-pay i {
                 font-size: 25px;
                 cursor: pointer;
+              
             }
 
             .image {
@@ -143,14 +163,15 @@
         <h1>Shop Products</h1>
     </header>
     <section>
-
+        <!-- Use flex-wrap for dividing line -->
         <div class="items-line">
             <div class="item-box">
                 <div class="image"><img src="/week_2/images/a1.jpg" alt="a1" /></div>
                 <div class="item-desc">
                     <div class="item-detail">
                         <h2>Blue Pants<br /></h2>
-                        <p>$74</p>
+                        <span class="old-price"><del>$99.00</del></span> <!--인라인 : flex없이 가로배치-->   
+                        <span class="new-price">$88.00</span>
                     </div>
                     <div class="item-pay"><i class="fa-solid fa-bag-shopping"></i></div>
                 </div>
@@ -212,8 +233,9 @@
             </div>
         </div>
 
-        <!--       
-      <div class="items-line">
+        <!-- Use 2 div(item-box) for dividing line-->       
+     
+        <!-- <div class="items-line">
         <div class="item-box">
           <div class="image">
             <img src="/week_2/images/a4.jpg" alt="a4" />
@@ -246,7 +268,7 @@
             <div class="item-pay"><i class="fa-solid fa-bag-shopping"></i></div>
           </div>
         </div> 
-      </div>-->
+      </div>--> 
     </section>
 </body>
 

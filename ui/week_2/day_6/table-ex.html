@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Nanum+Gothic:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Table</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: lightgray;
+        font-family: "Montserrat", sans-serif;
+      }
+      table {
+        border-collapse: collapse;
+        width: 95%;
+        height: 60vh;
+        margin: 50px auto 20px auto;
+        overflow: hidden;
+        z-index: 1;
+        border-spacing: 0;
+      }
+
+      button,
+      input,
+      select {
+        border: none;
+        background-color: none;
+      }
+      th {
+        font-weight: 400;
+        background-color: black;
+        color: white;
+        height: 60px;
+        position: relative;
+      }
+
+      tr {
+        height: 50px;
+      }
+
+      td {
+        text-align: center;
+        position: relative;
+      }
+
+      /* td:hover::before {
+        background-color: rgb(85, 197, 235);
+        width: 400px;
+      }
+
+      td:hover::after {
+        height: 1000px;
+        background-color: antiquewhite;
+      } */
+
+      td:hover::before {
+        background-color: rgba(131, 211, 238, 0.541);
+        content: "\00a0";
+        left: -10000px;
+        position: absolute;
+        top: 0px;
+        width: 10000px;
+        height: 100%;
+        z-index: 0.9;
+      }
+
+      td:hover::after {
+        background-color: rgba(131, 211, 238, 0.541);
+        content: "\00a0";
+        height: 10000px;
+        left: 0;
+        position: absolute;
+        top: -5000px;
+        width: 100%;
+        z-index: 0.9;
+      }
+
+      tr:nth-child(odd) {
+        background-color: lightblue;
+      }
+      tr:nth-child(even) {
+        background-color: white;
+      }
+
+      .page-bottom {
+        float: right;
+        margin-right: 60px;
+      }
+
+      select {
+        border: 1px solid lightblue;
+        border-radius: 5px;
+        width: 70px;
+        height: 25px;
+      }
+
+      input {
+        border: 1px solid lightblue;
+        border-radius: 5px;
+        height: 25px;
+      }
+      button {
+        border: 1px solid lightblue;
+        border-radius: 5px;
+        background-color: lightblue;
+        vertical-align: bottom;
+        color: white;
+        width: 50px;
+        height: 25px;
+        font-weight: bold;
+        cursor: pointer;
+        transition-duration: 0.2s;
+      }
+      button:hover {
+        background-color: white;
+        border: 1px solid lightblue;
+        color: lightblue;
+        transition-duration: 0.2s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead>
+          <tr>
+            <th></th>
+            <th>SUNDAY</th>
+            <th>MONDAY</th>
+            <th>TUESDAY</th>
+            <th>WENDSDAY</th>
+            <th>THURSDAY</th>
+            <th>FRIDAY</th>
+            <th>SATURDAY</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="row">
+            <td>Lee Scott</td>
+            <td>8:00 AM</td>
+            <td>-</td>
+            <td>-</td>
+            <td>8:00 AM</td>
+            <td>-</td>
+            <td>5:00 PM</td>
+            <td>8:00 AM</td>
+          </tr>
+          <tr class="row">
+            <td>Sara Manis</td>
+            <td>-</td>
+            <td>5:00 PM</td>
+            <td>5:00 PM</td>
+            <td>-</td>
+            <td>9:00 AM</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr class="row">
+            <td>Billy Mctom</td>
+            <td>9:00 AM</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>2:00 PM</td>
+            <td>8:00 AM</td>
+          </tr>
+          <tr class="row">
+            <td>Michael Johnson</td>
+            <td>-</td>
+            <td>5:00 PM</td>
+            <td>5:00 PM</td>
+            <td>-</td>
+            <td>9:00 AM</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr class="row">
+            <td>Wane Rooney</td>
+            <td>8:00 AM</td>
+            <td>-</td>
+            <td>-</td>
+            <td>8:00 AM</td>
+            <td>-</td>
+            <td>5:00 PM</td>
+            <td>8:00 AM</td>
+          </tr>
+          <tr class="row">
+            <td>Son</td>
+            <td>-</td>
+            <td>5:00 PM</td>
+            <td>5:00 PM</td>
+            <td>-</td>
+            <td>9:00 AM</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr class="row">
+            <td>James Owen</td>
+            <td>9:00 AM</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>2:00 PM</td>
+            <td>8:00 AM</td>
+          </tr>
+          <tr class="row">
+            <td>Chris John</td>
+            <td>8:00 AM</td>
+            <td>-</td>
+            <td>-</td>
+            <td>8:00 AM</td>
+            <td>-</td>
+            <td>5:00 PM</td>
+            <td>8:00 AM</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="page-bottom">
+      <form class="search-form">
+        <select name="search-type" id="search-type" class="search-type">
+          <option value="name">이름</option>
+          <option value="day">요일</option>
+          <option value="time">시간</option>
+        </select>
+        <input type="text" required name="search" id="search" class="search" />
+        <button type="submit">검색</button>
+      </form>
+    </div>
+  </body>
+</html>

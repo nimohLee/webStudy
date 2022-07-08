@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가로 세로 : posi tion:absolute;x,y값이 필요 -> (절대좌표)</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+
+        body{
+            background-color: tomato;
+        }
+
+        .login-box-wrap{
+            /* absolute position defalut */
+           position:absolute;
+           top: calc(50% - 150px);
+            left: calc(50% - 200px);
+            
+            /* 좌측상단에서 시작하므로 보통 top과 left를 사용하여 위치 조정 */
+            /* right: 0;     bottom: 0; */
+        }
+
+        .login-box{
+            width: 400px;
+            height: 300px;
+            background-color: white;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="login-box-wrap">
+        <div class="login-box">로그인상자</div>
+    </div>
+</body>
+</html>

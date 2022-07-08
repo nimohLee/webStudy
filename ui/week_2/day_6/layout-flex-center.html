@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>가로세로 정렬 flex - position</title>
+    <style>
+      /* import-font는 style 가장 위에  */
+      @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      input,
+      button {
+        /* 기본 outline */
+        border: 0;
+        /* input, button 클릭 시 outline */
+        outline: 0;
+        background-color: transparent;
+      }
+
+      body {
+        /* 넓이, 높이가 무조건 100%로 설정되어 있다고 생각 */
+        background-color: #01c4ff;
+        font-family: "Lato", sans-serif;
+      }
+
+      .login-box-wrap {
+        display: flex;
+        /* 가로 */
+        justify-content: center;
+        /* 세로 */
+        align-items: center;
+        /* viewport height ( 디바이스 높이에 맞게 높이(height) 100% 채우기 ) */
+        height: 100vh;
+      }
+
+      .login-box {
+        padding: 40px;
+        background-color: white;
+        width: 400px;
+        height: 300px;
+        border-radius: 25px;
+      }
+
+      .login-box h3 {
+        text-align: center;
+        font-size: 25px;
+        margin-bottom: 15px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="login-box-wrap">
+      <form
+        method="post"
+        action="login_process.do"
+        enctype="multipart/form-data"
+        name="frm"
+        id="frm"
+        class="frm"
+      >
+        <div class="login-box">
+          <h3>LOGIN <span style="color: tomato">BOX</span></h3>
+          <div class="userid-wrap">
+            <i class="fa-regular fa-user"></i>
+            <label for="userid">UserID</label>
+            <input
+              type="text"
+              required
+              name="userid"
+              class="userid"
+              id="userid"
+              maxlength="12"
+              placeholder="Inset ID..."
+            />
+          </div>
+          <div class="password-wrap">
+            <i class="fa-regular fa-keyboard"></i>
+            <label for="passwd">PassWD</label>
+            <input
+              type="password"
+              required
+              name="password"
+              class="password"
+              id="password"
+              maxlength="12"
+              placeholder="Inset PassWD..."
+            />
+          </div>
+          <div class="btn-wrap"><button type="submit">Sign in</button></div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

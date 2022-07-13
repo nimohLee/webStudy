@@ -26,6 +26,8 @@
         box-sizing: border-box;
       }
 
+      html {
+      }
       body {
       }
 
@@ -71,7 +73,6 @@
         margin-left: 5%;
         justify-content: space-between;
         align-items: center;
-
         /* 화면 정가운데 글자 배치할 때 */
         height: 60px;
       }
@@ -100,10 +101,41 @@
         display: none;
       }
 
+      .main-title {
+        color: white;
+      }
+
+      .hero-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: calc(100vh - 60px);
+      }
+
+      .hero-content h2 {
+        color: white;
+        /* font-size: 100px/16 */
+        font-size: 6.25rem;
+      }
+
+      .hero-content p {
+        color: white;
+        font-size: 0.75rem;
+
+        /* letter-spacing : 자간 */
+        letter-spacing: 2px;
+      }
+
       /*--- mediaQuery max-width 1000px (For tab) ---*/
       @media (max-width: 1000px) {
         .hero-bg {
           background-image: url("images/tap-img.jpg");
+        }
+        .hero-content h2 {
+          color: white;
+          /* font-size: 100px/16 */
+          font-size: 5rem;
         }
       }
 
@@ -113,6 +145,14 @@
       @media (max-width: 500px) {
         .hero-bg {
           background-image: url("images/mobile-img.jpg");
+        }
+        .hero-content h2 {
+          color: white;
+          /* font-size: 100px/16 */
+          font-size: 3.75rem;
+        }
+        .hero-content p {
+          text-align: left;
         }
         .toggle {
           display: block;
@@ -130,23 +170,20 @@
         <h1><a href="./index.html">Tasty</a></h1>
         <ul class="lato-font">
           <li><a href="#">HOME</a></li>
-
           <li><a href="#">RESTO</a></li>
-
           <li><a href="#">MENU</a></li>
-
           <li><a href="#">SPECIAL</a></li>
-
           <li><a href="#">RESERVATION</a></li>
-
           <li><a href="#">GALLERY</a></li>
-
           <li><a href="#">CONTACT</a></li>
-
           <li><a href="#">ADMIN/LOGIN/SIGNIN</a></li>
         </ul>
       </div>
       <div class="toggle"><i class="fa-solid fa-bars"></i></div>
+      <div class="hero-content">
+        <h2 class="kristi-font">delicious italian food</h2>
+        <p class="lora-font">MAKING DELICIOUS ITALIAN FOOD SINCE 1998</p>
+      </div>
     </div>
 
     <script></script>

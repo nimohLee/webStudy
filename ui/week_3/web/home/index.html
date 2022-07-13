@@ -126,6 +126,9 @@
         /* letter-spacing : 자간 */
         letter-spacing: 2px;
       }
+      .open {
+        display: block;
+      }
 
       /*--- mediaQuery max-width 1000px (For tab) ---*/
       @media (max-width: 1000px) {
@@ -146,6 +149,9 @@
         .hero-bg {
           background-image: url("images/mobile-img.jpg");
         }
+        .menu {
+          display: none;
+        }
         .hero-content h2 {
           color: white;
           /* font-size: 100px/16 */
@@ -157,6 +163,13 @@
         .toggle {
           display: block;
         }
+        .open {
+          display: block;
+        }
+        .close {
+          display: none;
+        }
+        /* js에서 클릭할 때 instance 보이게 할 class. 사용은 classList.add(클래스명); */
       }
 
       /*------ mediaQuery max-width 1000px (For mobile) --end----- */
@@ -166,9 +179,10 @@
 
   <body>
     <div class="hero-bg">
-      <div class="top-wrap">
+      <div class="top-wrap" id="top-wrap">
         <h1><a href="./index.html">Tasty</a></h1>
-        <ul class="lato-font">
+
+        <ul class="lato-font menu" id="menu">
           <li><a href="#">HOME</a></li>
           <li><a href="#">RESTO</a></li>
           <li><a href="#">MENU</a></li>
@@ -179,13 +193,33 @@
           <li><a href="#">ADMIN/LOGIN/SIGNIN</a></li>
         </ul>
       </div>
-      <div class="toggle"><i class="fa-solid fa-bars"></i></div>
+      <div class="toggle"><i class="fa-solid fa-bars" id="show"></i></div>
       <div class="hero-content">
         <h2 class="kristi-font">delicious italian food</h2>
         <p class="lora-font">MAKING DELICIOUS ITALIAN FOOD SINCE 1998</p>
       </div>
     </div>
 
-    <script></script>
+    <script>
+      // triger 버튼 사용을 위해 id(class) 이름 가져오기
+      // js -> 변수 (const, let....var(안씀))
+
+      const show_btn = document.querySelector("#show");
+      const navbar = document.querySelector("#menu");
+
+      // function showMenu(){}
+      const showMenu = () => {
+        //  화면에 보이는 동작 처리 : display:block 클래스를 가져오기
+        navbar.classList.toggle("open");
+      };
+
+      // const closeMenu = () => {
+      //   //  화면에 보이는 동작 처리 : display:block 클래스를 가져오기
+      //   navbar.classList.remove("open");
+      // };
+
+      // (이벤트, 함수명)
+      show_btn.addEventListener("click", showMenu);
+    </script>
   </body>
 </html>

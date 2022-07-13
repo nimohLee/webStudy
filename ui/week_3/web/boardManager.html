@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kristi&family=Lato:wght@400;700&family=Lora:ital@1&family=Nanum+Gothic&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-size: 13px;
+        width: 95%;
+        margin: 0 auto;
+        border-left: 1px solid rgba(0, 0, 0, 0.05);
+        border-right: 1px solid rgba(0, 0, 0, 0.05);
+        font-family: "Lora", sans-serif;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      button,
+      select {
+        border: 0;
+        background-color: none;
+      }
+      button {
+        cursor: pointer;
+      }
+
+      ul li {
+        list-style: none;
+      }
+      ul li a {
+        text-decoration: none;
+        color: black;
+      }
+
+      /* -------Reset Css -------*/
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        margin: 5px 10px 20px 5px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        font-weight: bold;
+      }
+
+      .menu-wrap {
+        border-right: 1px solid rgba(0, 0, 0, 0.05);
+        padding-right: 7px;
+        padding-bottom: 10px;
+      }
+
+      h1 {
+        font-size: 14px;
+      }
+
+      .paging {
+        display: flex;
+        justify-content: space-between;
+        background-color: rgba(0, 0, 0, 0.05);
+        height: 50px;
+        align-items: center;
+      }
+      .num {
+        display: flex;
+      }
+
+      /* Table Css */
+      table {
+        border-top: 3px solid blue;
+        height: 50vh;
+        text-align: center;
+        margin-top: 10px;
+        width: 100%;
+      }
+
+      thead {
+        height: 13%;
+        background-color: rgba(0, 0, 0, 0.05);
+      }
+
+      th,
+      tr {
+        border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+        height: 10%;
+      }
+
+      td:nth-child(3) {
+        color: blue;
+        font-weight: bold;
+        text-align: left;
+      }
+
+      tr:nth-child(5) {
+        border-bottom: none;
+      }
+
+      /* ! Table Css */
+
+      select {
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-radius: 3px;
+        height: 40px;
+        width: 80%;
+        font-size: 13px;
+      }
+
+      .num {
+        margin-left: 20px;
+      }
+
+      ul li {
+        display: flex;
+        background-color: white;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-left: 0;
+        width: 30px;
+        height: 35px;
+        justify-content: center;
+        align-items: center;
+      }
+      ul li:nth-child(1) {
+        border-radius: 3px 0 0 3px;
+        border-left: 1px solid rgba(0, 0, 0, 0.1);
+      }
+      ul li:nth-child(6) {
+        border-radius: 0 3px 3px 0;
+      }
+
+      .add-btn {
+        background-color: rgb(15, 4, 109);
+        color: white;
+        border-radius: 3px;
+        width: 100px;
+        height: 70%;
+        margin-right: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="menu-wrap" style="cursor: pointer">
+        <i class="fa-solid fa-bars"></i>&nbsp;Menu
+      </div>
+      <div class="logout-wrap" style="cursor: pointer">Logout</div>
+    </header>
+    <main>
+      <div class="path">
+        <h1>
+          <span style="color: blue">Home > Board -> </span>Board List Show All
+        </h1>
+      </div>
+      <table>
+        <thead>
+          <th>No.</th>
+          <th>Group</th>
+          <th>Name</th>
+          <th>Registration Date</th>
+          <th>Reply</th>
+          <th>Colors</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="checkbox" name="" id="" /></td>
+            <td>
+              <select name="" id="">
+                <option value="">Home > Business</option>
+                <option value="">Home > Community</option>
+              </select>
+            </td>
+            <td>비즈니스 답변형 게시판</td>
+            <td>2022.07.11</td>
+            <td>
+              <select name="" id="">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+            </td>
+
+            <td>
+              <select name="" id="">
+                <option value="">#cccccc</option>
+                <option value="">#ffffff</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" name="" id="" /></td>
+            <td>
+              <select name="" id="">
+                <option value="Business">Home > Business</option>
+                <option value="Community">Home > Community</option>
+              </select>
+            </td>
+            <td>비즈니스 답변형 게시판</td>
+            <td>2022.07.11</td>
+            <td>
+              <select name="" id="">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+            </td>
+            <td>
+              <select name="" id="">
+                <option value="">#cccccc</option>
+                <option value="">#ffffff</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" name="" id="" /></td>
+            <td>
+              <select name="" id="">
+                <option value="Business">Home > Business</option>
+                <option value="Community">Home > Community</option>
+              </select>
+            </td>
+            <td>비즈니스 답변형 게시판</td>
+            <td>2022.07.11</td>
+            <td>
+              <select name="" id="">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+            </td>
+            <td>
+              <select name="" id="">
+                <option value="">#cccccc</option>
+                <option value="">#ffffff</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" name="" id="" /></td>
+            <td>
+              <select name="" id="">
+                <option value="Business">Home > Business</option>
+                <option value="Community">Home > Community</option>
+              </select>
+            </td>
+            <td>비즈니스 답변형 게시판</td>
+            <td>2022.07.11</td>
+            <td>
+              <select name="" id="">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+            </td>
+            <td>
+              <select name="" id="">
+                <option value="">#cccccc</option>
+                <option value="">#ffffff</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" name="" id="" /></td>
+            <td>
+              <select name="" id="">
+                <option value="Business">Home > Business</option>
+                <option value="Community">Home > Community</option>
+              </select>
+            </td>
+            <td>비즈니스 답변형 게시판</td>
+            <td>2022.07.11</td>
+            <td>
+              <select name="" id="">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+            </td>
+            <td>
+              <select name="" id="">
+                <option value="">#cccccc</option>
+                <option value="">#ffffff</option>
+              </select>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="paging">
+        <ul class="num">
+          <li><a href="#">&lt;</a></li>
+          <li><a href="#">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">4</a></li>
+          <li><a href="#">&gt;</a></li>
+        </ul>
+        <button class="add-btn">
+          <i class="fa-solid fa-pencil"></i>&nbsp;&nbsp;Add Board
+        </button>
+      </div>
+    </main>
+  </body>
+</html>

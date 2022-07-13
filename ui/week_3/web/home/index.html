@@ -95,7 +95,7 @@
       }
 
       i {
-        color: white;
+        color: black;
       }
       .toggle {
         display: none;
@@ -152,6 +152,15 @@
         .menu {
           display: none;
         }
+
+        .top-wrap {
+          flex-direction: column;
+        }
+
+        a {
+          color: black;
+        }
+
         .hero-content h2 {
           color: white;
           /* font-size: 100px/16 */
@@ -166,9 +175,6 @@
         .open {
           display: block;
         }
-        .close {
-          display: none;
-        }
         /* js에서 클릭할 때 instance 보이게 할 class. 사용은 classList.add(클래스명); */
       }
 
@@ -181,7 +187,6 @@
     <div class="hero-bg">
       <div class="top-wrap" id="top-wrap">
         <h1><a href="./index.html">Tasty</a></h1>
-
         <ul class="lato-font menu" id="menu">
           <li><a href="#">HOME</a></li>
           <li><a href="#">RESTO</a></li>

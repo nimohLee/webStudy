@@ -6,11 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>All check, All unCheck</title>
   </head>
+
   <body>
-    <div><input type="checkbox" name="" id="chkAll" />전체선택</div>
+    <div>
+      <input
+        type="checkbox"
+        name=""
+        id="chkAll"
+        onClick="selectAll();"
+      />전체선택
+    </div>
     <div><input type="checkbox" name="" id="" /></div>
     <div><input type="checkbox" name="" id="" /></div>
     <div><input type="checkbox" name="" id="" /></div>
     <div><input type="checkbox" name="" id="" /></div>
+
+    <script>
+      function selectAll() {
+        alert("hi");
+
+        if (document.querySelector("#chkAll").checked == true) {
+          console.log("체크돼있음");
+        }
+      }
+    </script>
   </body>
 </html>

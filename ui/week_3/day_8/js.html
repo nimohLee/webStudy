@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>자바스크립트 예제</title>
+    <style>
+      .box1 {
+        width: 100%;
+        height: 200px;
+        background-color: tomato;
+      }
+
+      .box2 {
+        width: 100%;
+        height: 200px;
+        background-color: blue;
+      }
+
+      .onOff {
+        display: none;
+      }
+
+      .input[type="text"] {
+        border: 0;
+        border: 1px solid #d1d1d1;
+        width: 15px;
+        padding: 4px 8px;
+      }
+      button {
+        border: 1px solid #d1d1d1;
+        width: 100px;
+        height: 22px;
+      }
+
+      .text {
+        color: tomato;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box1" id="box1"></div>
+    <button type="button" class="box1Open" id="box1Open" onclick="showBox1()">
+      Open
+    </button>
+    <button
+      onClick="closeBox1()"
+      type="button"
+      class="box1Close"
+      id="box1Close"
+    >
+      Close
+    </button>
+    <p></p>
+    <hr />
+    <p></p>
+    <div class="box2" id="box2"></div>
+    <button class="box2Toggle" id="box2Toggle">Toggle</button>
+    <p></p>
+    <hr />
+    <p></p>
+    <input
+      type="text"
+      placeholder="아이디를 입력하세요"
+      class="userId"
+      id="userId"
+    />
+    <button class="idBtn" id="idBtn">아이디체크</button>
+    <div class="text" id="text"></div>
+    <script src="./js/app.js"></script>
+    <script src="./js/id.js"></script>
+  </body>
+</html>

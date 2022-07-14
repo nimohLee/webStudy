@@ -1,194 +1,233 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Kristi&family=Lato:wght@400;700&family=Lora:ital@1&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <style>
-      /* --- Reset Css---*/
+  <link href="https://fonts.googleapis.com/css2?family=Kristi&family=Lato:wght@400;700&family=Lora:ital@1&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+  <style>
+    /* --- Reset Css---*/
 
-      html {
-      }
-      body {
-      }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-      .kristi-font {
-        font-family: "Kristi", cursive;
-      }
+    html {}
 
-      .lato-font {
-        font-family: "Lato", sans-serif;
-      }
+    body {}
 
-      .lora-font {
-        font-family: "Lora", serif;
-      }
+    .kristi-font {
+      font-family: "Kristi", cursive;
+    }
 
-      ul {
-        display: flex;
-        margin-right: 20px;
-      }
+    .lato-font {
+      font-family: "Lato", sans-serif;
+    }
 
-      ul li {
-        list-style: none;
-      }
+    .lora-font {
+      font-family: "Lora", serif;
+    }
 
-      a {
-        color: white;
-        text-decoration: none;
-      }
-      /* !--- Reset Css---!*/
+    ul {
+      display: flex;
+      margin-right: 20px;
+    }
 
+    ul li {
+      list-style: none;
+    }
+
+    a {
+      color: white;
+      text-decoration: none;
+    }
+
+    /* !--- Reset Css---!*/
+
+    .hero-bg {
+      /* 배경이미지는 height 값 있어야 보임 */
+      background-image: url("images/pc-img.jpg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .top-wrap {
+      display: flex;
+      margin-left: 5%;
+      justify-content: space-between;
+      align-items: center;
+      /* 화면 정가운데 글자 배치할 때 */
+      height: 60px;
+    }
+
+    .top-wrap h1 a {
+      color: tomato;
+      font-size: 20px;
+    }
+
+    ul li a {
+      font-size: 15px;
+      font-weight: bold;
+      transition-duration: 0.2s;
+      margin-left: 40px;
+    }
+
+    ul li a:hover {
+      color: tomato;
+      transition-duration: 0.4s;
+    }
+
+    i {
+      color: black;
+    }
+
+    .toggle {
+      display: none;
+    }
+
+    .main-title {
+      color: white;
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: calc(100vh - 60px);
+    }
+
+    .hero-content h2 {
+      color: white;
+      /* font-size: 100px/16 */
+      font-size: 6.25rem;
+    }
+
+    .hero-content p {
+      color: white;
+      font-size: 0.75rem;
+
+      /* letter-spacing : 자간 */
+      letter-spacing: 2px;
+    }
+
+
+    .open {
+      display: block;
+
+    }
+
+    /*--- mediaQuery max-width 1000px (For tab) ---*/
+    @media (max-width: 1000px) {
       .hero-bg {
-        /* 배경이미지는 height 값 있어야 보임 */
-        background-image: url("images/pc-img.jpg");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        width: 100vw;
-        height: 100vh;
-      }
-
-      .top-wrap {
-        display: flex;
-        margin-left: 5%;
-        justify-content: space-between;
-        align-items: center;
-        /* 화면 정가운데 글자 배치할 때 */
-        height: 60px;
-      }
-
-      .top-wrap h1 a {
-        color: tomato;
-        font-size: 20px;
-      }
-
-      ul li a {
-        font-size: 15px;
-        font-weight: bold;
-        transition-duration: 0.2s;
-        margin-left: 40px;
-      }
-
-      ul li a:hover {
-        color: tomato;
-        transition-duration: 0.4s;
-      }
-
-      i {
-        color: black;
-      }
-
-      .toggle {
-        display: none;
-      }
-
-      .main-title {
-        color: white;
-      }
-
-      .hero-content {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: calc(100vh - 60px);
+        background-image: url("images/tap-img.jpg");
       }
 
       .hero-content h2 {
         color: white;
         /* font-size: 100px/16 */
-        font-size: 6.25rem;
+        font-size: 5rem;
+      }
+    }
+
+    /*!--- mediaQuery max-width 1000px (For tab) ---!*/
+
+    /*------ mediaQuery max-width 1000px (For mobile) ------*/
+    @media (max-width: 500px) {
+      .hero-bg {
+        background-image: url("images/mobile-img.jpg");
+      }
+
+      .menu {
+        display: none;
+      }
+
+      .top-wrap {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .top-wrap h1 {
+        position: relative;
+        top: 0;
+        left: -200px;
+      }
+
+      .ul-wrap {
+        position: absolute;
+        top: 40px;
+        left: 0;
+        display: none;
+        width: 100%;
+        height: 300px;
+        background-color: white;
+        z-index: 0;
+      }
+
+      .ul-wrap ul {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 20px;
+      }
+
+      a {
+        color: black;
+
+      }
+
+      li {
+        margin-bottom: 15px;
+      }
+
+      .hero-content h2 {
+        color: white;
+        /* font-size: 100px/16 */
+        font-size: 3.75rem;
       }
 
       .hero-content p {
-        color: white;
-        font-size: 0.75rem;
-
-        /* letter-spacing : 자간 */
-        letter-spacing: 2px;
+        text-align: left;
       }
-      .open {
+
+      .toggle {
         display: block;
+        position: absolute;
+        top: 15px;
+        right: 20px;
       }
 
-      /*--- mediaQuery max-width 1000px (For tab) ---*/
-      @media (max-width: 1000px) {
-        .hero-bg {
-          background-image: url("images/tap-img.jpg");
-        }
-        .hero-content h2 {
-          color: white;
-          /* font-size: 100px/16 */
-          font-size: 5rem;
-        }
+      .open {
+        display: flex;
+        flex-direction: column;
       }
 
-      /*!--- mediaQuery max-width 1000px (For tab) ---!*/
+      /* js에서 클릭할 때 instance 보이게 할 class. 사용은 classList.add(클래스명); */
+    }
 
-      /*------ mediaQuery max-width 1000px (For mobile) ------*/
-      @media (max-width: 500px) {
-        .hero-bg {
-          background-image: url("images/mobile-img.jpg");
-        }
-        .menu {
-          display: none;
-        }
+    /*------ mediaQuery max-width 1000px (For mobile) --end----- */
+  </style>
+  <title></title>
+</head>
 
-        .top-wrap {
-          flex-direction: column;
-        }
-
-        a {
-          color: black;
-        }
-
-        .hero-content h2 {
-          color: white;
-          /* font-size: 100px/16 */
-          font-size: 3.75rem;
-        }
-        .hero-content p {
-          text-align: left;
-        }
-        .toggle {
-          display: block;
-        }
-        .open {
-          display: block;
-        }
-        /* js에서 클릭할 때 instance 보이게 할 class. 사용은 classList.add(클래스명); */
-      }
-
-      /*------ mediaQuery max-width 1000px (For mobile) --end----- */
-    </style>
-    <title></title>
-  </head>
-
-  <body>
-    <div class="hero-bg">
-      <div class="top-wrap" id="top-wrap">
-        <h1><a href="./index.html">Tasty</a></h1>
-        <ul class="lato-font menu" id="menu">
+<body>
+  <div class="hero-bg">
+    <div class="top-wrap" id="top-wrap">
+      <h1><a href="./index.html">Tasty</a></h1>
+      <div class="ul-wrap" id="menu">
+        <ul class="lato-font">
           <li><a href="#">HOME</a></li>
           <li><a href="#">RESTO</a></li>
           <li><a href="#">MENU</a></li>
@@ -196,36 +235,38 @@
           <li><a href="#">RESERVATION</a></li>
           <li><a href="#">GALLERY</a></li>
           <li><a href="#">CONTACT</a></li>
-          <li><a href="#">ADMIN/LOGIN/SIGNIN</a></li>
+          <li><a href="/week_3/day_8/login.html">ADMIN/LOGIN/SIGNIN</a></li>
         </ul>
       </div>
-      <div class="toggle"><i class="fa-solid fa-bars" id="show"></i></div>
-      <div class="hero-content">
-        <h2 class="kristi-font">delicious italian food</h2>
-        <p class="lora-font">MAKING DELICIOUS ITALIAN FOOD SINCE 1998</p>
-      </div>
     </div>
+    <div class="toggle"><i class="fa-solid fa-bars" id="show"></i></div>
+    <div class="hero-content">
+      <h2 class="kristi-font">delicious italian food</h2>
+      <p class="lora-font">MAKING DELICIOUS ITALIAN FOOD SINCE 1998</p>
+    </div>
+  </div>
 
-    <script>
-      // triger 버튼 사용을 위해 id(class) 이름 가져오기
-      // js -> 변수 (const, let....var(안씀))
+  <script>
+    // triger 버튼 사용을 위해 id(class) 이름 가져오기
+    // js -> 변수 (const, let....var(안씀))
 
-      const show_btn = document.querySelector("#show");
-      const navbar = document.querySelector("#menu");
+    const show_btn = document.querySelector("#show");
+    const navbar = document.querySelector("#menu");
 
-      // function showMenu(){}
-      const showMenu = () => {
-        //  화면에 보이는 동작 처리 : display:block 클래스를 가져오기
-        navbar.classList.toggle("open");
-      };
+    // function showMenu(){}
+    const showMenu = () => {
+      //  화면에 보이는 동작 처리 : display:block 클래스를 가져오기
+      navbar.classList.toggle("open");
+    };
 
-      // const closeMenu = () => {
-      //   //  화면에 보이는 동작 처리 : display:block 클래스를 가져오기
-      //   navbar.classList.remove("open");
-      // };
+    // const closeMenu = () => {
+    //   //  화면에 보이는 동작 처리 : display:block 클래스를 가져오기
+    //   navbar.classList.remove("open");
+    // };
 
-      // (이벤트, 함수명)
-      show_btn.addEventListener("click", showMenu);
-    </script>
-  </body>
+    // (이벤트, 함수명)
+    show_btn.addEventListener("click", showMenu);
+  </script>
+</body>
+
 </html>

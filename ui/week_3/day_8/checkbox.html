@@ -13,20 +13,41 @@
         type="checkbox"
         name=""
         id="chkAll"
-        onClick="selectAll();"
+        class="chk"
+        onclick="selectAll()"
       />전체선택
     </div>
-    <div><input type="checkbox" name="" id="" /></div>
-    <div><input type="checkbox" name="" id="" /></div>
-    <div><input type="checkbox" name="" id="" /></div>
-    <div><input type="checkbox" name="" id="" /></div>
+    <!-- chk[0] -->
+    <div><input type="checkbox" name="" id="" class="chk" /></div>
+    <!-- chk[1] -->
+    <div><input type="checkbox" name="" id="" class="chk" /></div>
+    <!-- chk[2] -->
+    <div><input type="checkbox" name="" id="" class="chk" /></div>
+    <!-- chk[3] -->
+    <div><input type="checkbox" name="" id="" class="chk" /></div>
+    <!-- chk[5] -->
+    <div><input type="checkbox" name="" id="" class="chk" /></div>
+    <!-- chk[6] -->
+    <div><input type="checkbox" name="" id="" class="chk" /></div>
+    <!-- chk[7] -->
+    <div><input type="checkbox" name="" id="" class="chk" /></div>
+    <!-- chk[8] -->
+    <div><input type="checkbox" name="" id="" class="chk" /></div>
+    <!-- chk[9] -->
 
     <script>
+      const str = document.querySelectorAll(".chk");
       function selectAll() {
-        alert("hi");
-
-        if (document.querySelector("#chkAll").checked == true) {
-          console.log("체크돼있음");
+        //if (!document.querySelector("#chkAll").checked)
+        if (document.querySelector("#chkAll").checked) {
+          console.log(str.length);
+          for (let i = 0; i < str.length; i++) {
+            document.getElementsByClassName("chk")[i].checked = true;
+          }
+        } else {
+          for (let i = 0; i < document.querySelectorAll(".chk").length; i++) {
+            document.getElementsByClassName("chk")[i].checked = false;
+          }
         }
       }
     </script>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kristi&family=Lato:wght@400;700&family=Lora:ital@1&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #e7e7e7;
+        font-family: "Lato", sans-serif;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      a:visited {
+        color: blue;
+      }
+
+      /* === Reset css === */
+
+      .signin-wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+      }
+
+      .signin-box {
+        box-shadow: 0 0 10px 3px pink;
+        background-color: white;
+        padding: 40px 50px;
+        border: 1px solid rgba(34, 36, 38, 0.2);
+        border-radius: 7px;
+        width: 500px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .signin-box h1 {
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+
+      .userid,
+      .passwd {
+        margin-bottom: 10px;
+      }
+
+      input {
+        border: 0;
+        outline: 0;
+        border: 1px solid #d1d1d1;
+        border-radius: 3px;
+        width: 100%;
+        padding: 12px 6px;
+        margin: 10px 0 25px 0;
+      }
+      .input-wrap {
+        font-weight: 600;
+        margin-top: 20px;
+      }
+
+      .btn {
+        border: 0;
+        background-color: tomato;
+        color: white;
+        padding: 8px 12px;
+        font-size: 18px;
+        border-radius: 5px;
+        float: right;
+        cursor: pointer;
+      }
+
+      .btn-wrap {
+        display: flex;
+        justify-content: space-between;
+        color: tomato;
+        font-size: 20px;
+        align-items: center;
+        margin-top: 20px;
+      }
+
+      ::placeholder {
+        color: rgba(0, 0, 0, 0.4);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="signin-wrap">
+      <div class="signin-box">
+        <h1>Sign In</h1>
+        <form
+          method="get"
+          action="/week_3/day_9/login.html"
+          enctype="multipart/form-data"
+        >
+          <div class="input-wrap">
+            <label for="">Username</label>
+            <input
+              type="text"
+              name="user-name"
+              id="user-name"
+              class="user-name"
+              placeholder="Username"
+              required
+            />
+            <label for="">Identification</label>
+            <input
+              type="text"
+              name="user-id"
+              id="user-id"
+              class="user-id"
+              placeholder="Identification"
+              required
+            />
+            <label for="">Password</label>
+            <input
+              type="password"
+              name="user-pw"
+              id="user-pw"
+              class="user-pw"
+              placeholder="Password"
+              required
+            />
+            <label for="">Re-Password</label>
+            <input
+              type="password"
+              name="re-passwd"
+              id="re-passwd"
+              class="re-passwd"
+              placeholder="Re-Password"
+              required
+            />
+          </div>
+          <div>
+            <a href="login.html"
+              ><strong>Already registered sign in?</strong></a
+            >
+          </div>
+          <div class="btn-wrap">
+            <div class="text-box"></div>
+            <button type="submit" class="btn" id="btn">Sign in</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      let uID = document.querySelector("#user-id");
+      let uPW = document.querySelector("#user-pw");
+      let rePW = document.querySelector("#re-passwd");
+      let signBtn = document.querySelector("#btn");
+
+      const signIn = () => {
+        if (uPW.value == rePW.value) {
+          alert("회원가입이 성공적으로 완료되었습니다.");
+        } else if (uPW.value != rePW.value) {
+          alert("비밀번호를 확인해주세요");
+          uPW.value = "";
+          rePW.value = "";
+          uPW.focus();
+        }
+      };
+      signBtn.addEventListener("click", signIn);
+    </script>
+  </body>
+</html>

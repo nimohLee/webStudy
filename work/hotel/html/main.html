@@ -1,11 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="/work/hotel/css/styles.css" />
-  </head>
-  <body></body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+
+  <link rel="stylesheet" href="/work/hotel/css/styles.css" />
+
+  <!-- font link -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600&family=Josefin+Sans:wght@600&family=Montserrat&display=swap"
+    rel="stylesheet" />
+
+<!-- scroll trigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+    <script src="scroll.js"></script>
+
+    <!-- fontawesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+  <style>
+
+    body{
+      width: 80%;
+      margin: 30px auto;  
+    }
+    .container{
+    }
+
+    header{
+      position:fixed;
+    }
+
+    .header-wrap{
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .ul-wrap ul{
+      display: flex;
+    }
+
+    .ul-wrap ul li{
+      margin-left: 30px;
+    }
+
+    main{
+      font-family: 'Montserrat', sans-serif;
+      position: absolute;
+      top: 60px;
+    }
+
+    .logo{
+      font-family: 'Josefin Sans', sans-serif;
+    }
+
+    .ul-wrap{
+      font-family: 'Dosis', sans-serif;
+    }
+
+  </style>
+
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <div class="header-wrap">
+        <div class="logo">
+          <h1>Hotel</h1>
+        </div>
+        <div class="ul-wrap">
+          <ul>
+            <li><a href="#">Reservation</a></li>
+            <li><a href="#">login</a></li>
+            <li>
+              <n href="#">MyBooking</a>
+            </li>
+            <li><i class="fa-solid fa-bars menuBtn"></i></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="intro-section">
+        <h2>사진 및 안내</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam, deleniti.</p>
+      </section>
+      <section class="reservation-section">
+        <form action="post">
+          <!-- 날짜 select -->
+        </form>
+      </section>
+      <section class="facilites-section">
+        <article>
+          <img src="#">
+          <div class="description">
+            <h2>Restaraunt</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore, quis ullam! Soluta commodi esse odio voluptatibus iure, illo reiciendis, sapiente numquam illum, consectetur aliquid quibusdam.</p>
+          </div>
+        </article>
+        <article>
+          <div class="description">
+            <h2>Sports center</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore, quis ullam! Soluta commodi esse odio voluptatibus iure, illo reiciendis, sapiente numquam illum, consectetur aliquid quibusdam.</p>
+            <img src="#">
+        </article>
+      </section>
+      <section class="map-section">
+        <div><h2>찾아오시는 길</h2></div>
+       <!-- naver map api -->
+      </section>
+    </main>
+    <footer> 사업자 설명 </footer>
+  </div>
+</body>
+
 </html>

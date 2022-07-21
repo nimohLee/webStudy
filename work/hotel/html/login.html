@@ -12,7 +12,7 @@
     href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600&family=Josefin+Sans:wght@600;700;800&family=Montserrat&display=swap"
     rel="stylesheet" />
 
-  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/login-style.css" />
 </head>
 
 <body>
@@ -26,14 +26,14 @@
         </div>
         <div class="ul-wrap">
           <ul>
-            <li><a href="#reservation-section">Reservation</a></li>
-            <li class="login-menu-btn">login</a>
-              <div class="login-menu">
-                <ul>
-                  <li><a href="/work/hotel/html/login.html">Log in</a></li>
-                  <li><a href="/work/hotel/html/signin.html">Sign in</a></li>
-                </ul>
-              </div>
+            <li><a href="../html/main.html#reservation-section">Reservation</a></li>
+            <li class="login-menu-btn">login</li>
+            <div class="login-menu">
+              <ul>
+                <li><a href="/work/hotel/html/login.html">Log in</a></li>
+                <li><a href="/work/hotel/html/signin.html">Sign in</a></li>
+              </ul>
+            </div>
 
             </li>
             <li>
@@ -44,7 +44,32 @@
         </div>
       </div>
     </header>
+    <div class="bg">
+    </div>
+
+    <div class="login-wrap">
+      <div class="login-box">
+        <h1>Login</h1>
+        <form method="post" action="" enctype="multipart/form-data">
+          <div class="">
+            <label for="">Userid</label>
+            <input type="text" name="userid" id="userid" class="userid" placeholder="userid" required />
+            <label for="">Passwd</label>
+            <input type="password" name="passwd" id="passwd" class="passwd" placeholder="passwd" required />
+          </div>
+          <div>
+            <a href="../html/signin.html" class="go-signin"><strong>Don't you have an account?</strong></a>
+          </div>
+          <div class="btn-wrap">
+            <div class="text-box"></div>
+            <button type="button" class="btn" id="btn">Login</button>
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
+
+  <script src="../script/login.js"></script>
 </body>
 
 </html>

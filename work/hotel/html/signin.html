@@ -1,11 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="/work/hotel/css/styles.css" />
-  </head>
-  <body></body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+
+  <!-- font link -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600&family=Josefin+Sans:wght@600;700;800&family=Montserrat&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="../css/signin-style.css" />
+
+
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <div class="header-wrap">
+        <div class="logo">
+          <a href="../html/main.html">
+            <h1>Hotel</h1>
+          </a>
+        </div>
+        <div class="ul-wrap">
+          <ul>
+            <li><a href="../html/main.html#reservation-section">Reservation</a></li>
+            <li class="login-menu-btn">login</li>
+            <div class="login-menu">
+              <ul>
+                <li><a href="/work/hotel/html/login.html">Log in</a></li>
+                <li><a href="/work/hotel/html/signin.html">Sign in</a></li>
+              </ul>
+            </div>
+
+            </li>
+            <li>
+              <a href="#">MyBooking</a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div class="bg">
+    </div>
+    <div class="signin-wrap">
+      <div class="signin-box">
+        <h1>Sign In</h1>
+        <form method="get" action="/week_3/day_8/home/index2.html" enctype="multipart/form-data">
+          <div class="input-wrap">
+            <label for="">Username</label>
+            <input type="text" name="user-name" id="user-name" class="user-name" placeholder="Username" required />
+            <label for="">Identification</label>
+            <input type="text" name="user-id" id="user-id" class="user-id" placeholder="Identification" required />
+            <label for="">Password</label>
+            <input type="password" name="user-pw" id="user-pw" class="user-pw" placeholder="Password" required />
+            <label for="">Re-Password</label>
+            <input type="password" name="re-passwd" id="re-passwd" class="re-passwd" placeholder="Re-Password"
+              required />
+          </div>
+          <div>
+            <a href="login.html"><strong>Already registered sign in?</strong></a>
+          </div>
+          <div class="btn-wrap">
+            <div class="text-box"></div>
+            <button type="submit" class="btn" id="btn">Sign in</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      let uID = document.querySelector("#user-id");
+      let uPW = document.querySelector("#user-pw");
+      let rePW = document.querySelector("#re-passwd");
+      let signBtn = document.querySelector("#btn");
+
+      const signIn = () => {
+        if (uPW.value == rePW.value) {
+          alert("회원가입이 성공적으로 완료되었습니다.");
+        } else if (uPW.value != rePW.value) {
+          alert("비밀번호를 확인해주세요");
+          uPW.value = "";
+          rePW.value = "";
+          uPW.focus();
+        }
+      };
+      signBtn.addEventListener("click", signIn);
+    </script>
+  </div>
+
+  <script src="../script/login.js"></script>
+</body>
+
 </html>

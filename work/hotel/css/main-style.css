@@ -1,0 +1,421 @@
+@charset 'utf-8';
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+time,
+figure,
+article,
+nav,
+header,
+footer,
+hgroup,
+video,
+audio,
+aside,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  vertical-align: baseline;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  
+}
+
+ul {
+  list-style-type: none;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+
+button{
+  border: none;
+  background-color: transparent;
+}
+
+/* ---------------------------------------------------- */
+/* --------------------- Reset Css -------------------- */
+/* ---------------------------------------------------- */
+
+html{
+ 
+}
+
+body {
+  overflow-x: hidden;
+  
+}
+
+.container {
+  width: 100vw;
+  position: relative;
+
+  margin: 0 auto;
+}
+
+header {
+  width: 100%;
+  height: 80px;
+  background-color: white;
+
+  position: fixed;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+
+.header-wrap {
+  width: 100%;
+  padding: 0 10em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ul-wrap>ul {
+  display: flex;
+}
+
+.ul-wrap>ul>li {
+  font-size: 1.2em;
+  margin-left: 30px;
+}
+
+.ul-wrap a {
+  transition-duration: .5s;
+}
+
+.ul-wrap a:hover , .login-menu-btn:hover{
+  color: tomato;
+  transition-duration: .5s;
+}
+
+/* 햄버거 버튼 없애고, login 에 커서 올리면  sign in과 log in 선택 메뉴 니오게 하기. */
+
+main {
+  font-family: 'Montserrat', sans-serif;
+  position: relative;
+
+  /* main이 자기 자리를 지키는 relative를 사용함으로써 footer가 그 밑으로 감 */
+  top: 60px;
+  z-index: 0;
+  padding-bottom: 2.5em;
+}
+
+.logo {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 700;
+  color: #4F4D4C;
+}
+
+.logo a{
+  cursor: pointer;
+}
+
+.ul-wrap {
+  font-family: 'Dosis', sans-serif;
+}
+
+.login-menu{
+  
+  visibility: hidden;
+  opacity: 0;
+  
+  
+  transition-duration: .5s;
+  position: absolute;
+  padding-top: 10px;
+  font-size: 1em;
+  top:60px;
+  height: 90px;
+  width: 70px;
+  text-align: center;
+  background-color: white;
+}
+
+.login-menu li{
+  margin: 10px 0;  
+}
+
+.login-menu-btn{
+  cursor: pointer;
+}
+
+.blocked{
+  visibility: visible;
+  opacity: 1;
+
+  transition-duration: .5s;
+}
+
+/* main part */
+
+.bg {
+
+  background-image: url(/work/hotel/images/bed_image.jpg);
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+  width: 100vw;
+  height: 60vw;
+
+}
+
+.intro-section {
+  position: absolute;
+  top: 45vh;
+  left: -30vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 1;
+}
+
+.intro-text {
+  color: #4F4D4C;
+}
+
+.intro-text h2 {
+  font-size: 4em;
+  font-weight: 700;
+}
+
+.intro-text p {
+  font-size: 1.5em;
+}
+
+
+
+.contents-wrap {
+  padding: 0 10em;
+}
+
+.reservation-section {
+  /* display: flex;
+  align-items: center; */
+  transition-duration: 2s;
+  padding: 10em 0;
+  margin: 40px 0;
+  height: 30vh;
+  margin-bottom: 15em;
+}
+
+.reservation-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+}
+form{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+.select-time {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2em;
+}
+
+.start-date{
+  margin-right: 20%;
+  display: flex;
+  flex-direction: column;
+}
+
+#start{
+  padding: 0 30px;
+  text-align: center;
+  font-size: 1.5em;
+  margin-top: 20px;
+  width: 18em;
+  height: 4em;
+  border-radius: 10px;
+  border: 1px solid #4F4D4C;
+}
+
+#end{
+  padding: 0 30px;
+  text-align: center;
+  font-size: 1.5em;
+  margin-top: 20px;
+  width: 18em;
+  height: 4em;
+  border-radius: 10px;
+  border: 1px solid #4F4D4C;
+}
+
+.end-date{
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* reservation button */
+.reser-btn-wrap{
+  align-self: center;
+}
+
+.reservation-btn{
+  padding: 0;
+  width: 13em;
+  height: 2.8em;
+  border-radius: 10px;
+  border: 1px solid #4F4D4C;
+  color: white;
+  font-size: 1.2em;
+  transition-duration: .5s;
+  background-color: #4F4D4C;
+  cursor: pointer;
+}
+
+.reservation-btn:hover{
+ background-color: #4f4d4c5a;
+  color: black;
+  transition-duration: .3s;
+}
+
+.facilites-section {
+  height: 100vh;
+  /* z-index: 1; */
+  /* background-color: lightgreen; */
+  margin-bottom: 20em;
+}
+
+
+article {
+  display: flex;
+  align-items: center;
+}
+
+.description {
+  margin: 40px;
+}
+
+.description h2 {
+  font-size: 2em;
+}
+
+.description p {
+  margin-top: 15px;
+  font-size: 1.3em;
+}
+
+.map-section {
+  text-align: center;
+
+}
+
+.map-wrap {
+  margin-top: 20px;
+  margin-bottom: 2.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* footer bottom 0으로 가장 아랫부분에 붙도록 함. */
+footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
+
+  padding: 0 40px;
+}
+
+.hotelList ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hotelList ul li {}
+
+
+/* scroll transform */
+.reveal {
+  position: relative;
+  transform: translateX(-30px);
+  opacity: 0;
+  /* transition: 2s all ease; */
+  transition-duration: 2s;
+}
+
+
+.reveal.active {
+  transform: translateY(0px);
+  opacity: 1;
+  transition: 2s all ease;
+}
+
+
+
+
+
+

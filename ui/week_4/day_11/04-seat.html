@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>객실 좌석 배치</h2>
+    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum temporibus voluptate provident earum facilis esse,
+        ipsum cumque eius dignissimos quidem tempora mollitia doloribus error quaerat nostrum, eveniet atque, corporis
+        suscipit?</h1>
+    <!-- document.write로 table 배치 -->
+
+    <script>
+        let members = prompt('객실 정원을 입력하세요.');
+        let seats = prompt('객실 한 줄에 몇 명씩 앉나요?');
+
+        let line = members / seats;
+
+        document.open();
+
+        document.write('<table border =1>');
+        for (let i = 0; i < line; i++) {
+            document.write('<tr>');
+
+            for (let j = 1; j <= seats; j++) {
+
+                document.write('<td>');
+                document.write('좌석');
+                document.write('</td>');
+                console.log('ho');
+            }
+
+            document.write('</tr>');
+
+        }
+        document.write('</table>');
+        document.close();
+    </script>
+</body>
+
+</html>

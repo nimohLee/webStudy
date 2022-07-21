@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
+  <title>The IT Hotel</title>
 
-  <link rel="stylesheet" href="/work/hotel/css/styles.css" />
+  <link rel="stylesheet" href="../css/styles.css" />
 
   <!-- font link -->
   <link
@@ -19,226 +19,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <!-- naver map api -->
   <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=1mu20f065k"></script>
   </script>
 
-
   <style>
-    body {
-      overflow-x: hidden;
-    }
-
-    .container {
-      width: 100vw;
-      position: relative;
-
-      margin: 0 auto;
-    }
-
-    header {
-      width: 100%;
-      height: 80px;
-      background-color: white;
-
-      position: fixed;
-      display: flex;
-      align-items: center;
-      z-index: 1;
-    }
-
-    .header-wrap {
-      width: 100%;
-      padding: 0 10em;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .ul-wrap ul {
-      display: flex;
-    }
-
-    .ul-wrap ul li {
-      font-size: 1.2em;
-      margin-left: 30px;
-    }
-
-    .ul-wrap a {
-      transition-duration: .5s;
-    }
-
-    .ul-wrap a:hover {
-      color: tomato;
-      transition-duration: .5s;
-    }
-
-    /* 햄버거 버튼 없애고, login 에 커서 올리면  sign in과 log in 선택 메뉴 니오게 하기. */
-
-    main {
-      font-family: 'Montserrat', sans-serif;
-      position: relative;
-
-      /* main이 자기 자리를 지키는 relative를 사용함으로써 footer가 그 밑으로 감 */
-      top: 60px;
-      z-index: 0;
-      padding-bottom: 2.5em;
-    }
-
-    .logo {
-      font-family: 'Josefin Sans', sans-serif;
-      font-weight: 700;
-      color: #4F4D4C;
-    }
-
-    .ul-wrap {
-      font-family: 'Dosis', sans-serif;
-    }
-
-
-
-
-    /* main part */
-
-    .bg {
-
-      background-image: url(/work/hotel/images/bed_image.jpg);
-      background-position: center;
-      background-attachment: fixed;
-      background-repeat: no-repeat;
-      background-size: cover;
-      z-index: -1;
-      width: 100vw;
-      height: 60vw;
-
-    }
-
-    .intro-section {
-      position: absolute;
-      top: 45vh;
-      left: -30vw;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      z-index: 1;
-    }
-
-    .intro-text {
-      color: #4F4D4C;
-    }
-
-    .intro-text h2 {
-      font-size: 4em;
-      font-weight: 700;
-    }
-
-    .intro-text p {
-      font-size: 1.5em;
-    }
-
-
-
-    .contents-wrap {
-      padding: 0 10em;
-    }
-
-    .reservation-section {
-      display: flex;
-      align-items: center;
-      transition-duration: 2s;
-      padding-left: 3vw;
-      height: 30vh;
-      /* z-index: 1; */
-      /* background-color: lightblue; */
-    }
-
-
-    .facilites-section {
-      height: 100vh;
-      /* z-index: 1; */
-      /* background-color: lightgreen; */
-    }
-
-
-    article {
-      display: flex;
-      align-items: center;
-    }
-
-    .description {
-      margin: 40px;
-    }
-
-    .description h2 {
-      font-size: 2em;
-    }
-
-    .description p {
-      margin-top: 15px;
-      font-size: 1.3em;
-    }
-
-    .map-section {
-      text-align: center;
-
-    }
-
-    .map-wrap {
-      margin-top: 20px;
-      margin-bottom: 2.5em;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-
-    /* footer bottom 0으로 가장 아랫부분에 붙도록 함. */
-    footer {
-      position: relative;
-      bottom: 0;
-      width: 100%;
-      z-index: 1;
-
-      padding: 0 40px;
-    }
-
-    .hotelList ul {
-      display: flex;
-      justify-content: space-between;
-    }
-
-    .hotelList ul li {}
-
-
-    /* scroll transform */
-    .reveal {
-      position: relative;
-      transform: translateX(-30px);
-      opacity: 0;
-      /* transition: 2s all ease; */
-      transition-duration: 2s;
-    }
-
-
-    .reveal.active {
-      transform: translateY(0px);
-      opacity: 1;
-      transition: 2s all ease;
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
     @media (max-width : 1440px) {
 
 
@@ -267,12 +53,22 @@
     <header>
       <div class="header-wrap">
         <div class="logo">
-          <h1>Hotel</h1>
+          <a href="../html/main.html">
+            <h1>Hotel</h1>
+          </a>
         </div>
         <div class="ul-wrap">
           <ul>
             <li><a href="#reservation-section">Reservation</a></li>
-            <li><a href="/work/hotel/html/login.html">login</a></li>
+            <li class="login-menu-btn">login</a>
+              <div class="login-menu">
+                <ul>
+                  <li><a href="/work/hotel/html/login.html">Log in</a></li>
+                  <li><a href="/work/hotel/html/signin.html">Sign in</a></li>
+                </ul>
+              </div>
+
+            </li>
             <li>
               <a href="#">MyBooking</a>
             </li>
@@ -292,77 +88,90 @@
       </section>
       <div class="contents-wrap">
         <section class="reservation-section" id="reservation-section">
+          <h2 class="reveal" style="text-align: center; font-size: 3em; margin-bottom: 1.2em;">
+            Reservation</h2>
           <div class="reservation-wrap reveal">
-            <div class="select-time \">
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam ratione, ex blanditiis atque
-                excepturi,
-                nobis ut animi in dolorem saepe dolor a magnam, provident natus. Maxime totam sit magni consectetur.</p>
-            </div>
             <form action="post">
-              <!-- 날짜 select -->=======================날짜선택해서 예약하기 제출=======================
-            </form>
-          </div>
-        </section>
-        <section class="facilites-section">
-          <div class="article-wrap">
-            <article class="reveal">
-              <img src="/work/hotel/images/restaurant.jpg" style="margin:30px; width: 40%; border-radius: 10px;">
-              <div class="description">
-                <h2>Restaurant</h2>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore, quis ullam! Soluta commodi esse
-                  odio
-                  voluptatibus iure, illo reiciendis, sapiente numquam illum, consectetur aliquid quibusdam.</p>
+              <div class="select-time">
+                <div class="start-date">
+                  <label for="start" style="font-size: 1.5em;">Check In</label>
+                  <input type="date" name="start" id="start" max="2023-12-31"></div>
 
+                <div class="end-date">
+                  <label for="end" style="font-size: 1.5em;">Check Out</label>
+                  <input type="date" name="end" id="end" max="2023-12-31">
+                </div>
               </div>
 
-            </article>
-            <article class="reveal">
-              <div class="description">
-                <h2>Sports center</h2>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore, quis ullam! Soluta commodi esse
-                  odio
-                  voluptatibus iure, illo reiciendis, sapiente numquam illum, consectetur aliquid quibusdam.</p>
+
+              <div class="reser-btn-wrap"><button class="reservation-btn" id="reservation-btn">Reservation</button>
               </div>
-              <img src="/work/hotel/images/gym.jpg" style="margin:30px; width: 40%; border-radius: 10px;">
-            </article>
-        </section>
-        <section class="map-section">
-          <div class="reveal">
-            <h2>찾아오시는 길</h2>
+
           </div>
-          <!-- naver map api -->
-          <div class="map-wrap reveal">
-            <div id="map" style="width:40%;height:400px; border-radius: 10px; border: 1px solid #4f4d4c6e"></div>
-          </div>
-        </section>
+          </form>
       </div>
-    </main>
-    <p></p>
-    <hr />
-    <p></p>
-    <footer>
-      <div class="hotelList">
-        <ul>
-          <li class="josunpalace"><a href="https://jpg.josunhotel.com/main.do" target="_blank" title="새창열림">조선 팰리스 서울
-              강남</a></li>
-          <li class="wchosunseoul"><a href="https://www.marriott.co.kr/hotels/travel/selwi-the-westin-chosun-seoul"
-              target="_blank" title="새창열림">The Westin Josun Seoul</a></li>
-          <li class="wchosunbusan"><a href="https://www.marriott.co.kr/hotels/travel/puswi-the-westin-chosun-busan"
-              target="_blank" title="새창열림">The Westin Josun Busan</a></li>
-          <li class="grandjosun"><a href="https://gjb.josunhotel.com/main.do" title="새창열림">Grand Josun</a></li>
-          <li class="grandjosunjj"><a href="https://gjj.josunhotel.com/main.do" target="_blank" title="새창열림">Grand Josun
-              Jeju</a></li>
-          <li class="lescape"><a href="https://lescapehotel.com/main" target="_blank" title="새창열림">L'Escape Hotel</a>
-          </li>
-          <li class="gravity"><a href="https://grp.josunhotel.com/main.do" target="_blank" title="새창열림">그래비티 서울 판교</a>
-          </li>
-          <li class="fourpoints"><a href="https://www.marriott.co.kr/hotels/travel/selfp-four-points-seoul-namsan"
-              target="_blank" title="새창열림">Four Points by Sheraton</a>
-          <li class="fourpointsmd"><a href="https://www.marriott.co.kr/hotels/travel/selfd-four-points-seoul-myeongdong"
-              target="_blank">포포인츠 바이 쉐라톤 서울 명동</a></li>
-        </ul>
-      </div>
-    </footer>
+      </section>
+      <section class="facilites-section">
+        <div class="article-wrap">
+          <h2 class="reveal" style="text-align: center; font-size: 3em; margin-bottom: 1.2em;">Facilities</h2>
+          <article class="reveal">
+            <img src="/work/hotel/images/restaurant.jpg" style="margin:30px; width: 40%; border-radius: 10px;">
+            <div class="description">
+              <h2>Restaurant</h2>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore, quis ullam! Soluta commodi esse
+                odio
+                voluptatibus iure, illo reiciendis, sapiente numquam illum, consectetur aliquid quibusdam.</p>
+
+            </div>
+
+          </article>
+          <article class="reveal">
+            <div class="description">
+              <h2>Sports center</h2>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore, quis ullam! Soluta commodi esse
+                odio
+                voluptatibus iure, illo reiciendis, sapiente numquam illum, consectetur aliquid quibusdam.</p>
+            </div>
+            <img src="/work/hotel/images/gym.jpg" style="margin:30px; width: 40%; border-radius: 10px;">
+          </article>
+      </section>
+      <section class="map-section">
+        <div class="reveal" style="margin-top:50px">
+          <h2>찾아오시는 길</h2>
+        </div>
+        <!-- naver map api -->
+        <div class=" map-wrap reveal">
+          <div id="map" style="width:40%;height:400px; border-radius: 10px; border: 1px solid #4f4d4c6e"></div>
+        </div>
+      </section>
+  </div>
+  </main>
+  <p></p>
+  <hr />
+  <p></p>
+  <footer>
+    <div class="hotelList">
+      <ul>
+        <li class="josunpalace"><a href="https://jpg.josunhotel.com/main.do" target="_blank" title="새창열림">조선 팰리스 서울
+            강남</a></li>
+        <li class="wchosunseoul"><a href="https://www.marriott.co.kr/hotels/travel/selwi-the-westin-chosun-seoul"
+            target="_blank" title="새창열림">The Westin Josun Seoul</a></li>
+        <li class="wchosunbusan"><a href="https://www.marriott.co.kr/hotels/travel/puswi-the-westin-chosun-busan"
+            target="_blank" title="새창열림">The Westin Josun Busan</a></li>
+        <li class="grandjosun"><a href="https://gjb.josunhotel.com/main.do" title="새창열림">Grand Josun</a></li>
+        <li class="grandjosunjj"><a href="https://gjj.josunhotel.com/main.do" target="_blank" title="새창열림">Grand Josun
+            Jeju</a></li>
+        <li class="lescape"><a href="https://lescapehotel.com/main" target="_blank" title="새창열림">L'Escape Hotel</a>
+        </li>
+        <li class="gravity"><a href="https://grp.josunhotel.com/main.do" target="_blank" title="새창열림">그래비티 서울 판교</a>
+        </li>
+        <li class="fourpoints"><a href="https://www.marriott.co.kr/hotels/travel/selfp-four-points-seoul-namsan"
+            target="_blank" title="새창열림">Four Points by Sheraton</a>
+        <li class="fourpointsmd"><a href="https://www.marriott.co.kr/hotels/travel/selfd-four-points-seoul-myeongdong"
+            target="_blank">포포인츠 바이 쉐라톤 서울 명동</a></li>
+      </ul>
+    </div>
+  </footer>
   </div>
 
 
@@ -398,6 +207,8 @@
     }
     window.addEventListener("scroll", reveal);
   </script>
+
+  <!-- 네이버 지도 api script -->
   <script type="text/javascript">
     var mapOptions = {
       center: new naver.maps.LatLng(35.14846063861386, 129.11349699731272),
@@ -409,6 +220,26 @@
     });
   </script>
 
+  <!-- 현재날짜 세팅 script -->
+  <script>
+    document.getElementById('start').min = new Date().toISOString().substring(0, 10);;
+  </script>
+
+  <!-- login menu block script -->
+  <script>
+    let loginBtn = document.querySelector('.login-menu-btn');
+    let loginMenu = document.querySelector('.login-menu');
+
+    const add = () => {
+      loginMenu.classList.add('blocked');
+    }
+    const remove = () => {
+      loginMenu.classList.remove('blocked');
+    }
+
+    loginBtn.addEventListener('mouseover', add);
+    loginBtn.addEventListener('mouseout', remove);
+  </script>
 </body>
 
 </html>

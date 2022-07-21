@@ -51,7 +51,7 @@
     <div class="signin-wrap">
       <div class="signin-box">
         <h1>Sign In</h1>
-        <form method="get" action="/week_3/day_8/home/index2.html" enctype="multipart/form-data">
+        <form method="get" action="../html/main.html" enctype="multipart/form-data">
           <div class="input-wrap">
             <label for="">Username</label>
             <input type="text" name="user-name" id="user-name" class="user-name" placeholder="Username" required />
@@ -75,26 +75,31 @@
     </div>
 
     <script>
+      let uName = document.querySelector('#user-name');
       let uID = document.querySelector("#user-id");
       let uPW = document.querySelector("#user-pw");
       let rePW = document.querySelector("#re-passwd");
       let signBtn = document.querySelector("#btn");
 
       const signIn = () => {
-        if (uPW.value == rePW.value) {
-          alert("회원가입이 성공적으로 완료되었습니다.");
-        } else if (uPW.value != rePW.value) {
-          alert("비밀번호를 확인해주세요");
-          uPW.value = "";
-          rePW.value = "";
-          uPW.focus();
+        if (uID == "" || uName == "" || uPW == "" || rePW == "") {
+
+          if (uPW.value == rePW.value) {
+            alert("회원가입이 성공적으로 완료되었습니다.");
+          } else if (uPW.value != rePW.value) {
+            alert("비밀번호를 확인해주세요");
+            uPW.value = "";
+            rePW.value = "";
+            uPW.focus();
+          }
         }
       };
+
       signBtn.addEventListener("click", signIn);
     </script>
   </div>
 
-  <script src="../script/login.js"></script>
+
 </body>
 
 </html>

@@ -103,7 +103,6 @@ html{
 
 body {
   overflow-x: hidden;
-  
 }
 
 .container {
@@ -226,7 +225,7 @@ main {
 .intro-section {
   position: absolute;
   top: 45vh;
-  left: -30vw;
+  left: -40vw;
   display: flex;
   justify-content: center;
   align-items: center;

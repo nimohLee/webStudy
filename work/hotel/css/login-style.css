@@ -98,6 +98,13 @@ button{
 
 body {
   overflow: hidden;
+  opacity: 1;
+  transition-duration: 0.5s;
+  transition-property: opacity;
+
+}
+body.fade{
+  opacity: 0;
 }
 
 .container {
@@ -296,6 +303,7 @@ main {
   }
 
   .go-signin:hover{
+    text-decoration: underline;
     color: tomato;
     transition-duration: .2s;
   }

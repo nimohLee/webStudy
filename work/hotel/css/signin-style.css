@@ -98,7 +98,15 @@ button{
 
 body {
   overflow: hidden;
+  opacity: 1;
+  transition-duration: 0.5s;
+  transition-property: opacity;
+
 }
+body.fade{
+  opacity: 0;
+}
+
 
 .container {
   width: 100vw;
@@ -278,6 +286,11 @@ main {
     float: right;
     cursor: pointer;
   }
+
+.go-login:hover{
+  text-decoration: underline;
+  color: tomato;
+}
 
   .btn-wrap {
     display: flex;

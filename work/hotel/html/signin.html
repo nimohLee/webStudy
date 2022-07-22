@@ -5,7 +5,18 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
+  <!-- 화면 전환 부드럽게해주는 meta  -->
+  <meta http-equiv="page-enter" content="blendTrans(duration=0.3)">
+  <meta http-equiv="page-exit" content="blendTrans(duration=0.3)">
+  <title>Busan IT Hotel</title>
+
+  <!-- fontawesome cdn -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- favicon -->
+  <link rel="shortcut icon" href="../images/favicon.ico">
 
   <!-- font link -->
   <link
@@ -18,13 +29,13 @@
 
 </head>
 
-<body>
+<body class="fade">
   <div class="container">
     <header>
       <div class="header-wrap">
         <div class="logo">
           <a href="../html/main.html">
-            <h1>Hotel</h1>
+            <h1><i class="fa-solid fa-hotel"></i>&nbsp;IT Hotel</h1>
           </a>
         </div>
         <div class="ul-wrap">
@@ -67,7 +78,7 @@
               required />
           </div>
           <div>
-            <a href="login.html"><strong>Already registered sign in?</strong></a>
+            <a href="login.html" class="go-login"><strong>Already registered sign in?</strong></a>
           </div>
           <div class="btn-wrap">
             <div class="text-box"></div>
@@ -85,17 +96,17 @@
       let signBtn = document.querySelector("#btn");
 
       const signIn = () => {
-        if (uID == "" || uName == "" || uPW == "" || rePW == "") {
+        if (uID == "" || uName == "" || uPW == "" || rePW == "") {}
 
-          if (uPW.value == rePW.value) {
-            alert("회원가입이 성공적으로 완료되었습니다.");
-          } else if (uPW.value != rePW.value) {
-            alert("비밀번호를 확인해주세요");
-            uPW.value = "";
-            rePW.value = "";
-            uPW.focus();
-          }
+        if (uPW.value == rePW.value) {
+          alert("회원가입이 성공적으로 완료되었습니다.");
+        } else if (uPW.value != rePW.value) {
+          alert("비밀번호를 확인해주세요");
+          uPW.value = "";
+          rePW.value = "";
+          uPW.focus();
         }
+      }
       };
 
       signBtn.addEventListener("click", signIn);
@@ -103,7 +114,13 @@
 
 
   </div>
-
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      window.setTimeout(() => {
+        document.body.classList.remove('fade');
+      });
+    });
+  </script>
   <script src="../script/login_menu.js"></script>
 </body>
 

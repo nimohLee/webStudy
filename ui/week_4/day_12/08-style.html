@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        .active {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- random dummy lmage -->
+    <div id="container">
+        <div id="contents">
+            <img src="http://loremflickr.com/640/360" alt="dummy">
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, rerum.</p>
+        </div>
+
+        <div class="btn-wrap"">
+            <button class=" open" id="open" onClick="open()">Open</button>
+            <button class="close" id="close" onClick="close()">Close</button>
+        </div>
+    </div>
+
+
+
+    <script>
+        function open() {
+            document.getElementById("contents").style.display = 'block';
+        }
+
+        function close() {
+            document.getElementById("contents").style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>

@@ -5,7 +5,15 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The IT Hotel</title>
+  <!-- 화면 전환 부드럽게해주는 meta  -->
+  <meta http-equiv="page-enter" content="blendTrans(duration=2)">
+  <meta http-equiv="page-exit" content="blendTrans(duration=2)">
+  <title>Busan IT Hotel</title>
+
+
+
+  <!-- favicon -->
+  <link rel="shortcut icon" href="../images/favicon.ico">
 
   <link rel="stylesheet" href="../css/main-style.css" />
   <!-- <link rel="stylesheet" href="../css/media.css" /> -->
@@ -42,23 +50,24 @@
 
 </head>
 
-<body>
+<body class="fade">
   <div class="container">
     <header>
       <div class="header-wrap">
         <div class="logo">
           <a href="../html/main.html">
-            <h1>Hotel</h1>
+            <h1><i class="fa-solid fa-hotel"></i>&nbsp;IT Hotel</h1>
           </a>
         </div>
         <div class="ul-wrap">
           <ul>
-            <li><a href="#reservation-section">Reservation</a></li>
+            <li id="go-reservation">Reservation
+            </li>
             <li class="login-menu-btn">Member</a>
               <div class="login-menu">
                 <ul>
-                  <li><a href="/work/hotel/html/login.html">Log in</a></li>
-                  <li><a href="/work/hotel/html/signin.html">Sign in</a></li>
+                  <li><a href="/work/hotel/html/login.html" data-transition="fade">Log in</a></li>
+                  <li><a href="/work/hotel/html/signin.html" data-transition="fade">Sign in</a></li>
                 </ul>
               </div>
 
@@ -76,7 +85,7 @@
       </div>
       <section class="intro-section">
         <div class="intro-text">
-          <h2>The IT Hotel</h2>
+          <h2>Busan IT Hotel</h2>
           <p>It will be amazing experience with us.</p>
         </div>
       </section>
@@ -85,15 +94,15 @@
           <h2 class="reveal" style="text-align: center; font-size: 3em; margin-bottom: 1.2em;">
             Reservation</h2>
           <div class="reservation-wrap reveal">
-            <form action="post">
+            <form action="">
               <div class="select-time">
                 <div class="start-date">
                   <label for="start" style="font-size: 1.5em;">Check In</label>
-                  <input type="date" name="start" id="start" max="2023-12-31"></div>
+                  <input type="date" name="start" id="start" max="2023-12-31" required></div>
 
                 <div class="end-date">
                   <label for="end" style="font-size: 1.5em;">Check Out</label>
-                  <input type="date" name="end" id="end" max="2023-12-31">
+                  <input type="date" name="end" id="end" max="2023-12-31" required>
                 </div>
               </div>
 
@@ -145,25 +154,8 @@
   <p></p>
   <footer>
     <div class="hotelList">
-      <ul>
-        <li class="josunpalace"><a href="https://jpg.josunhotel.com/main.do" target="_blank" title="새창열림">조선 팰리스 서울
-            강남</a></li>
-        <li class="wchosunseoul"><a href="https://www.marriott.co.kr/hotels/travel/selwi-the-westin-chosun-seoul"
-            target="_blank" title="새창열림">The Westin Josun Seoul</a></li>
-        <li class="wchosunbusan"><a href="https://www.marriott.co.kr/hotels/travel/puswi-the-westin-chosun-busan"
-            target="_blank" title="새창열림">The Westin Josun Busan</a></li>
-        <li class="grandjosun"><a href="https://gjb.josunhotel.com/main.do" title="새창열림">Grand Josun</a></li>
-        <li class="grandjosunjj"><a href="https://gjj.josunhotel.com/main.do" target="_blank" title="새창열림">Grand Josun
-            Jeju</a></li>
-        <li class="lescape"><a href="https://lescapehotel.com/main" target="_blank" title="새창열림">L'Escape Hotel</a>
-        </li>
-        <li class="gravity"><a href="https://grp.josunhotel.com/main.do" target="_blank" title="새창열림">그래비티 서울 판교</a>
-        </li>
-        <li class="fourpoints"><a href="https://www.marriott.co.kr/hotels/travel/selfp-four-points-seoul-namsan"
-            target="_blank" title="새창열림">Four Points by Sheraton</a>
-        <li class="fourpointsmd"><a href="https://www.marriott.co.kr/hotels/travel/selfd-four-points-seoul-myeongdong"
-            target="_blank">포포인츠 바이 쉐라톤 서울 명동</a></li>
-      </ul>
+      <p>CopyRight : Homin Lee</p>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum, nulla?Lorem ipsum dolor sit amet.</p>
     </div>
   </footer>
   </div>
@@ -239,6 +231,42 @@
 
     loginBtn.addEventListener('mouseover', add);
     loginBtn.addEventListener('mouseout', remove);
+  </script>
+
+
+  <!-- 한 페이지 내에 이동 시 부드럽게 스크롤 script-->
+  <script>
+    const button = document.getElementById('go-reservation');
+    const section = document.getElementById('reservation-section');
+
+    button.addEventListener('click', () => {
+      section.scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  </script>
+
+  <script>
+    let btn = document.getElementById('reservation-btn');
+    let start = document.getElementById('start');
+    let end = document.getElementById('end');
+
+    const reserve = () => {
+      if (start != "" && end != "") {
+        alert('예약이 완료되었습니다.');
+      } else {
+
+      }
+
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+      window.setTimeout(() => {
+        document.body.classList.remove('fade');
+      });
+    });
+
+    btn.addEventListener('click', reserve)
   </script>
 
 

@@ -5,7 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Busan IT Hotel</title>
+
+    <!-- fontawesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="../images/favicon.ico">
+
     <!-- font link -->
     <link
         href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600&family=Josefin+Sans:wght@600;700;800&family=Montserrat&display=swap"
@@ -20,13 +29,13 @@
 
 </head>
 
-<body>
+<body class="fade">
     <div class="container">
         <header>
             <div class="header-wrap">
                 <div class="logo">
                     <a href="../html/main.html">
-                        <h1>Hotel</h1>
+                        <h1><i class="fa-solid fa-hotel"></i>&nbsp;T Hotel</h1>
                     </a>
                 </div>
                 <div class="ul-wrap">
@@ -63,7 +72,13 @@
 
 
     </div>
-
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            window.setTimeout(() => {
+                document.body.classList.remove('fade');
+            });
+        });
+    </script>
     <script src="../script/login_menu.js"></script>
 </body>
 

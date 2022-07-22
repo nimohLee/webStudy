@@ -1,13 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- 화면 전환 부드럽게해주는 meta  -->
-  <meta http-equiv="page-enter" content="blendTrans(duration=0.3)">
-  <meta http-equiv="page-exit" content="blendTrans(duration=0.3)">
+
   <title>Busan IT Hotel</title>
 
   <!-- fontawesome cdn -->
@@ -23,9 +21,9 @@
     href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600&family=Josefin+Sans:wght@600;700;800&family=Montserrat&display=swap"
     rel="stylesheet" />
   <!-- style sheet -->
-  <link rel="stylesheet" href="../css/signin-style.css" />
+  <link rel="stylesheet" href="../css/signUp-style.css" />
   <!-- mediaQuery -->
-  <link rel="stylesheet" href="../media_query/signin-media.css">
+  <link rel="stylesheet" href="../media_query/signUp-media.css">
 
 </head>
 
@@ -45,7 +43,7 @@
               <div class="login-menu">
                 <ul>
                   <li><a href="/work/hotel/html/login.html">Log in</a></li>
-                  <li><a href="/work/hotel/html/signin.html">Sign in</a></li>
+                  <li><a href="/work/hotel/html/sign-up.html">Sign up</a></li>
                 </ul>
               </div>
 
@@ -64,7 +62,7 @@
     </div>
     <div class="signin-wrap">
       <div class="signin-box">
-        <h1>Sign In</h1>
+        <h1>Sign Up</h1>
         <form method="get" action="../html/main.html" enctype="multipart/form-data">
           <div class="input-wrap">
             <label for="">Username</label>
@@ -78,11 +76,11 @@
               required />
           </div>
           <div>
-            <a href="login.html" class="go-login"><strong>Already registered sign in?</strong></a>
+            <a href="login.html" class="go-login"><strong>Already registered sign up?</strong></a>
           </div>
           <div class="btn-wrap">
             <div class="text-box"></div>
-            <button type="submit" class="btn" id="btn">Sign in</button>
+            <button type="submit" class="btn" id="btn">Sign up</button>
           </div>
         </form>
       </div>
@@ -114,6 +112,8 @@
 
 
   </div>
+
+  <!-- 페이지 전환 Delay 주기 -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       window.setTimeout(() => {

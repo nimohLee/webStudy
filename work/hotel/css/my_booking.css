@@ -107,7 +107,6 @@ body.fade{
   opacity: 0;
 }
 
-
 .container {
   width: 100vw;
   position: relative;
@@ -297,7 +296,7 @@ main {
   
     z-index: -1;
     width: 100vw;
-    height: 60vw;
+    height: 150vw;
   
   }
   
@@ -311,7 +310,7 @@ main {
       align-items: center;
       width: 100vw;
       height: 80vh;
-      top: 13.5vh;
+      top: 20vh;
     left: 0;
       z-index: 1;
       
@@ -337,4 +336,32 @@ main {
   .notice-wrap p{
     font-size: 1.3em;
   }
+
+
+  @media (max-width : 960px) {
+    
+    .header-wrap{
+      padding: 0 30px;
+      
+    }
+    .bg{
+      height: 100vh;
+    }
+
+  }
+
+
+  @media(max-width:816px){
+    .notice-wrap h2{
+      font-size: 1.5em;
+      margin-bottom: 20px;
+    }
+    .notice-wrap p{
+      font-size: 1em;
+    }
+    .bg{
+      height: 200vh;
+    }
+  }
   
+  @

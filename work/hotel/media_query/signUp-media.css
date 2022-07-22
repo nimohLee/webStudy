@@ -12,7 +12,7 @@
  
  @media (max-width : 1200px){
   .bg{
-    height: 100vh;
+    height: 200vh;
   }
  }
  
@@ -26,4 +26,9 @@
       
     }
     
+  }
+
+
+  @media(max-height : 750px){
+    body{overflow:scroll;}
   }

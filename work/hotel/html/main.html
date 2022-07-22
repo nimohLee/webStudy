@@ -5,9 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- 화면 전환 부드럽게해주는 meta  -->
-  <meta http-equiv="page-enter" content="blendTrans(duration=2)">
-  <meta http-equiv="page-exit" content="blendTrans(duration=2)">
+
   <title>Busan IT Hotel</title>
 
 
@@ -67,7 +65,7 @@
               <div class="login-menu">
                 <ul>
                   <li><a href="/work/hotel/html/login.html" data-transition="fade">Log in</a></li>
-                  <li><a href="/work/hotel/html/signin.html" data-transition="fade">Sign in</a></li>
+                  <li><a href="/work/hotel/html/sign-up.html" data-transition="fade">Sign up</a></li>
                 </ul>
               </div>
 
@@ -167,13 +165,16 @@
   <script src="../script/scroll.js"></script>
 
 
-
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      window.setTimeout(() => {
+        document.body.classList.remove('fade');
+      });
+    });
+  </script>
   <script>
     const img = document.querySelector('.bg');
     const m = window.matchMedia("screen and (max-width: 768px)");
-
-
-
     const reveal = () => {
       var reveals = document.querySelectorAll(".reveal");
 

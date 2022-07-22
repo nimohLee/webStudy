@@ -11,9 +11,10 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600&family=Josefin+Sans:wght@600;700;800&family=Montserrat&display=swap"
     rel="stylesheet" />
-
+  <!-- style sheet -->
   <link rel="stylesheet" href="../css/signin-style.css" />
-
+  <!-- mediaQuery -->
+  <link rel="stylesheet" href="../media_query/signin-media.css">
 
 </head>
 
@@ -29,17 +30,19 @@
         <div class="ul-wrap">
           <ul>
             <li><a href="../html/main.html#reservation-section">Reservation</a></li>
-            <li class="login-menu-btn">login</li>
-            <div class="login-menu">
-              <ul>
-                <li><a href="/work/hotel/html/login.html">Log in</a></li>
-                <li><a href="/work/hotel/html/signin.html">Sign in</a></li>
-              </ul>
-            </div>
+            <li class="login-menu-btn">Member</a>
+              <div class="login-menu">
+                <ul>
+                  <li><a href="/work/hotel/html/login.html">Log in</a></li>
+                  <li><a href="/work/hotel/html/signin.html">Sign in</a></li>
+                </ul>
+              </div>
+
+            </li>
 
             </li>
             <li>
-              <a href="#">MyBooking</a>
+              <a href="../html/my_booking.html">MyBooking</a>
             </li>
 
           </ul>
@@ -97,9 +100,11 @@
 
       signBtn.addEventListener("click", signIn);
     </script>
+
+
   </div>
 
-
+  <script src="../script/login_menu.js"></script>
 </body>
 
 </html>

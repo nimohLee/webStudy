@@ -1,11 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="/work/hotel/css/styles.css" />
-  </head>
-  <body></body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="/work/hotel/css/styles.css" />
+
+  <style>
+    body {
+      opacity: 0;
+      transition: opacity 6s;
+      background-image: url(../images/intro.jpg);
+      background-size: cover;
+    }
+
+    .intro {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .intro h1 {
+      font-size: 5em;
+      color: #4F4D4C;
+    }
+  </style>
+
+</head>
+
+<body onload="document.body.style.opacity='1'">
+  <div class="intro">
+    <h1>Busan IT Hotel</h1>
+  </div>
+
+
+
+  <script>
+    // const locateMain =() => location.href = "../html/main.html";
+
+    setTimeout(locateMain => {
+      location.href = "../html/main.html";
+    }, 4000);
+  </script>
+</body>
+
 </html>

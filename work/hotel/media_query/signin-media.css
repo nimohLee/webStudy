@@ -1,0 +1,29 @@
+@media (max-width : 960px) {
+    
+    .header-wrap{
+      padding: 0 30px;
+      
+    }
+    .bg{
+      height: 100vh;
+    }
+
+  }
+ 
+ @media (max-width : 1200px){
+  .bg{
+    height: 100vh;
+  }
+ }
+ 
+ 
+ 
+ 
+  @media (max-width : 960px) {
+    
+    .header-wrap{
+      padding: 0 30px;
+      
+    }
+    
+  }

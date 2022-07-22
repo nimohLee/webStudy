@@ -9,6 +9,7 @@
 
   <link rel="stylesheet" href="../css/main-style.css" />
   <!-- <link rel="stylesheet" href="../css/media.css" /> -->
+
   <!-- font link -->
   <link
     href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600&family=Josefin+Sans:wght@600;700;800&family=Montserrat&display=swap"
@@ -23,6 +24,9 @@
   <!-- naver map api -->
   <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=1mu20f065k"></script>
   </script>
+
+  <!-- media query -->
+  <link rel="stylesheet" href="../css/main-media.css">
 
   <style>
     @media (max-width : 1200px) {}
@@ -105,7 +109,7 @@
         <div class="article-wrap">
           <h2 class="reveal" style="text-align: center; font-size: 3em; margin-bottom: 1.2em;">Facilities</h2>
           <article class="reveal">
-            <img src="/work/hotel/images/restaurant.jpg" style="margin:30px; width: 40%; border-radius: 10px;">
+            <img src="/work/hotel/images/restaurant.jpg" class="res-img">
             <div class="description">
               <h2>Restaurant</h2>
               <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore, quis ullam! Soluta commodi esse
@@ -115,14 +119,14 @@
             </div>
 
           </article>
-          <article class="reveal">
-            <div class="description">
+          <article class="reveal gym-article">
+            <div class="description description-order">
               <h2>Sports center</h2>
               <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore, quis ullam! Soluta commodi esse
                 odio
                 voluptatibus iure, illo reiciendis, sapiente numquam illum, consectetur aliquid quibusdam.</p>
             </div>
-            <img src="/work/hotel/images/gym.jpg" style="margin:30px; width: 40%; border-radius: 10px;">
+            <img src="/work/hotel/images/gym.jpg" class="gym-img">
           </article>
       </section>
       <section class="map-section">
@@ -170,12 +174,16 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
   <script src="./scroll.js"></script>
 
+
+
   <script>
     const img = document.querySelector('.bg');
+    const m = window.matchMedia("screen and (max-width: 768px)");
+
+
 
     const reveal = () => {
       var reveals = document.querySelectorAll(".reveal");
-
 
       for (var i = 0; i < reveals.length; i++) {
         var windowHeight = window.innerHeight;
@@ -195,7 +203,9 @@
 
 
     }
-    window.addEventListener("scroll", reveal);
+
+    if (!m.matches)
+      window.addEventListener("scroll", reveal);
   </script>
 
   <!-- 네이버 지도 api script -->

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spread Operator - 앞에 내용에 이어서 적기(변수명이 같으면 마지막 변수값이)</title>
+</head>
+
+<body>
+    <script>
+        // const arr1 = [1, 2, 3]; // array type
+        // const arr2 = [4, 5, 6];
+
+        // const result = [...arr1, ...arr2]; 
+        // // document.write(result);
+
+        // //spread 변수 선언 보다 한 번 사용 자주함.
+        // console.log([...arr1, ...arr2]);
+
+        //javascript, json -> 웹에서 데이터를 주고 받을 때 쓰는 데이터 타입
+
+        const obj1 = { // object type
+            userid: "busan it",
+            passwd: "1234",
+            gender: "male",
+
+        };
+
+        const obj2 = {
+            email: "busanit@busnaca.net",
+            addr: "busan guanganri",
+        };
+
+        console.log({
+            ...obj1,
+            ...obj2
+        });
+    </script>
+</body>
+
+</html>

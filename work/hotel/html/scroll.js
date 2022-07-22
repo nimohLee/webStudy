@@ -8,19 +8,21 @@ gsap.registerPlugin(ScrollTrigger); //gsap plugin 등록(ScrollTrigger)
 // });
 
 
+if(window.matchMedia("(min-width: 768px)").matches){
+    gsap.to(".intro-text",{
+        scrollTrigger:{
+            trigger:".intro-text",
+            toggleActions: "play reverse play",
+        
+            end:"top center",
+            // scrub : true,
+        },
+        xPercent:140,
+        pin:true,
+        duration:1.5
+    })
+}
 
-gsap.to(".intro-text",{
-    scrollTrigger:{
-        trigger:".intro-text",
-        toggleActions: "play reverse play",
-    
-        end:"top center",
-        // scrub : true,
-    },
-    xPercent:140,
-    pin:true,
-    duration:1.5
-})
 
 // gsap.to(".box1", {
 //   scrollTrigger: {

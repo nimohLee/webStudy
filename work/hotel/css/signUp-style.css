@@ -322,6 +322,26 @@ main {
   transition: 2s all ease;
 }
 
+.form-control small{
+  display: none;
+color: tomato;
+}
+
+.form-control.error small{
+  display: block;
+}
+
+.form-control.error input{
+  border : 3px solid tomato;
+}
+
+.form-control.success input{
+  border : 3px solid rgb(14, 213, 14);
+}
+.form-control.success small{
+  display: none;
+}
+
 
 
 

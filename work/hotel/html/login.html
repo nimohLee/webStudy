@@ -73,19 +73,24 @@
     <div class="login-wrap">
       <div class="login-box">
         <h1>Login</h1>
-        <form onSubmit="return vaildateFormCheck()" method="post" action="#" enctype="multipart/form-data">
-          <div class="">
+        <form action="#" enctype="multipart/form-data" id="form">
+          <div class="form-control">
             <label for="">Userid</label>
-            <input type="text" name="userid" id="userid" class="userid" placeholder="userid" required />
+            <input type="text" name="userid" id="userid" class="userid" placeholder="userid" />
+            <!-- required 붙이면 submit 안됨-->
+            <small></small></div>
+          <div class="form-control">
             <label for="">Passwd</label>
-            <input type="password" name="passwd" id="passwd" class="passwd" placeholder="passwd" required />
+            <input type="password" name="passwd" id="passwd" class="passwd" placeholder="passwd" />
+            <small></small>
           </div>
           <div>
             <a href="../html/sign-up.html" class="go-signin"><strong>Don't you have an account?</strong></a>
           </div>
+          <button type="submit" class="btn" id="btn">Login</button>
           <div class="btn-wrap">
             <div class="text-box"></div>
-            <button type="submit" class="btn" id="btn">Login</button>
+
           </div>
         </form>
       </div>
@@ -123,44 +128,39 @@
     //   login script
 
     function vaildateFormCheck() {
+
       let uID = document.querySelector("#userid");
       let idBtn = document.querySelector("#btn");
       let text = document.querySelector(".text-box");
       let uPW = document.querySelector("#passwd");
 
-      if (uID.value == null || uID.value == '') {
-        alert('아이디를 입력하세요');
-        uID.focus();
-        return false;
+      let uidValue = uID.value.trim();
+      let upwValue = uPW.value.trim();
+
+
+      if (uidValue === null || uidValue === '') {
+        errorCheck(uID, '아이디를 입력해주세요');
       }
       if (uPW.value == null || uPW.value == '') {
-        alert('비밀번호를 입력하세요');
-        uPW.focus();
-        return false;
-      }
-      if (uPW.value.length < 8) {
-        alert('비밀번호는 최소 8자리 이상이 되어야 합니다.');
-        passwd.value = "";
-        passwd.focus();
-        return false;
+        errorCheck(uPW, '비밀번호를 입력해주세요');
       }
     }
 
 
+    function errorCheck(input, msg) {
+      const formControl = input.parentElement;
+      const small = formControl.querySelector("small");
+      formControl.className = "form-control error";
+      small.innerHTML = msg;
+    }
 
-    // const login = () => {
-    //   if (uID.value == "spaker38" && uPW.value == "123") {
-    //     location.href = "../html/main.html";
-    //     isLogin = true;
-    //   } else {
-    //     text.innerHTML = "<strong>아이디 또는 비밀번호를 확인하세요</strong>";
-    //     uID.value = "";
-    //     uPW.value = "";
-    //     uID.focus();
-    //   }
-    // };
 
-    // idBtn.addEventListener("click", login);
+
+    document.getElementById('form').addEventListener('submit', (e) => {
+
+      e.preventDefault();
+      vaildateFormCheck();
+    })
   </script>
 
 

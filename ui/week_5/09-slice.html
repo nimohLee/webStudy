@@ -13,10 +13,11 @@
     <h2>배열(객체).slice(start index, end index)</h2>
     <script>
         const numbers = ['one', 'two', 'three', 'four', 'five'];
-        // console.log(typeof numbers);
-        // index 2번부터 끝까지 : end 값이 없음
+        //console.log(typeof numbers);
+        /* index 2번 부터 끝까지 */
         console.log(numbers.slice(2));
-        console.log(numbers.slice(2, 4)); // 인덱스 2 ~ 4번째 값
+        // 인덱스 2 ~ (마지막인덱스 - 1 )까지 출력
+        console.log(numbers.slice(2, 4));
     </script>
 </body>
 

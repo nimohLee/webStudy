@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>부산IT 메인페이지</title>
+</head>
+
+<body>
+    <button onClick="popUpOpen('./10-child_pop.html','',500,400);">팝업열기</button>
+
+    <script>
+        function popUpOpen(url, nick, w, h) {
+            // popUpOpen(자식파일이름, 별명, 옵션);
+            // window.open(자식파일이름, 별명, 옵션)
+            // window.open('./10-child_pop.html', "", "");
+
+            let screen = "width=" + w + ", height = " + h;
+            alert(screen);
+        }
+    </script>
+</body>
+
+</html>

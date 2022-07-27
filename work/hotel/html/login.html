@@ -42,7 +42,7 @@
     <header>
       <div class="header-wrap">
         <div class="logo">
-          <a href="../html/main.html">
+          <a href="./main.html">
             <h1><i class="fa-solid fa-hotel"></i>&nbsp;IT Hotel</h1>
           </a>
         </div>
@@ -73,7 +73,7 @@
     <div class="login-wrap">
       <div class="login-box">
         <h1>Login</h1>
-        <form method="post" action="" enctype="multipart/form-data">
+        <form onSubmit="return vaildateFormCheck()" method="post" action="./main.html" enctype="multipart/form-data">
           <div class="">
             <label for="">Userid</label>
             <input type="text" name="userid" id="userid" class="userid" placeholder="userid" required />
@@ -85,7 +85,7 @@
           </div>
           <div class="btn-wrap">
             <div class="text-box"></div>
-            <button type="button" class="btn" id="btn">Login</button>
+            <button type="submit" class="btn" id="btn">Login</button>
           </div>
         </form>
       </div>
@@ -122,23 +122,45 @@
 
     //   login script
 
-    let uID = document.querySelector("#userid");
-    let idBtn = document.querySelector("#btn");
-    let text = document.querySelector(".text-box");
-    let uPW = document.querySelector("#passwd");
-    const login = () => {
-      if (uID.value == "spaker38" && uPW.value == "123") {
-        location.href = "../html/main.html";
-        isLogin = true;
-      } else {
-        text.innerHTML = "<strong>아이디 또는 비밀번호를 확인하세요</strong>";
-        uID.value = "";
-        uPW.value = "";
-        uID.focus();
-      }
-    };
+    function vaildateFormCheck() {
+      let uID = document.querySelector("#userid");
+      let idBtn = document.querySelector("#btn");
+      let text = document.querySelector(".text-box");
+      let uPW = document.querySelector("#passwd");
 
-    idBtn.addEventListener("click", login);
+      if (uID.value == null || uID.value == '') {
+        alert('아이디를 입력하세요');
+        uID.focus();
+        return false;
+      }
+      if (uPW.value == null || uPW.value == '') {
+        alert('비밀번호를 입력하세요');
+        uPW.focus();
+        return false;
+      }
+      if (uPW.value.length < 8) {
+        alert('비밀번호는 최소 8자리 이상이 되어야 합니다.');
+        passwd.value = "";
+        passwd.focus();
+        return false;
+      }
+    }
+
+
+
+    // const login = () => {
+    //   if (uID.value == "spaker38" && uPW.value == "123") {
+    //     location.href = "../html/main.html";
+    //     isLogin = true;
+    //   } else {
+    //     text.innerHTML = "<strong>아이디 또는 비밀번호를 확인하세요</strong>";
+    //     uID.value = "";
+    //     uPW.value = "";
+    //     uID.focus();
+    //   }
+    // };
+
+    // idBtn.addEventListener("click", login);
   </script>
 
 

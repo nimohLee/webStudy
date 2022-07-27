@@ -1,0 +1,77 @@
+@charset 'utf-8';
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f1f1f1;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100vw;
+    height:100vh;
+}
+
+.signin-box {
+    background-color: white;
+    border-radius: 5px;
+    width:400px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.header {
+    padding:20px 40px;
+    border-bottom: 1px solid rgba(219,40,40,0.3);
+}
+
+.form {
+    padding: 30px 40px;
+}
+
+.form-control {
+    margin-bottom : 10px;
+    padding-bottom: 20px;
+    /* 기준점 변경 */
+    position: relative;
+}
+
+.form-control input {
+    border: 2px solid #f0f0f0;
+    border-radius: 4px;
+    font-size: 14px;
+    padding:10px;
+    width:100%;
+}
+
+.form-control input:focus {
+    outline:0;
+    border-color: #777;
+}
+
+.form-control i {
+    position:absolute;
+    top:35px;
+    right:10px;
+    display: none;
+}
+
+.form button {
+    background-color: #db2828;
+    border: 2px solid #db2828;
+    border-radius: 4px;
+    color:#fff;
+    /* 부모 글씨체를 그대 받아 씀 */
+    font-family: inherit;
+    width:100%;
+    padding:10px;
+    font-size:18px;
+    cursor: pointer;
+}

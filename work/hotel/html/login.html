@@ -125,7 +125,13 @@
 
 
 
+
+
     //   login script
+
+    // id와 pw 입력되었는지 boolean
+    let idOK = false;
+    let pwOK = false;
 
     function vaildateFormCheck() {
 
@@ -138,12 +144,26 @@
       let upwValue = uPW.value.trim();
 
 
+
+
       if (uidValue === null || uidValue === '') {
         errorCheck(uID, '아이디를 입력해주세요');
+      } else {
+        successCheck(uID);
+        idOK = true;
       }
       if (uPW.value == null || uPW.value == '') {
         errorCheck(uPW, '비밀번호를 입력해주세요');
+      } else {
+        successCheck(uPW);
+        pwOK = true;
       }
+
+
+      if (idOK == true && pwOK == true) {
+        location.href = "./main.html";
+      }
+
     }
 
 
@@ -154,6 +174,10 @@
       small.innerHTML = msg;
     }
 
+    function successCheck(input) {
+      const formControl = input.parentElement;
+      formControl.className = "form-control success";
+    };
 
 
     document.getElementById('form').addEventListener('submit', (e) => {

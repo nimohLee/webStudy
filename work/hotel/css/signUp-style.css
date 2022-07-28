@@ -269,7 +269,7 @@ main {
     border-radius: 3px;
     width: 100%;
     padding: 12px 6px;
-    margin: 10px 0 25px 0;
+    margin: 10px 0 10px 0;
   }
   .input-wrap {
     font-weight: 600;
@@ -322,9 +322,17 @@ main {
   transition: 2s all ease;
 }
 
+
+.form-control{
+  margin-bottom:10px;
+}
 .form-control small{
   display: none;
 color: tomato;
+}
+
+.form-control.error{
+  margin-bottom: ;
 }
 
 .form-control.error small{

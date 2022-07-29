@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+
+    <!-- link style sheet -->
+    <link rel="stylesheet" href="/css/register-style.css">
+
+    <!-- link fonts-->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Open+Sans:wght@400;700&display=swap"
+        rel="stylesheet">
+
+
+
+</head>
+
+<body>
+    <div class="bg"></div>
+    <div class="form-control">
+        <h1 class="gothic">회원가입</h1>
+        <form action="" id="frm" class="frm gothic" name="frm">
+            <input type="text" name="name" id="name">
+            <div class="id-wrap">
+                <input type="text" name="" id="userid">
+                <button>중복확인</button>
+            </div>
+            <input type="password" name="" id="passwd">
+            <input type="password" name="" id="passwd2">
+            <input type="text" name="" id="email">
+            <div class="gender-wrap">
+                <input type="radio" name="gender" id="man" value="1">
+                <label for="man">남자</label>
+                <input type="radio" name="gender" id="woman" value="2">
+                <label for="woman">여자</label>
+            </div>
+            <select name="location" id="location">
+                <option value="">지역</option>
+                <option value="1">서울특별시</option>
+                <option value="2">인천광역시</option>
+                <option value="3">대전광역시</option>
+                <option value="4">대구광역시</option>
+                <option value="5">광주광역시</option>
+                <option value="6">울산광역시</option>
+                <option value="7">부산광역시</option>
+            </select>
+            <div class="hobby-wrap">
+                <input type="checkbox" name="sports" id="sports" value="1" class="hobby">
+                <label for="sports">운동</label>
+                <input type="checkbox" name="inst" id="inst" value="2" class="hobby">
+                <label for="inst">악기</label>
+                <input type="checkbox" name="game" id="game" value="3" class="hobby">
+                <label for="game">게임</label>
+            </div>
+            <textarea name="self" id="" cols="30" rows="10"></textarea>
+            <button>회원가입</button>
+        </form>
+    </div>
+
+    <!-- link script -->
+    <script src="/js/register.js"></script>
+</body>
+
+</html>

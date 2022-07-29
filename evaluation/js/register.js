@@ -45,6 +45,113 @@ function popupOpen(url, nick, width, height) {
 }
 
 
+
+
+
+uName.addEventListener('keyup', (e) => {
+    if (regExpName(e.currentTarget.value)) {
+        successCheck(uName);
+        nameOK = true;
+    } else if (e.currentTarget.value.length == "") {
+        errorCheck(uName, '이름을 입력해주세요');
+    } else {
+        errorCheck(uName, '이름에는 글자만 입력할 수 있습니다');
+    };
+})
+
+uID.addEventListener('keyup', (e) => {
+    if (regExpID(e.currentTarget.value)) {
+        successCheck(uID);
+        idOK = true;
+    } else if (regExpID(e.currentTarget.value)) {
+        errorCheck(uID, '아이디는 영어 소문자, 영어 대문자, 숫자 조합만 가능합니다');
+    } else {
+        errorCheck(uID, "아이디를 6자 이상 10자 미만으로 입력해주세요");
+    };
+})
+
+uPW.addEventListener('keyup', (e) => {
+    if (e.currentTarget.value.length > 5 && e.currentTarget.value.length < 11) {
+        pwOK = successCheck(uPW);
+    } else {
+        errorCheck(UPW, "비밀번호는 6자 이상 10자 이하로 입력해주세요");
+    }
+
+})
+
+uPW2.addEventListener('keyup', (e) => {
+    const pw2Event = e.currentTarget.value;
+    if (pw2Event.length > 5 && pw2Event.length < 11 && uPW.value == pw2Event) {
+        successCheck(uPW2);
+    }
+
+})
+
+
+
+//gender validation
+
+genders.forEach((gender) => {
+    if (gender.checked) {
+        genderOK = true;
+    }
+    gender.addEventListener('change', () => {
+        successCheck(document.querySelector('.gender'));
+    })
+})
+
+if (!genderOK) {
+    errorCheck(document.querySelector('.gender'), '성별을 선택해주세요');
+}
+
+
+
+// location validation
+
+if (locations.options[locations.selectedIndex].value == "") {
+    errorCheck(locations, '지역을 선택해주세요');
+}
+locations.addEventListener('change', (e) => {
+    if (e.currentTarget.value != "") {
+        successCheck(locations);
+        locationOK = true;
+    } else {
+        errorCheck(locations, '지역을 선택해주세요');
+    }
+})
+
+
+// hobby validation
+hobbies.forEach((hobby) => {
+    if (hobby.checked) {
+        hobbyOK = true;
+    }
+    hobby.addEventListener('change', () => {
+        successCheck(document.querySelector('.hobby-wrap'));
+    })
+})
+
+if (!hobbyOK) {
+    errorCheck(document.querySelector('.hobby-wrap'), '취미를 하나 이상 선택해주세요');
+}
+
+//self-introduce validation
+const selfValue = selfText.value.trim();
+if (selfValue === null || selfValue === "" || selfValue.length < 10) {
+    errorCheck(selfText, "자기소개를 10자 이상 입력해주세요");
+}
+selfText.addEventListener('keyup', (e) => {
+
+    if (e.currentTarget.value.length > 10) {
+        selfOK = successCheck(selfText);
+    } else {
+        errorCheck(selfText, "자기소개를 10자 이상 입력해주세요");
+        selfOK = false;
+    }
+
+})
+
+
 // 유효성 검사 function
 function validateCheck() {
     const uNameValue = uName.value.trim();
@@ -62,14 +169,7 @@ function validateCheck() {
         nameOK = successCheck(uName);
     }
 
-    uName.addEventListener('keyup', (e) => {
-        if (regExpName(e.currentTarget.value)) {
-            successCheck(uName);
-            nameOK = true;
-        } else {
-            errorCheck(uName, '이름에는 글자만 입력할 수 있습니다');
-        };
-    })
+
 
 
     // id validation
@@ -83,16 +183,7 @@ function validateCheck() {
         idOK = successCheck(uID);
     }
 
-    uID.addEventListener('keyup', (e) => {
-        if (regExpID(e.currentTarget.value)) {
-            successCheck(uID);
-            idOK = true;
-        } else if (regExpID(e.currentTarget.value)) {
-            errorCheck(uID, '아아이디는 영어 소문자, 영어 대문자, 숫자 조합만 가능합니다');
-        } else {
-            errorCheck(uID, "아이디를 6자 이상 10자 미만으로 입력해주세요");
-        };
-    })
+
 
 
     // pw validation
@@ -106,12 +197,6 @@ function validateCheck() {
         pwOK = successCheck(uPW);
     }
 
-    uPW.addEventListener('keyup', (e) => {
-        if (e.currentTarget.value.length > 5 && e.currentTarget.value.length < 11) {
-            successCheck(uPW);
-        }
-
-    })
 
     // pw2 validation
     if (uPW2Value === null || uPW2Value == "") {
@@ -122,73 +207,7 @@ function validateCheck() {
         pw2OK = successCheck(uPW2);
     }
 
-    uPW2.addEventListener('keyup', (e) => {
-        const pw2Event = e.currentTarget.value;
-        if (pw2Event.length > 5 && pw2Event.length < 11 && uPW.value == pw2Event) {
-            successCheck(uPW2);
-        }
 
-    })
-
-    //gender validation
-
-    genders.forEach((gender) => {
-        if (gender.checked) {
-            genderOK = true;
-        }
-        gender.addEventListener('change', () => {
-            successCheck(document.querySelector('.gender'));
-        })
-    })
-
-    if (!genderOK) {
-        errorCheck(document.querySelector('.gender'), '성별을 선택해주세요');
-    }
-
-
-
-
-
-
-    // location validation
-
-    if (locations.options[locations.selectedIndex].value == "") {
-        errorCheck(locations, '지역을 선택해주세요');
-    }
-    locations.addEventListener('change', () => {
-        successCheck(locations);
-        locationOK = true;
-    })
-
-
-    // hobby validation
-    hobbies.forEach((hobby) => {
-        if (hobby.checked) {
-            hobbyOK = true;
-        }
-        hobby.addEventListener('change', () => {
-            successCheck(document.querySelector('.hobby-wrap'));
-        })
-
-    })
-
-    if (!hobbyOK) {
-        errorCheck(document.querySelector('.hobby-wrap'), '취미를 하나 이상 선택해주세요');
-    }
-
-    //self-introduce validation
-    const selfValue = selfText.value.trim();
-    if (selfValue === null || selfValue === "" || selfValue.length < 10) {
-        errorCheck(selfText, "자기소개를 10자 이상 입력해주세요");
-    }
-    selfText.addEventListener('keyup', (e) => {
-
-        if (e.currentTarget.value.length > 10) {
-            successCheck(selfText);
-            selfOK = true;
-        }
-
-    })
 }
 
 //email validation
@@ -199,6 +218,15 @@ function isEmail(value) {
     //value.split 공부하기
 
     return (value.indexOf('@')) > 1 && (value.split('@')[1].indexOf('.') > 1);
+}
+
+if (email.value === null || email.value == "") {
+    errorCheck(email, '이메일을 입력해주세요')
+} else if (!isEmail(val)) {
+    errorCheck(email, '올바른 이메일 형식이 아닙니다.')
+} else {
+    emailOK = successCheck(email);
+
 }
 
 email.addEventListener("keyup", (e) => {

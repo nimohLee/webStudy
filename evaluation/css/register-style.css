@@ -55,3 +55,8 @@ h1{
 small{
     color: tomato;
 }
+
+textarea{
+    outline: 0;    
+    border: lightgray;
+}

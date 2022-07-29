@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>radio - e.currentTarget</title>
+</head>
+
+<body>
+    <h2>it 서적을 선택하세요</h2>
+    <input type="radio" name="books" id="" value="java">Java
+    <input type="radio" name="books" id="" value="spring">Spring Framework
+    <input type="radio" name="books" id="" value="node">Node
+    <input type="radio" name="books" id="" value="react">React
+    <hr>
+    <p></p>
+
+    <script>
+        const checkBooks = document.querySelectorAll('input');
+        const p = document.querySelector('p');
+        checkBooks.forEach((book) => {
+            // what is checked?
+
+            book.addEventListener('change', (e) => {
+                if (e.currentTarget.checked) {
+                    p.textContent = `${e.currentTarget.value}`;
+                }
+            });
+
+
+
+        })
+    </script>
+</body>
+
+</html>

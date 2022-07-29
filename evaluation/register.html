@@ -35,7 +35,7 @@
             <div class="form-control">
                 <label for="">아이디</label>
                 <input type="text" name="" id="userid">
-                <button onClick="popupOpen('./valid-pop.html','',500,400);" id="btn">중복확인</button>
+                <button type="button" onClick="popupOpen('./valid-pop.html','',500,400);" id="btn">중복확인</button>
                 <br>
                 <small></small>
             </div>
@@ -63,9 +63,9 @@
             <small></small>
             <div class="form-control">
                 <label for="">성별</label>
-                <input type="radio" name="gender" id="man" value="1">
+                <input type="radio" name="gender" class="gender" id="man" value="1">
                 <label for="man">남자</label>
-                <input type="radio" name="gender" id="woman" value="2">
+                <input type="radio" name="gender" class="gender" id="woman" value="2">
                 <label for="woman">여자</label>
                 <br>
                 <small></small>
@@ -88,8 +88,9 @@
             </div>
             <small></small>
             <div class="form-control">
-                <label for="">취미</label>
+
                 <div class="hobby-wrap">
+                    <label for="">취미</label>
                     <input type="checkbox" name="sports" id="sports" value="1" class="hobby">
                     <label for="sports">운동</label>
                     <input type="checkbox" name="inst" id="inst" value="2" class="hobby">
@@ -104,9 +105,10 @@
             <div class="form-control">
                 <label for="">자기소개</label>
                 <textarea name="self" id="" cols="30" rows="10"></textarea>
+                <br>
+                <small></small>
             </div>
-            <br>
-            <small></small>
+
 
             <button>회원가입</button>
         </form>

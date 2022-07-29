@@ -11,20 +11,30 @@ const uPW2 = document.getElementById('passwd2');
 const email = document.getElementById('email');
 
 // declare radio
-const gender = document.frm.gender;
+const genders = document.querySelectorAll('.gender');
 
 // declare select
-const locations = document.frm.locations;
-
-
+const locations = document.frm.location;
 
 // declare checkbox
+const hobbies = document.querySelectorAll('.hobby');
 const sports = document.getElementById('sports');
 const inst = document.getElementById('inst');
 const game = document.getElementById('game');
 
+//declare self-introduce
+const selfText = document.querySelector('textarea');
 
-
+// declare isInput(boolean)
+let nameOK = false;
+let idOK = false;
+let pwOK = false;
+let pw2OK = false;
+let emailOK = false;
+let genderOK = false;
+let hobbyOK = false;
+let selfOK = false;
+let locationOK = false;
 // 중복확인 버튼 클릭 시 팝업 function
 function popupOpen(url, nick, width, height) {
     let screen = "";
@@ -43,21 +53,24 @@ function validateCheck() {
     const uPW2Value = uPW2.value.trim();
     const emailValue = email.value.trim();
 
-
-    let nameOk = false;
-    let idOk = false;
-    let pwOk = false;
-    let pw2Ok = false;
-    let emailOk = false;
-
     // name validation
     if (uNameValue === null || uNameValue == "") {
         errorCheck(uName, "이름을 입력해주세요");
     } else if (!regExpName(uNameValue)) {
         errorCheck(uName, "이름을 확인해주세요");
     } else {
-        nameOk = successCheck(uName);
+        nameOK = successCheck(uName);
     }
+
+    uName.addEventListener('keyup', (e) => {
+        if (regExpName(e.currentTarget.value)) {
+            successCheck(uName);
+            nameOK = true;
+        } else {
+            errorCheck(uName, '이름에는 글자만 입력할 수 있습니다');
+        };
+    })
+
 
     // id validation
     if (uIDValue === null || uIDValue == "") {
@@ -65,10 +78,22 @@ function validateCheck() {
     } else if (uIDValue.length < 6 || uIDValue.length > 10) {
         errorCheck(uID, "아이디를 6자 이상 10자 미만으로 입력해주세요");
     } else if (!regExpID(uIDValue)) {
-        errorCheck(uID, "아이디는 영어 소문자, 영어 대문자, 숫자 조합만 가능합니다")
+        errorCheck(uID, "아이디는 영어 소문자, 영어 대문자, 숫자 조합만 가능합니다");
     } else {
-        idOk = successCheck(uID);
+        idOK = successCheck(uID);
     }
+
+    uID.addEventListener('keyup', (e) => {
+        if (regExpID(e.currentTarget.value)) {
+            successCheck(uID);
+            idOK = true;
+        } else if (regExpID(e.currentTarget.value)) {
+            errorCheck(uID, '아아이디는 영어 소문자, 영어 대문자, 숫자 조합만 가능합니다');
+        } else {
+            errorCheck(uID, "아이디를 6자 이상 10자 미만으로 입력해주세요");
+        };
+    })
+
 
     // pw validation
     if (uPWValue === null || uPWValue == "") {
@@ -78,8 +103,15 @@ function validateCheck() {
     } else if (!regExpID(uPWValue)) {
         errorCheck(uPW, "비밀번호는 영어 소문자, 숫자 조합만 가능합니다")
     } else {
-        pwOk = successCheck(uPW);
+        pwOK = successCheck(uPW);
     }
+
+    uPW.addEventListener('keyup', (e) => {
+        if (e.currentTarget.value.length > 5 && e.currentTarget.value.length < 11) {
+            successCheck(uPW);
+        }
+
+    })
 
     // pw2 validation
     if (uPW2Value === null || uPW2Value == "") {
@@ -87,13 +119,105 @@ function validateCheck() {
     } else if (uPW2Value !== uPWValue) {
         errorCheck(uPW2, "비밀번호가 다릅니다");
     } else {
-        pw2Ok = successCheck(uPW2);
+        pw2OK = successCheck(uPW2);
+    }
+
+    uPW2.addEventListener('keyup', (e) => {
+        const pw2Event = e.currentTarget.value;
+        if (pw2Event.length > 5 && pw2Event.length < 11 && uPW.value == pw2Event) {
+            successCheck(uPW2);
+        }
+
+    })
+
+    //gender validation
+
+    genders.forEach((gender) => {
+        if (gender.checked) {
+            genderOK = true;
+        }
+        gender.addEventListener('change', () => {
+            successCheck(document.querySelector('.gender'));
+        })
+    })
+
+    if (!genderOK) {
+        errorCheck(document.querySelector('.gender'), '성별을 선택해주세요');
     }
 
 
 
 
+
+
+    // location validation
+
+    if (locations.options[locations.selectedIndex].value == "") {
+        errorCheck(locations, '지역을 선택해주세요');
+    }
+    locations.addEventListener('change', () => {
+        successCheck(locations);
+        locationOK = true;
+    })
+
+
+    // hobby validation
+    hobbies.forEach((hobby) => {
+        if (hobby.checked) {
+            hobbyOK = true;
+        }
+        hobby.addEventListener('change', () => {
+            successCheck(document.querySelector('.hobby-wrap'));
+        })
+
+    })
+
+    if (!hobbyOK) {
+        errorCheck(document.querySelector('.hobby-wrap'), '취미를 하나 이상 선택해주세요');
+    }
+
+    //self-introduce validation
+    const selfValue = selfText.value.trim();
+    if (selfValue === null || selfValue === "" || selfValue.length < 10) {
+        errorCheck(selfText, "자기소개를 10자 이상 입력해주세요");
+    }
+    selfText.addEventListener('keyup', (e) => {
+
+        if (e.currentTarget.value.length > 10) {
+            successCheck(selfText);
+            selfOK = true;
+        }
+
+    })
 }
+
+//email validation
+
+function isEmail(value) {
+    // 없으면 -1, 있으면 0 ~
+
+    //value.split 공부하기
+
+    return (value.indexOf('@')) > 1 && (value.split('@')[1].indexOf('.') > 1);
+}
+
+email.addEventListener("keyup", (e) => {
+    //currentTarger : 현재 이벤트 발생하는 target
+    const val = e.currentTarget.value;
+    //@ 체크
+    //@ 뒤에 .있으면 true 없으면 false
+    if (e.currentTarget.value === null || e.currentTarget.value == "") {
+        errorCheck(email, '이메일을 입력해주세요')
+    } else if (!isEmail(val)) {
+        errorCheck(email, '올바른 이메일 형식이 아닙니다.')
+    } else {
+        emailOK = successCheck(email);
+
+    }
+
+})
+
+
 
 
 
@@ -214,30 +338,6 @@ function successCheck(input) {
 
 
 
-//email validation
-
-function isEmail(value) {
-    // 없으면 -1, 있으면 0 ~
-
-    //value.split 공부하기
-
-    return (value.indexOf('@')) > 1 && (value.split('@')[1].indexOf('.') > 1);
-}
-
-email.addEventListener("keyup", (e) => {
-    //currentTarger : 현재 이벤트 발생하는 target
-    const val = e.currentTarget.value;
-    //@ 체크
-    //@ 뒤에 .있으면 true 없으면 false
-
-    if (!isEmail(val)) {
-        email.style.border = '2px solid tomato';
-    } else {
-        email.style.border = '2px solid green';
-        emailOk = true;
-    }
-
-})
 
 document.getElementById('frm').addEventListener('submit', (e) => {
     e.preventDefault();

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+    <p>입력한 글자 수 : 0</p>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const textarea = document.querySelector("textarea");
+            const padding = document.querySelector("p");
+            textarea.addEventListener("keyup", (e) => {
+                padding.textContent = `입력한 글자 수 : ${e.target.value.length}`;
+            })
+        })
+    </script>
+</body>
+
+</html>

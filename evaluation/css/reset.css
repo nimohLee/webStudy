@@ -55,3 +55,7 @@ button{
 .open-sans{
 	font-family: 'Open Sans', sans-serif;
 }
+
+input{
+	outline: 0;
+}

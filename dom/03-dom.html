@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="tc"></div>
+    <div id="ih"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const tc = document.querySelector("#tc");
+            const ih = document.querySelector("#ih");
+
+            //component.textContent : 글자 그대로 표시
+            tc.textContent = '<h1>busan it : innerHTML</h1>';
+            //component.innerHTML : html로 변환해서 표시
+            ih.innerHTML = '<h1>busan it : innerHTML</h1>';
+
+
+        });
+    </script>
+</body>
+
+</html>

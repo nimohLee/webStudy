@@ -70,15 +70,15 @@ function validateCheck() {
     } else if (regExpID(uID.value.trim())) {
         errorCheck(uID, '아이디는 영어 소문자, 영어 대문자, 숫자 조합만 가능합니다');
     } else {
-        errorCheck(uID, "아이디를 6자 이상 10자 미만으로 입력해주세요");
+        errorCheck(uID, "아이디를 8자 이상 11자 미만으로 입력해주세요");
     };
 
     //PW
-    if (uPW.value.trim().length > 5 && uPW.value.trim().length < 11) {
+    if (uPW.value.trim().length > 11) {
         pwOK = successCheck(uPW);
 
     } else {
-        errorCheck(uPW, "비밀번호는 6자 이상 10자 이하로 입력해주세요");
+        errorCheck(uPW, "비밀번호는 12자 이상 입력해주세요");
     }
 
     //PW2
@@ -112,17 +112,17 @@ function validateCheck() {
         } else if (regExpID(e.currentTarget.value)) {
             errorCheck(uID, '아이디는 영어 소문자, 영어 대문자, 숫자 조합만 가능합니다');
         } else {
-            errorCheck(uID, "아이디를 6자 이상 10자 미만으로 입력해주세요");
+            errorCheck(uID, "아이디를 8자 이상 입력해주세요");
         };
     })
 
     // PW
     uPW.addEventListener('keyup', (e) => {
-        if (e.currentTarget.value.length > 5 && e.currentTarget.value.length < 11) {
+        if (e.currentTarget.value.length > 11) {
             pwOK = successCheck(uPW);
 
         } else {
-            errorCheck(uPW, "비밀번호는 6자 이상 10자 이하로 입력해주세요");
+            errorCheck(uPW, "비밀번호는 12자리 이상 입력해주세요");
         }
 
     })
@@ -252,9 +252,9 @@ function regExpName(input) {
     return exp.test(input);
 }
 
-// ID 정규표현식 함수 (영어 소문자, 숫자 0~9 6자부터 10자)
+// ID 정규표현식 함수 (영어 소문자, 숫자 0~9 8자부터 11자)
 function regExpID(input) {
-    let exp = /([a-z0-9]){6,10}/;
+    let exp = /([a-z0-9]){8,11}/;
 
     return exp.test(input);
 }

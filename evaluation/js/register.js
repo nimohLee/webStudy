@@ -1,6 +1,5 @@
 'use strict';
 
-console.log('hi');
 
 // declare auth
 const uName = document.getElementById('name');
@@ -43,6 +42,7 @@ let isSecond = false;
 
 // 중복확인 버튼 클릭 시 팝업 function
 function popupOpen(url, nick, width, height) {
+    console.log('hi');
     let screen = "";
     let left = (screen.availWidth - width) / 2;
     let top = (screen.availHeight - height) / 2;
@@ -61,7 +61,7 @@ function validateCheck() {
     } else if (uName.value.length == "") {
         errorCheck(uName, '이름을 입력해주세요');
     } else {
-        errorCheck(uName, '이름에는 글자만 입력할 수 있습니다');
+        errorCheck(uName, '이름에는 한글이름만 입력할 수 있습니다');
     };
 
     // ID
@@ -130,7 +130,7 @@ function validateCheck() {
     // PW2
     uPW2.addEventListener('keyup', (e) => {
         const pw2Event = e.currentTarget.value;
-        if (pw2Event.length > 5 && pw2Event.length < 11 && uPW.value == pw2Event) {
+        if (uPW.value.trim() == pw2Event.trim()) {
             pw2OK = successCheck(uPW2);
         } else if (pw2Event.trim() === null || pw2Event.trim() == "") {
             errorCheck(uPW2, '비밀번호 확인을 입력해주세요');
@@ -174,12 +174,12 @@ function validateCheck() {
             genderOK = true;
         }
         gender.addEventListener('change', () => {
-            successCheck(document.querySelector('.gender'));
+            genderOK = successCheck(document.querySelector('.gender-wrap'));
         })
     })
 
     if (!genderOK) {
-        errorCheck(document.querySelector('.gender'), '성별을 선택해주세요');
+        errorCheck(document.querySelector('.gender-wrap'), '성별을 선택해주세요');
     }
 
 
@@ -191,8 +191,7 @@ function validateCheck() {
     }
     locations.addEventListener('change', (e) => {
         if (e.currentTarget.value != "") {
-            successCheck(locations);
-            locationOK = true;
+            locationOK = successCheck(locations);
         } else {
             errorCheck(locations, '지역을 선택해주세요');
         }
@@ -200,18 +199,26 @@ function validateCheck() {
 
 
     // hobby validation
+    let firstCheck = 0;
     hobbies.forEach((hobby) => {
+        if (hobby.checked) {
+            firstCheck++;
+        }
+    })
+    if (firstCheck == 0) {
+        errorCheck(document.querySelector('.hobby-wrap'), '취미를 하나 이상 선택해주세요')
+    }
 
+    hobbies.forEach((hobby) => {
         hobby.addEventListener('change', () => {
             if (hobby.checked) {
                 leastChecked++;
             } else
                 leastChecked--;
-
             if (leastChecked < 1)
                 errorCheck(document.querySelector('.hobby-wrap'), '취미를 하나 이상 선택해주세요');
             else
-                successCheck(document.querySelector('.hobby-wrap'));
+                hobbyOK = successCheck(document.querySelector('.hobby-wrap'));
         })
     })
 
@@ -247,7 +254,7 @@ function isEmail(value) {
 
 // Name 정규표현식 함수 (영어 소문자, 대문자, 한글 (가~힣))
 function regExpName(input) {
-    let exp = /[a-zA-Z가-힣]/;
+    let exp = /^[가-힣]{2,4}$/;
 
     return exp.test(input);
 }
@@ -262,19 +269,24 @@ function regExpID(input) {
 // input border tomato로 설정
 function errorCheck(input, msg) {
 
-    let formContol = input.parentElement;
-    let small = formContol.querySelector('small');
-    formContol.className = "form-control error"
+    let formControl = input.parentElement;
+    let small = formControl.querySelector('small');
+
+    formControl.className = "form-control error"
     small.innerHTML = msg;
 }
 
 function successCheck(input) {
     let formControl = input.parentElement;
+
     formControl.className = "form-control success"
     return true;
 }
 
 document.getElementById('frm').addEventListener('submit', (e) => {
     e.preventDefault();
-    validateCheck();
+    if (nameOK && idOK && pwOK && pw2OK && emailOK && genderOK && locationOK && hobbyOK && selfOK) {
+        location.href = './login.html';
+    } else
+        validateCheck();
 })

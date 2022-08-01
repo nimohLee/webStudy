@@ -22,95 +22,121 @@
 
 <body>
     <div class="container">
-        <div class="form-wrap">
-            <h1 class="gothic">회원가입</h1>
-            <form action="" id="frm" class="frm gothic" name="frm">
-                <div class="form-control">
-                    <span>이름</span>
-                    <input type="text" name="name" id="name" placeholder="name">
-                    <br>
-                    <small></small>
-                </div>
-                <div class="form-control">
-                    <span>아이디</span>
-                    <input type="text" name="" id="userid" placeholder="id">
-                    <button type="button" onClick="popupOpen('./valid-pop.html','',500,400);" id="btn">중복확인</button>
-                    <br>
-                    <small></small>
-                </div>
-                <div class="form-control">
-                    <span>비밀번호</span>
-                    <input type="password" name="" id="passwd" placeholder="password">
-                    <br>
-                    <small></small>
-                </div>
-                <div class="form-control">
-                    <span>비밀번호 확인</span>
-                    <input type="password" name="" id="passwd2" placeholder="password">
-                    <br>
-                    <small></small>
-                </div>
-                <small></small>
-                <div class="form-control">
-                    <span>이메일</span>
-                    <input type="text" name="" id="email" placeholder="email">
-                    <br>
-                    <small></small>
-                </div>
-                <small></small>
-                <div class="form-control">
-                    <label for="">성별</label>
-                    <input type="radio" name="gender" class="gender" id="man" value="1">
-                    <label for="man">남자</label>
-                    <input type="radio" name="gender" class="gender" id="woman" value="2">
-                    <label for="woman">여자</label>
-                    <br>
-                    <small></small>
-                </div>
-                <small></small>
-                <div class="form-control">
-                    <label for="">지역</label>
-                    <select name="location" id="location">
-                        <option value="">지역</option>
-                        <option value="1">서울특별시</option>
-                        <option value="2">인천광역시</option>
-                        <option value="3">대전광역시</option>
-                        <option value="4">대구광역시</option>
-                        <option value="5">광주광역시</option>
-                        <option value="6">울산광역시</option>
-                        <option value="7">부산광역시</option>
-                    </select>
-                    <br>
-                    <small></small>
-                </div>
-                <small></small>
-                <div class="form-control">
-                    <div class="hobby-wrap">
-                        <label for="">취미</label>
-                        <input type="checkbox" name="sports" id="sports" value="sports" class="hobby">
-                        <label for="sports">운동</label>
-                        <input type="checkbox" name="inst" id="inst" value="inst" class="hobby">
-                        <label for="inst">악기</label>
-                        <input type="checkbox" name="game" id="game" value="game" class="hobby">
-                        <label for="game">게임</label>
+
+        <form action="" id="frm" class="frm gothic" name="frm">
+            <div class="form-wrap">
+                <h1 class="gothic">회원가입</h1>
+                <div class="form-main">
+                    <div class="form-control">
+                        <span class="lbl">이름</span>
+                        <input type="text" name="name" id="name" placeholder="NAME..">
+                        <br>
+                        <small></small>
                     </div>
-                    <br>
+                    <div class="form-control">
+                        <span class="lbl">아이디</span>
+                        <input type="text" name="" id="userid" placeholder="ID..">
+                        <br>
+                        <small></small>
+                        <div class="btn-wrap">
+                            <button type="button" onClick="popupOpen('./valid-pop.html', '', 300, 100);" class='btn'
+                                id="btn">중복확인</button>
+                        </div>
+
+                    </div>
+                    <div class="form-control">
+                        <span class="lbl">비밀번호</span>
+                        <input type="password" name="" id="passwd" placeholder="PASSWORD..">
+                        <br>
+                        <small></small>
+                    </div>
+                    <div class="form-control">
+                        <span class="lbl">비밀번호 확인</span>
+                        <input type="password" name="" id="passwd2" placeholder="PASSWORD..">
+                        <br>
+                        <small></small>
+                    </div>
                     <small></small>
-                </div>
-                <small></small>
-                <div class="form-control">
-                    <span>자기소개</span>
-                    <textarea name="self" id="" cols="30" rows="5" placeholder="10자 이상 입력해주세요.."></textarea>
-                    <br>
+                    <div class="form-control">
+                        <span class="lbl">이메일</span>
+                        <input type="text" name="" id="email" placeholder="EMAIL..">
+                        <br>
+                        <small></small>
+                    </div>
                     <small></small>
+                    <div class="form-control">
+                        <div class="gender-wrap">
+                            <span class="lbl genLbl">성별</span>
+                            <div class="radio-wrap">
+                                <div>
+                                    <input type="radio" name="gender" class="gender" id="man" value="1">
+                                    <label for="man"><span class="genderRd">남자</span></label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="gender" class="gender" id="woman" value="2">
+                                    <label for="woman">
+                                        <span class="genderRd">여자</span>
+                                </div>
+                            </div>
+                            </label>
+                        </div>
+                        <br>
+                        <small></small>
+                    </div>
+                    <small></small>
+                    <div class="form-control">
+                        <span class="lbl">지역</span>
+                        <select name="location" id="location" class="location">
+                            <option value="">지역</option>
+                            <option value="1">서울특별시</option>
+                            <option value="2">인천광역시</option>
+                            <option value="3">대전광역시</option>
+                            <option value="4">대구광역시</option>
+                            <option value="5">광주광역시</option>
+                            <option value="6">울산광역시</option>
+                            <option value="7">부산광역시</option>
+                        </select>
+                        <br>
+                        <small></small>
+                    </div>
+                    <small></small>
+                    <div class="form-control">
+                        <span class="lbl">취미</span>
+                        <div class="hobby-wrap">
+                            <div>
+                                <input type="checkbox" name="sports" id="sports" value="sports" class="hobby">
+                                <label for="sports">운동</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" name="inst" id="inst" value="inst" class="hobby">
+                                <label for="inst">악기</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" name="game" id="game" value="game" class="hobby">
+                                <label for="game">게임</label>
+                            </div>
+                        </div>
+                        <br>
+                        <small></small>
+                    </div>
+                    <small></small>
+                    <div class="form-control">
+                        <span class="lbl">자기소개</span>
+                        <textarea name="self" id="" cols="30" rows="5" placeholder="10자 이상 입력해주세요.."></textarea>
+                        <br>
+                        <small></small>
+                    </div>
                 </div>
-                <button>회원가입</button>
-            </form>
-        </div>
+                <button class="sign">회원가입</button>
+                <a href="./login.html">아이디가 있으신가요?</a>
+            </div>
+        </form>
+    </div>
     </div>
 
     <!-- link script -->
     <script src="./js/register.js"></script>
 </body>
+
 
 </html>

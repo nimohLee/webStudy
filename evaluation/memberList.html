@@ -1,99 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MemberList</title>
 
     <!-- link style sheet -->
-    <link rel="stylesheet" href="./css/memberList-style.css">
+    <link rel="stylesheet" href="./css/memberList-style.css" />
 
     <!-- link fonts-->
     <link
-        href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Open+Sans:wght@400;700&display=swap"
-        rel="stylesheet">
-
-</head>
-
-<body>
+      href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="container">
+      <div class="top-table">
+        <span>MemberList></span>
         <div class="search-wrap">
-            <select name="" id="">
-                <option value="1">이름</option>
-                <option value="2">번호</option>
-                <option value="3">아이디</option>
-                <option value="4">이메일</option>
-
-
-            </select>
-            <input type="text" name="search" id="search">
-            <button>검색</button></div>
-        <div class="table-wrap">
-            <table>
-                <thead>
-                    <th>번호</th>
-                    <th>이름</th>
-                    <th>아이디</th>
-                    <th>이메일</th>
-                    <th>성별</th>
-                    <th>지역</th>
-                    <th>취미</th>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>5</td>
-                        <td>이호민</td>
-                        <td>spaker38</td>
-                        <td>spaker38@naver.com</td>
-                        <td>남</td>
-                        <td>부산</td>
-                        <td>운동</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>이호민</td>
-                        <td>spaker38</td>
-                        <td>spaker38@naver.com</td>
-                        <td>남</td>
-                        <td>부산</td>
-                        <td>운동</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>이호민</td>
-                        <td>spaker38</td>
-                        <td>spaker38@naver.com</td>
-                        <td>남</td>
-                        <td>부산</td>
-                        <td>운동</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>이호민</td>
-                        <td>spaker38</td>
-                        <td>spaker38@naver.com</td>
-                        <td>남</td>
-                        <td>부산</td>
-                        <td>운동</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>이호민</td>
-                        <td>spaker38</td>
-                        <td>spaker38@naver.com</td>
-                        <td>남</td>
-                        <td>부산</td>
-                        <td>운동</td>
-                    </tr>
-                </tbody>
-            </table>
+          <select name="" id="">
+            <option value="1">이름</option>
+            <option value="2">번호</option>
+            <option value="3">아이디</option>
+            <option value="4">이메일</option>
+          </select>
+          <input type="text" name="search" id="search" />
+          <button>검색</button>
         </div>
+      </div>
+      <div class="table-wrap">
+        <table border="1">
+          <thead>
+            <th>번호</th>
+            <th>이름</th>
+            <th>아이디</th>
+            <th>이메일</th>
+            <th>성별</th>
+            <th>지역</th>
+            <th>취미</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>5</td>
+              <td>이호민</td>
+              <td>spaker38</td>
+              <td>spaker38@naver.com</td>
+              <td>남</td>
+              <td>부산</td>
+              <td>운동</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>이호민</td>
+              <td>spaker38</td>
+              <td>spaker38@naver.com</td>
+              <td>남</td>
+              <td>부산</td>
+              <td>운동</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>이호민</td>
+              <td>spaker38</td>
+              <td>spaker38@naver.com</td>
+              <td>남</td>
+              <td>부산</td>
+              <td>운동</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>이호민</td>
+              <td>spaker38</td>
+              <td>spaker38@naver.com</td>
+              <td>남</td>
+              <td>부산</td>
+              <td>운동</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>이호민</td>
+              <td>spaker38</td>
+              <td>spaker38@naver.com</td>
+              <td>남</td>
+              <td>부산</td>
+              <td>운동</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="paging-btn">
+        <button class="btn1">1</button>
+        <button class="btn2">2</button>
+        <button class="btn3">3</button>
+        <button class="btn4">4</button>
+        <button class="btn5">5</button>
+      </div>
     </div>
 
     <!-- link script -->
     <script src="./js/memberList.js"></script>
-</body>
-
+  </body>
 </html>

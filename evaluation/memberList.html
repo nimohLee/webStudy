@@ -20,14 +20,14 @@
       <div class="top-table">
         <span>MemberList></span>
         <div class="search-wrap">
-          <select name="" id="">
-            <option value="1">이름</option>
-            <option value="2">번호</option>
-            <option value="3">아이디</option>
-            <option value="4">이메일</option>
+          <select name="" id="select">
+            <option value="sel-name">이름</option>
+            <option value="sel-num">번호</option>
+            <option value="sel-id">아이디</option>
+            <option value="sel-email">이메일</option>
           </select>
-          <input type="text" name="search" id="search" />
-          <button>검색</button>
+          <input type="text" name="search" id="search" class="search" />
+          <button class="search-btn" id="search-btn">검색</button>
         </div>
       </div>
       <div class="table-wrap">
@@ -41,61 +41,61 @@
             <th>지역</th>
             <th>취미</th>
           </thead>
-          <tbody>
+          <tbody id="table">
             <tr>
-              <td>5</td>
-              <td>이호민</td>
-              <td>spaker38</td>
-              <td>spaker38@naver.com</td>
-              <td>남</td>
-              <td>부산</td>
-              <td>운동</td>
+              <td id="no">5</td>
+              <td id="name">이호민</td>
+              <td id="id">spaker38</td>
+              <td id="email">spaker38@naver.com</td>
+              <td id="gender">남</td>
+              <td id="location">부산</td>
+              <td id="hobby">게임</td>
             </tr>
             <tr>
-              <td>4</td>
-              <td>이호민</td>
-              <td>spaker38</td>
-              <td>spaker38@naver.com</td>
-              <td>남</td>
-              <td>부산</td>
-              <td>운동</td>
+              <td id="no">4</td>
+              <td id="name">이호</td>
+              <td id="id">ghals</td>
+              <td id="email">asd@naver.com</td>
+              <td id="gender">남</td>
+              <td id="location">경주</td>
+              <td id="hobby">운동</td>
             </tr>
             <tr>
-              <td>3</td>
-              <td>이호민</td>
-              <td>spaker38</td>
-              <td>spaker38@naver.com</td>
-              <td>남</td>
-              <td>부산</td>
-              <td>운동</td>
+              <td id="no">3</td>
+              <td id="name">박호민</td>
+              <td id="id">spak8</td>
+              <td id="email">hmpark@naver.com</td>
+              <td id="gender">남</td>
+              <td id="location">양산</td>
+              <td id="hobby">악기</td>
             </tr>
             <tr>
-              <td>2</td>
-              <td>이호민</td>
-              <td>spaker38</td>
-              <td>spaker38@naver.com</td>
-              <td>남</td>
-              <td>부산</td>
-              <td>운동</td>
+              <td id="no">2</td>
+              <td id="name">정호민</td>
+              <td id="id">babo</td>
+              <td id="email">hmjung@naver.com</td>
+              <td id="gender">남</td>
+              <td id="location">부산</td>
+              <td id="hobby">게임</td>
             </tr>
             <tr>
-              <td>1</td>
-              <td>이호민</td>
-              <td>spaker38</td>
-              <td>spaker38@naver.com</td>
-              <td>남</td>
-              <td>부산</td>
-              <td>운동</td>
+              <td id="no">1</td>
+              <td id="name">주호민</td>
+              <td id="id">pearl</td>
+              <td id="email">hmjoo@naver.com</td>
+              <td id="gender">남</td>
+              <td id="location">서울</td>
+              <td id="hobby">운동</td>
             </tr>
           </tbody>
         </table>
       </div>
       <div class="paging-btn">
-        <button class="btn1">1</button>
-        <button class="btn2">2</button>
-        <button class="btn3">3</button>
-        <button class="btn4">4</button>
-        <button class="btn5">5</button>
+        <button class="btn">1</button>
+        <button class="btn">2</button>
+        <button class="btn">3</button>
+        <button class="btn">4</button>
+        <button class="btn">5</button>
       </div>
     </div>
 

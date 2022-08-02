@@ -1,140 +1,137 @@
 @charset "utf-8";
 
 /* reset.css import */
-@import 'reset.css';
+@import "reset.css";
 
-
-
-body{
-  width: 100vw;
-  height: 100vh;
-  
+body {
   background-color: rgb(228, 225, 245);
+  height: 1200px; /* 회원가입 폼이 커서 임의로 body height 확장 */
 }
 
+.container {
+  position: absolute;
 
-.container{
-  width: 100vw;
-  height: 100vh;
-  
-  
-  margin-bottom: 20vh;
-  
+  /*  확장된 body height의 절반값(50%)만큼 top에서 내려준 뒤, form-wrap의 height와 padding을 더한 값을 빼 줌*/
+  top: calc(600px - (500px + 50px));
+
+  left: calc(50% - 350px);
+  width: 700px;
+  height: 1000px;
 }
 
-form{
+.frm {
+  width: 100%;
+  height: 100%;
+
+  margin-bottom: 50px;
+}
+
+.form-wrap {
+  /* padding: 20px; */
+  background-color: white;
+  box-shadow: 0 0 10px 3px #4f4d4c;
+  border: 1px solid rgba(34, 36, 38, 0.2);
+  border-radius: 7px;
+
+  width: 100%;
+
+  padding: 50px 0;
   display: flex;
-  width: 80%;
-  margin:0 auto;
-  }
-
-.form-wrap{
-    /* padding: 20px; */
-    width: 100%;
-    height: 100%;
-    padding: 50px 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    /* -content: center; */
-    align-items: center;
-    /* border : 3px solid lightslategrey; */
-    border-radius: 10px;
-    /* box-shadow: 0 0 10px 0px; */
+  flex-direction: column;
+  justify-content: space-evenly;
+  /* -content: center; */
+  align-items: center;
+  /* border : 3px solid lightslategrey; */
+  border-radius: 10px;
+  /* box-shadow: 0 0 10px 0px; */
 }
 
-.form-main{
+.form-main {
   width: 50%;
 }
 
-.form-control{
+.form-control {
   display: flex;
   flex-direction: column;
-  font-size:0.8em;
+  font-size: 0.8em;
   width: 100%;
- /* margin:20px 0 20px 0; */
+  /* margin:20px 0 20px 0; */
   /* margin:0 auto; */
   /* padding-left: 60px; */
 }
-.form-control small{
+.form-control small {
   display: none;
-color: tomato;
+  color: tomato;
 }
 
-.form-control.error{
-  
+.form-control.error {
 }
 
-.form-control.error small{
+.form-control.error small {
   display: block;
 }
 
-.form-control.error input{
-  border : 3px solid tomato;
+.form-control.error input {
+  border: 3px solid tomato;
 }
 
-.form-control.success input{
-  border : 3px solid rgb(14, 213, 14);
+.form-control.success input {
+  border: 3px solid rgb(14, 213, 14);
 }
-.form-control.success small{
+.form-control.success small {
   display: none;
 }
 
-.lbl{
+.lbl {
   display: inline-block;
-  
+
   font-size: 1.5em;
   margin-bottom: 10px;
 }
 
-.form-control>input{
+.form-control > input {
   width: 100%;
   height: 50px;
   font-size: 1.6em;
-  
 }
-.radio-wrap{
+.radio-wrap {
   width: 50%;
   font-size: 1.1em;
   display: flex;
   margin: 0 auto;
-  justify-content:space-between;
+  justify-content: space-between;
 }
 
-.genderRd{
+.genderRd {
   font-size: 1.3em;
 }
 
-input[type=radio]{
+input[type="radio"] {
   width: 15px;
   height: 15px;
 }
 
-
-h1{
-    font-size: 2em;
-    font-weight: 700;
-    margin-bottom: 20px;
+h1 {
+  font-size: 2em;
+  font-weight: 700;
+  margin-bottom: 20px;
 }
 
-.btn{
-  
+.btn {
   cursor: pointer;
   background-color: purple;
   color: white;
   border-radius: 5px;
   font-size: 1.4em;
   margin-top: 10px;
-  
-  
 }
 
-.btn:hover{
+.btn:hover {
   background-color: rgba(128, 0, 128, 0.7);
-  transition: .2s;
+  transition: 0.2s;
 }
 
-.btn-wrap{
+.btn-wrap {
   display: flex;
   justify-content: end;
   width: 100%;
@@ -147,70 +144,68 @@ h1{
     height: 100%;
 } */
 
-small{
-    color: tomato;
-    margin-bottom: 10px;
-    font-size: 0.9em;
+small {
+  color: tomato;
+  margin-bottom: 10px;
+  font-size: 0.9em;
 }
 
-
-textarea{
+textarea {
   border-radius: 5px;
   width: 100%;
-    margin-top:10px;
-    outline: 0;    
-    border: none;
+  margin-top: 10px;
+  outline: 0;
+  border: none;
 }
-textarea:focus{
-    border:1px solid rgba(128, 0, 128, 0.341);
-
+textarea:focus {
+  border: 1px solid rgba(128, 0, 128, 0.341);
 }
 
-.sign{
+.sign {
   width: 50%;
   background-color: purple;
-  color : white;
+  color: white;
   border-radius: 5px;
   font-size: 1.4em;
   cursor: pointer;
   height: 35px;
 }
 
-.sign:hover{
+.sign:hover {
   background-color: rgba(128, 0, 128, 0.7);
-  transition: .2s;
+  transition: 0.2s;
 }
 
-.location option{
+.location option {
   width: 100%;
- font-size: 1.5em;
+  font-size: 1.5em;
 }
 
-select{
+select {
   border-radius: 5px;
   width: 100%;
   height: 50px;
-  font-size:1.3em;
-  border:1px solid rgba(128, 0, 128, 0.341);
+  font-size: 1.3em;
+  border: 1px solid rgba(128, 0, 128, 0.341);
 }
 
-input{
+input {
   border-radius: 5px;
   font-size: 1.1em;
-  border : 1px solid rgba(128, 0, 128, 0.341);
+  border: 1px solid rgba(128, 0, 128, 0.341);
 }
 
-.hobby-wrap{
+.hobby-wrap {
   margin: 0 auto;
   width: 50%;
   display: flex;
   justify-content: space-between;
 }
-.hobby-wrap label{
+.hobby-wrap label {
   font-size: 1.3em;
 }
 
-a{
+a {
   margin-top: 15px;
   color: purple;
   text-decoration: none;

@@ -38,3 +38,17 @@ button {
   display: flex;
   justify-content: end;
 }
+
+.search {
+  margin: 0px 10px;
+}
+
+.search-btn {
+  border: 1px solid purple;
+  border-radius: 3px;
+}
+
+.btn {
+  border: 1px solid purple;
+  border-radius: 3px;
+}

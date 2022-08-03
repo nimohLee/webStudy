@@ -5,17 +5,17 @@
 
 body {
   background-color: rgb(228, 225, 245);
-  height: 1200px; /* 회원가입 폼이 커서 임의로 body height 확장 */
+  height: 1100px; /* 회원가입 폼이 커서 임의로 body height 확장 */
 }
 
 .container {
   position: absolute;
 
   /*  확장된 body height의 절반값(50%)만큼 top에서 내려준 뒤, form-wrap의 height와 padding을 더한 값을 빼 줌*/
-  top: calc(600px - (500px + 50px));
+  top: calc(550px - calc(500px - 50px));
 
-  left: calc(50% - 350px);
-  width: 700px;
+  left: calc(50% - 300px);
+  width: 600px;
   height: 1000px;
 }
 
@@ -47,7 +47,7 @@ body {
 }
 
 .form-main {
-  width: 50%;
+  width: 60%;
 }
 
 .form-control {

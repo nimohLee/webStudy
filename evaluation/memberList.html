@@ -14,12 +14,23 @@
       href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Open+Sans:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <!-- fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
-  <body>
+  <body class="gothic">
     <div class="container">
       <div class="top-table">
         <span>MemberList></span>
         <div class="search-wrap">
+          <i id="refresh" class="fa-solid fa-arrow-rotate-right"
+            >&nbsp;&nbsp;</i
+          >
           <select name="" id="select">
             <option value="sel-name">이름</option>
             <option value="sel-num">번호</option>
@@ -42,8 +53,9 @@
             <th>취미</th>
           </thead>
           <tbody id="table">
-            <tr>
-              <td id="no">5</td>
+            <!-- 1 페이지 -->
+            <tr class="tr1">
+              <td id="no">25</td>
               <td id="name">이호민</td>
               <td id="id">spaker38</td>
               <td id="email">spaker38@naver.com</td>
@@ -51,35 +63,35 @@
               <td id="location">부산</td>
               <td id="hobby">게임</td>
             </tr>
-            <tr>
-              <td id="no">4</td>
-              <td id="name">이호</td>
-              <td id="id">ghals</td>
-              <td id="email">asd@naver.com</td>
-              <td id="gender">남</td>
-              <td id="location">경주</td>
+            <tr class="tr1">
+              <td id="no">24</td>
+              <td id="name">정유진</td>
+              <td id="id">yuuoo</td>
+              <td id="email">yjjeong@naver.com</td>
+              <td id="gender">여</td>
+              <td id="location">부산</td>
               <td id="hobby">운동</td>
             </tr>
-            <tr>
-              <td id="no">3</td>
-              <td id="name">박호민</td>
-              <td id="id">spak8</td>
-              <td id="email">hmpark@naver.com</td>
-              <td id="gender">남</td>
-              <td id="location">양산</td>
-              <td id="hobby">악기</td>
-            </tr>
-            <tr>
-              <td id="no">2</td>
-              <td id="name">정호민</td>
-              <td id="id">babo</td>
-              <td id="email">hmjung@naver.com</td>
-              <td id="gender">남</td>
+            <tr class="tr1">
+              <td id="no">23</td>
+              <td id="name">김예원</td>
+              <td id="id">yeeeee</td>
+              <td id="email">yykim@naver.com</td>
+              <td id="gender">여</td>
               <td id="location">부산</td>
               <td id="hobby">게임</td>
             </tr>
-            <tr>
-              <td id="no">1</td>
+            <tr class="tr1">
+              <td id="no">22</td>
+              <td id="name">전민경</td>
+              <td id="id">mnkkk</td>
+              <td id="email">mkjeon@naver.com</td>
+              <td id="gender">여</td>
+              <td id="location">부산</td>
+              <td id="hobby">게임</td>
+            </tr>
+            <tr class="tr1">
+              <td id="no">21</td>
               <td id="name">주호민</td>
               <td id="id">pearl</td>
               <td id="email">hmjoo@naver.com</td>
@@ -87,15 +99,199 @@
               <td id="location">서울</td>
               <td id="hobby">운동</td>
             </tr>
+            <!--2 페이지 -->
+            <tr class="tr2 hide" id="tr2">
+              <td id="no">20</td>
+              <td id="name">유재석</td>
+              <td id="id">yooooo</td>
+              <td id="email">jsyoo@naver.com</td>
+              <td id="gender">남</td>
+              <td id="location">서울</td>
+              <td id="hobby">운동</td>
+            </tr>
+            <tr class="tr2 hide" id="tr2">
+              <td id="no">19</td>
+              <td id="name">김다미</td>
+              <td id="id">damdam</td>
+              <td id="email">kimdami@naver.com</td>
+              <td id="gender">여</td>
+              <td id="location">서울</td>
+              <td id="hobby">게임</td>
+            </tr>
+            <tr class="tr2 hide" id="tr2">
+              <td id="no">18</td>
+              <td id="name">서현진</td>
+              <td id="id">hjsed</td>
+              <td id="email">hjseo@naver.com</td>
+              <td id="gender">여</td>
+              <td id="location">서울</td>
+              <td id="hobby">악기</td>
+            </tr>
+            <tr class="tr2 hide" id="tr2">
+              <td id="no">17</td>
+              <td id="name">이지은</td>
+              <td id="id">iu</td>
+              <td id="email">jejlee@naver.com</td>
+              <td id="gender">여</td>
+              <td id="location">서울</td>
+              <td id="hobby">악기</td>
+            </tr>
+            <tr class="tr2 hide" id="tr2">
+              <td id="no">16</td>
+              <td id="name">김사랑</td>
+              <td id="id">love</td>
+              <td id="email">lovekim@naver.com</td>
+              <td id="gender">여</td>
+              <td id="location">서울</td>
+              <td id="hobby">운동</td>
+            </tr>
+            <!--3 페이지 -->
+            <tr class="tr3 hide">
+              <td id="no">15</td>
+              <td id="name">민정은</td>
+              <td id="id">jungeuun</td>
+              <td id="email">jujue@naver.com</td>
+              <td id="gender">여</td>
+              <td id="location">부산</td>
+              <td id="hobby">운동</td>
+            </tr>
+            <tr class="tr3 hide">
+              <td id="no">14</td>
+              <td id="name">성이호</td>
+              <td id="id">leeho</td>
+              <td id="email">sunglee@naver.com</td>
+              <td id="gender">남</td>
+              <td id="location">계양</td>
+              <td id="hobby">게임</td>
+            </tr>
+            <tr class="tr3 hide">
+              <td id="no">13</td>
+              <td id="name">민정현</td>
+              <td id="id">minmin</td>
+              <td id="email">jhpark@naver.com</td>
+              <td id="gender">남</td>
+              <td id="location">양구</td>
+              <td id="hobby">운동</td>
+            </tr>
+            <tr class="tr3 hide">
+              <td id="no">12</td>
+              <td id="name">박강산</td>
+              <td id="id">mountain</td>
+              <td id="email">kspark@naver.com</td>
+              <td id="gender">남</td>
+              <td id="location">일본</td>
+              <td id="hobby">게임</td>
+            </tr>
+            <tr class="tr3 hide">
+              <td id="no">11</td>
+              <td id="name">정민경</td>
+              <td id="id">minlk</td>
+              <td id="email">mkjoo@naver.com</td>
+              <td id="gender">여</td>
+              <td id="location">서울</td>
+              <td id="hobby">운동</td>
+            </tr>
+            <!--4 페이지 -->
+            <tr class="tr4 hide">
+              <td id="no">10</td>
+              <td id="name">이민호</td>
+              <td id="id">alsh</td>
+              <td id="email">minho@naver.com</td>
+              <td id="gender">여</td>
+              <td id="location">부산</td>
+              <td id="hobby">운동</td>
+            </tr>
+            <tr class="tr4 hide">
+              <td id="no">9</td>
+              <td id="name">이호선</td>
+              <td id="id">ghtjs</td>
+              <td id="email">hslee@naver.com</td>
+              <td id="gender">남</td>
+              <td id="location">광주</td>
+              <td id="hobby">운동</td>
+            </tr>
+            <tr class="tr4 hide">
+              <td id="no">8</td>
+              <td id="name">호민수</td>
+              <td id="id">minsoo</td>
+              <td id="email">hmsoo@naver.com</td>
+              <td id="gender">남</td>
+              <td id="location">일산</td>
+              <td id="hobby">악기</td>
+            </tr>
+            <tr class="tr4 hide">
+              <td id="no">7</td>
+              <td id="name">김소라</td>
+              <td id="id">sorara</td>
+              <td id="email">sorakim@naver.com</td>
+              <td id="gender">여</td>
+              <td id="location">부산</td>
+              <td id="hobby">게임</td>
+            </tr>
+            <tr class="tr4 hide">
+              <td id="no">6</td>
+              <td id="name">정윤정</td>
+              <td id="id">jengejg</td>
+              <td id="email">yoonj@naver.com</td>
+              <td id="gender">여</td>
+              <td id="location">서울</td>
+              <td id="hobby">게임</td>
+            </tr>
+            <!--5 페이지 -->
+            <tr class="tr5 hide">
+              <td id="no">5</td>
+              <td id="name">김수민</td>
+              <td id="id">suminii</td>
+              <td id="email">smkim38@naver.com</td>
+              <td id="gender">여</td>
+              <td id="location">부산</td>
+              <td id="hobby">게임</td>
+            </tr>
+            <tr class="tr5 hide">
+              <td id="no">4</td>
+              <td id="name">이호찬</td>
+              <td id="id">ghcks</td>
+              <td id="email">hochan@naver.com</td>
+              <td id="gender">여</td>
+              <td id="location">대구</td>
+              <td id="hobby">악기</td>
+            </tr>
+            <tr class="tr5 hide">
+              <td id="no">3</td>
+              <td id="name">박진호</td>
+              <td id="id">jinhhooo</td>
+              <td id="email">hjo@naver.com</td>
+              <td id="gender">남</td>
+              <td id="location">인천</td>
+              <td id="hobby">악기</td>
+            </tr>
+            <tr class="tr5 hide">
+              <td id="no">2</td>
+              <td id="name">김갑산</td>
+              <td id="id">gapsan</td>
+              <td id="email">gap@naver.com</td>
+              <td id="gender">여</td>
+              <td id="location">부산</td>
+              <td id="hobby">게임</td>
+            </tr>
+            <tr class="tr5 hide">
+              <td id="no">1</td>
+              <td id="name">강윤수</td>
+              <td id="id">yoonsu123</td>
+              <td id="email">yskang@naver.com</td>
+              <td id="gender">남</td>
+              <td id="location">양주</td>
+              <td id="hobby">운동</td>
+            </tr>
           </tbody>
         </table>
       </div>
       <div class="paging-btn">
-        <button class="btn">1</button>
-        <button class="btn">2</button>
-        <button class="btn">3</button>
-        <button class="btn">4</button>
-        <button class="btn">5</button>
+        <button id="pBtn" class="btn1">1</button>
+        <button id="pBtn" class="btn2">2</button>
+        <button id="pBtn" class="btn3">3</button>
+        <button id="pBtn" class="btn4">4</button>
+        <button id="pBtn" class="btn5">5</button>
       </div>
     </div>
 

@@ -8,30 +8,39 @@ body {
   background-color: rgb(228, 225, 245);
 }
 
-table,
-th,
-td {
-  text-align: center;
-  padding: 7px 0;
-}
 table {
-  line-height: 1.5;
+  line-height: 2.5;
   margin: 10px 0;
   width: 100%;
   background-color: rgb(238, 236, 236);
+  text-align: center;
 }
 th {
   font-weight: bold;
   color: white;
   background-color: #af58f7;
+  width: 200px;
+}
+td {
+  width: 200px;
 }
 tr {
   border-bottom: 1px solid rgb(212, 212, 212);
 }
+
 button {
   cursor: pointer;
 }
+.tb {
+  display: none;
+}
 
+.hide {
+  display: none;
+}
+.show {
+  display: "";
+}
 .container {
   margin: 100px auto;
   width: 85vw;
@@ -45,6 +54,11 @@ button {
   width: 100%;
   display: flex;
   justify-content: end;
+  align-items: center;
+}
+
+i {
+  cursor: pointer;
 }
 
 .search {
@@ -59,4 +73,12 @@ button {
 .btn {
   border: 1px solid purple;
   border-radius: 3px;
+}
+
+#pBtn {
+  border: 1px solid #af58f7;
+  background-color: #af58f7;
+  color: white;
+  border-radius: 5px;
+  height: 25px;
 }

@@ -34,7 +34,7 @@ h1 {
   margin-bottom: 20px;
 }
 label {
-  font-size: 1.3em;
+  font-size: 1em;
   margin-bottom: 10px;
 }
 
@@ -69,6 +69,7 @@ button:hover {
   transition: 0.3s;
 }
 small {
+  font-size: 0.8em;
   display: none;
 }
 

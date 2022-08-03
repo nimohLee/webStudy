@@ -65,3 +65,10 @@ function successCheck(input) {
   formControl.className = "form-control success";
   return true;
 }
+
+// 페이지 로딩 천천히
+document.addEventListener("DOMContentLoaded", () => {
+  window.setTimeout(() => {
+    document.body.classList.remove("fade");
+  });
+});

@@ -4,15 +4,29 @@
 @import "reset.css";
 
 body {
+  width: 100vw;
+  height: 1200x; /* 회원가입 폼이 커서 임의로 body height 확장 */
   background-color: rgb(228, 225, 245);
-  height: 1100px; /* 회원가입 폼이 커서 임의로 body height 확장 */
+  opacity: 1;
+  transition-duration: 0.5s;
+  transition-property: opacity;
+}
+body.fade {
+  opacity: 0;
+}
+
+i {
+  position: absolute;
+  top: 37px;
+  right: 0px;
+  font-size: 1.6em;
+  color: rgba(0, 0, 0, 0.329);
 }
 
 .container {
   position: absolute;
 
   /*  확장된 body height의 절반값(50%)만큼 top에서 내려준 뒤, form-wrap의 height와 padding을 더한 값을 빼 줌*/
-  top: calc(550px - calc(500px - 50px));
 
   left: calc(50% - 300px);
   width: 600px;
@@ -23,15 +37,15 @@ body {
   width: 100%;
   height: 100%;
 
-  margin-bottom: 50px;
+  /* margin-bottom: 50px; */
 }
 
 .form-wrap {
   /* padding: 20px; */
+
   background-color: white;
   box-shadow: 0 0 10px 3px rgba(185, 173, 255, 0.589);
   border: 1px solid rgb(228, 225, 245);
-  border-radius: 7px;
 
   width: 100%;
 
@@ -39,11 +53,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  /* -content: center; */
   align-items: center;
-  /* border : 3px solid lightslategrey; */
   border-radius: 10px;
-  /* box-shadow: 0 0 10px 0px; */
 }
 
 .form-main {
@@ -51,20 +62,18 @@ body {
 }
 
 .form-control {
+  position: relative;
+  top: 0;
+  left: 0;
   display: flex;
   flex-direction: column;
   font-size: 0.6em;
   width: 100%;
-  /* margin:20px 0 20px 0; */
-  /* margin:0 auto; */
-  /* padding-left: 60px; */
+  margin-bottom: 20px;
 }
 .form-control small {
   display: none;
-  color: tomato;
-}
-
-.form-control.error {
+  color: red;
 }
 
 .form-control.error small {
@@ -72,7 +81,7 @@ body {
 }
 
 .form-control.error input {
-  border: 3px solid tomato;
+  border: 3px solid red;
 }
 
 .form-control.success input {
@@ -84,7 +93,7 @@ body {
 
 .lbl {
   display: inline-block;
-
+  font-weight: bold;
   font-size: 1.5em;
   margin-bottom: 10px;
 }
@@ -112,14 +121,15 @@ input[type="radio"] {
 }
 
 h1 {
-  font-size: 1.5em;
+  color: #3700b3;
+  font-size: 2.5em;
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 .btn {
   cursor: pointer;
-  background-color: purple;
+  background-color: #6200ee;
   color: white;
   border-radius: 5px;
   font-size: 1.4em;
@@ -127,7 +137,7 @@ h1 {
 }
 
 .btn:hover {
-  background-color: rgba(128, 0, 128, 0.7);
+  background-color: #6300eec4;
   transition: 0.2s;
 }
 
@@ -139,7 +149,7 @@ h1 {
 }
 
 small {
-  color: tomato;
+  color: #b00020;
   margin-bottom: 10px;
   font-size: 0.9em;
 }
@@ -158,7 +168,7 @@ textarea:focus {
 
 .sign {
   width: 50%;
-  background-color: purple;
+  background-color: #6200ee;
   color: white;
   border-radius: 5px;
   font-size: 1.4em;
@@ -167,7 +177,7 @@ textarea:focus {
 }
 
 .sign:hover {
-  background-color: rgba(128, 0, 128, 0.7);
+  background-color: #6300eec4;
   transition: 0.2s;
 }
 
@@ -177,17 +187,16 @@ textarea:focus {
 }
 
 select {
-  border-radius: 5px;
+  padding: 5px;
   width: 100%;
   height: 30px;
   font-size: 1.3em;
-  border: 1px solid rgba(128, 0, 128, 0.341);
+  border: solid 1px #dadada;
 }
 
 input {
-  border-radius: 5px;
-  font-size: 1.1em;
-  border: 1px solid rgba(128, 0, 128, 0.341);
+  padding: 5px;
+  border: solid 1px #dadada;
 }
 
 .hobby-wrap {

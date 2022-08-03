@@ -23,7 +23,8 @@
       referrerpolicy="no-referrer"
     />
   </head>
-  <body class="gothic">
+
+  <body class="gothic fade">
     <div class="container">
       <div class="top-table">
         <span>MemberList></span>
@@ -31,7 +32,7 @@
           <i id="refresh" class="fa-solid fa-arrow-rotate-right"
             >&nbsp;&nbsp;</i
           >
-          <select name="" id="select">
+          <select name="select" class="select" id="select">
             <option value="sel-name">이름</option>
             <option value="sel-num">번호</option>
             <option value="sel-id">아이디</option>
@@ -41,7 +42,7 @@
             <option value="sel-hobby">취미</option>
           </select>
           <input type="text" name="search" id="search" class="search" />
-          <button class="search-btn" id="search-btn">검색</button>
+          <button type="submit" class="search-btn" id="search-btn">검색</button>
         </div>
       </div>
       <div class="table-wrap">

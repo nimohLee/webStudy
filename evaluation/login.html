@@ -13,9 +13,18 @@
       href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Open+Sans:wght@400;700&display=swap"
       rel="stylesheet"
     />
+
+    <!-- fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
 
-  <body>
+  <body class="fade">
     <div class="login-wrap gothic">
       <form method="post">
         <div class="title">
@@ -24,23 +33,30 @@
         <div class="login-main">
           <div class="form-control">
             <label for="">아이디</label>
+            <i class="fa-solid fa-user"></i>
             <input type="text" name="id" id="id" placeholder="ID" />
 
             <small></small>
           </div>
           <div class="form-control">
             <label for="">비밀번호</label>
+            <i class="fa-solid fa-key"></i>
             <input type="password" name="pw" id="pw" placeholder="PW" />
             <small></small>
           </div>
         </div>
         <div class="login-bottom">
           <a href="./register.html">아이디가 없으신가요?</a>
-          <button type="button" onClick="return validateLogin();">
+          <button type="submit" onClick="return validateLogin();">
             로그인
           </button>
         </div>
       </form>
+      <a
+        href="./memberList.html"
+        style="font-size: 0.8em; color: #3700b3; margin-top: 10px"
+        >Member List</a
+      >
     </div>
 
     <script src="./js/login.js"></script>

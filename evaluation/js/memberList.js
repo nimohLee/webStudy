@@ -121,5 +121,17 @@ reBtn.addEventListener("click", () => {
   location.reload();
 });
 
-// 검색(search)버튼 클릭이벤트리스너
+// 검색(search)버튼 or Text enter 클릭이벤트리스너
 btn.addEventListener("click", search);
+text.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    search();
+  }
+});
+
+// 페이지 로딩 천천히
+document.addEventListener("DOMContentLoaded", () => {
+  window.setTimeout(() => {
+    document.body.classList.remove("fade");
+  });
+});

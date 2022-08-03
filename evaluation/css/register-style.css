@@ -29,8 +29,8 @@ body {
 .form-wrap {
   /* padding: 20px; */
   background-color: white;
-  box-shadow: 0 0 10px 3px #4f4d4c;
-  border: 1px solid rgba(34, 36, 38, 0.2);
+  box-shadow: 0 0 10px 3px rgba(185, 173, 255, 0.589);
+  border: 1px solid rgb(228, 225, 245);
   border-radius: 7px;
 
   width: 100%;

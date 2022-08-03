@@ -11,10 +11,15 @@ function validateLogin() {
   uID.addEventListener("keyup", () => {
     idValidate();
   });
+  uPW.addEventListener("keyup", () => {
+    pwValidate();
+  });
 
   if (idOK && pwOK)
     location.href =
       "https://nid.naver.com/nidlogin.login?mode=form&url=https%3A%2F%2Fwww.naver.com";
+
+  return false;
 }
 
 function idValidate() {
@@ -60,11 +65,3 @@ function successCheck(input) {
   formControl.className = "form-control success";
   return true;
 }
-
-// document.getElementById('frm').addEventListener('submit', (e) => {
-//     e.preventDefault();
-//     if (nameOK && idOK && pwOK && pw2OK && emailOK && genderOK && locationOK && hobbyOK && selfOK) {
-//         location.href = './login.html';
-//     } else
-//         validateCheck();
-// })

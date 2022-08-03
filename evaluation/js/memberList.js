@@ -34,17 +34,6 @@ function search() {
   switch (sel.value) {
     case "sel-name":
       names.forEach((name) => {
-        // const tr = name.parentElement;
-        // const tds = tr.querySelectorAll("td");
-        // const para = document.createElement("tr");
-        // para.innerHTML = `<td>${tds[0].textContent}</td><td>${tds[1].textContent}</td><td>${tds[2].textContent}</td><td>${tds[3].textContent}</td><td>${tds[4].textContent}</td><td>${tds[5].textContent}</td><td>${tds[6].textContent}</td>`;
-        // if (name.textContent == text.value) {
-        //   if (isFirstLoop) {
-        //     table.innerHTML = "";
-        //     table.appendChild(para);
-        //     isFirstLoop = false;
-        //   } else table.appendChild(para);
-        // }
         searchLoop(name);
       });
       isFirstLoop = true;

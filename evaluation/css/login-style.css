@@ -12,12 +12,13 @@ body {
   position: absolute;
   top: calc(50% - 200px); /* calc(50% - (height + padding) */
   left: calc(50% - 240px); /* calc(50% - (width + padding) */
-  box-shadow: 0 0 10px 3px #4f4d4c;
+
   background-color: white;
   width: 400px;
   height: 300px;
   padding: 40px 50px;
-  border: 1px solid rgba(34, 36, 38, 0.2);
+  box-shadow: 0 0 10px 3px rgba(185, 173, 255, 0.589);
+  border: 1px solid rgb(228, 225, 245);
   border-radius: 7px;
 
   display: flex;

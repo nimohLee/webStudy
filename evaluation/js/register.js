@@ -21,7 +21,7 @@ const inst = document.getElementById("inst");
 const game = document.getElementById("game");
 
 //declare self-introduce
-const selfText = document.querySelector("textarea");
+const selfIntro = document.querySelector("textarea");
 
 // declare isInput(boolean)
 let nameOK = false;
@@ -31,8 +31,9 @@ let pw2OK = false;
 let emailOK = false;
 let genderOK = false;
 let hobbyOK = false;
-let selfOK = false;
+let selfIntroOK = false;
 let locationOK = false;
+let duplicateOK = false;
 
 //hobbyIsChecked?
 let leastChecked = 0;
@@ -40,14 +41,33 @@ let isSecond = false;
 
 // 중복확인 버튼 클릭 시 팝업 function
 function popupOpen(url, nick, width, height) {
-  console.log("hi");
-  let screen = "";
-  let left = (screen.availWidth - width) / 2;
-  let top = (screen.availHeight - height) / 2;
-  screen =
-    "left=" + left + ", top=" + top + ", width=" + width + ", height=" + height;
-  window.open(url, nick, screen);
+  if (idOK) {
+    let screen = "";
+    let left = (screen.availWidth - width) / 2;
+    let top = (screen.availHeight - height) / 2;
+    screen =
+      "left=" + left + ", top=" + top + ", width=" + width + ", height=" + height;
+    window.open(url, nick, screen);
+    duplicateOK = true;
+  } else {
+    alert('아이디를 8자 이상 11자 이하 소문자/숫자로 입력해주세요');
+    duplicateOK = false;
+  }
 }
+
+// ID 중복확인(최초 keyUP에 따른 idOK의 참 거짓을 분리해주기 위한 eventListener 
+uID.addEventListener("keyup", (e) => {
+  console.log('키업');
+  if (regExpID(e.currentTarget.value)) {
+    idOK = true;
+  } else if (regExpID(e.currentTarget.value)) {
+    idOK = false;
+  } else {
+    idOK = false;
+  }
+});
+
+
 
 // 유효성 검사 function
 function validateCheck() {
@@ -104,6 +124,7 @@ function validateCheck() {
 
   //ID
   uID.addEventListener("keyup", (e) => {
+    console.log('키업');
     if (regExpID(e.currentTarget.value)) {
       idOK = successCheck(uID);
     } else if (regExpID(e.currentTarget.value)) {
@@ -179,6 +200,8 @@ function validateCheck() {
 
   if (locations.options[locations.selectedIndex].value == "") {
     errorCheck(locations, "지역을 선택해주세요");
+  } else {
+    locationOK = successCheck(locations);
   }
   locations.addEventListener("change", (e) => {
     if (e.currentTarget.value != "") {
@@ -201,6 +224,8 @@ function validateCheck() {
       "취미를 하나 이상 선택해주세요"
     );
 
+  } else {
+    hobbyOK = successCheck(document.querySelector(".hobby-wrap"));
   }
 
   hobbies.forEach((hobby) => {
@@ -226,23 +251,20 @@ function validateCheck() {
 
 
 
-
-
-  hobbies.addEventListener('change', () => {
-
-  })
-
   //self-introduce validation
-  const selfValue = selfText.value.trim();
+  const selfValue = selfIntro.value.trim();
   if (selfValue === null || selfValue === "" || selfValue.length < 10) {
-    errorCheck(selfText, "자기소개를 10자 이상 입력해주세요");
+    errorCheck(selfIntro, "자기소개를 10자 이상 입력해주세요");
+    selfIntroOK = false;
+  } else {
+    selfIntroOK = successCheck(selfIntro);
   }
-  selfText.addEventListener("keyup", (e) => {
+  selfIntro.addEventListener("keyup", (e) => {
     if (e.currentTarget.value.length > 10) {
-      selfOK = successCheck(selfText);
+      selfIntroOK = successCheck(selfIntro);
     } else {
-      errorCheck(selfText, "자기소개를 10자 이상 입력해주세요");
-      selfOK = false;
+      errorCheck(selfIntro, "자기소개를 10자 이상 입력해주세요");
+      selfIntroOK = false;
     }
   });
 }
@@ -288,8 +310,11 @@ function successCheck(input) {
 
 document.getElementById("frm").addEventListener("submit", (e) => {
   e.preventDefault();
-  if (
-    nameOK &&
+  validateCheck();
+  if (!duplicateOK) {
+    alert('아이디 중복확인을 해주세요');
+  } else if (
+    duplicateOK &&
     idOK &&
     pwOK &&
     pw2OK &&
@@ -297,10 +322,20 @@ document.getElementById("frm").addEventListener("submit", (e) => {
     genderOK &&
     locationOK &&
     hobbyOK &&
-    selfOK
+    selfIntroOK
   ) {
     location.href = "./login.html";
-  } else validateCheck();
+  } else {
+    console.log('dupOK=' + duplicateOK);
+    console.log('idOK=' + idOK);
+    console.log('pwOK=' + pwOK);
+    console.log('pw2OK=' + pw2OK);
+    console.log('emailOK=' + emailOK);
+    console.log('genderOK=' + genderOK);
+    console.log('locationOK=' + locationOK);
+    console.log('hobbyOK=' + hobbyOK);
+    console.log('selfOK=' + selfOK);
+  }
 });
 
 // 페이지 로딩 천천히

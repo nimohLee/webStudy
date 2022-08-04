@@ -200,14 +200,21 @@ function validateCheck() {
       document.querySelector(".hobby-wrap"),
       "취미를 하나 이상 선택해주세요"
     );
+
   }
 
   hobbies.forEach((hobby) => {
     hobby.addEventListener("change", () => {
       if (hobby.checked) {
         leastChecked++;
-      } else leastChecked--;
-      if (leastChecked < 1)
+      } else {
+        if (leastChecked != 0)
+          leastChecked--;
+
+      }
+
+
+      if (leastChecked == 0)
         errorCheck(
           document.querySelector(".hobby-wrap"),
           "취미를 하나 이상 선택해주세요"
@@ -215,6 +222,15 @@ function validateCheck() {
       else hobbyOK = successCheck(document.querySelector(".hobby-wrap"));
     });
   });
+  leastChecked = 0;
+
+
+
+
+
+  hobbies.addEventListener('change', () => {
+
+  })
 
   //self-introduce validation
   const selfValue = selfText.value.trim();

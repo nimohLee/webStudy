@@ -33,12 +33,8 @@ let genderOK = false;
 let hobbyOK = false;
 let selfIntroOK = false;
 let locationOK = false;
-<<<<<<< HEAD
-let dupOK = false;
-=======
 let duplicateOK = false;
 
->>>>>>> 2cb7d3837d1a223b3d4bad09900594cf24f889d2
 //hobbyIsChecked?
 let leastChecked = 0;
 let isSecond = false;
@@ -50,28 +46,6 @@ function popupOpen(url, nick, width, height) {
     let left = (screen.availWidth - width) / 2;
     let top = (screen.availHeight - height) / 2;
     screen =
-<<<<<<< HEAD
-      "left=" +
-      left +
-      ", top=" +
-      top +
-      ", width=" +
-      width +
-      ", height=" +
-      height;
-    window.open(url, nick, screen);
-    dupOK = true;
-  } else {
-    alert("아이디를 8자 이상 입력해주세요");
-  }
-}
-
-uID.addEventListener("keyup", (e) => {
-  dupOK = false;
-  if (regExpID(e.currentTarget.value)) {
-    idOK = true;
-  } else if (!regExpID(e.currentTarget.value)) {
-=======
       "left=" + left + ", top=" + top + ", width=" + width + ", height=" + height;
     window.open(url, nick, screen);
     duplicateOK = true;
@@ -87,18 +61,14 @@ uID.addEventListener("keyup", (e) => {
   if (regExpID(e.currentTarget.value)) {
     idOK = true;
   } else if (regExpID(e.currentTarget.value)) {
->>>>>>> 2cb7d3837d1a223b3d4bad09900594cf24f889d2
     idOK = false;
   } else {
     idOK = false;
   }
 });
 
-<<<<<<< HEAD
-=======
 
 
->>>>>>> 2cb7d3837d1a223b3d4bad09900594cf24f889d2
 // 유효성 검사 function
 function validateCheck() {
   /* -------- 회원가입 폼 제출 시 초기 validate 출력  -------*/
@@ -106,37 +76,37 @@ function validateCheck() {
   if (regExpName(uName.value.trim())) {
     nameOK = successCheck(uName);
   } else if (uName.value.length == "") {
-    nameOK = errorCheck(uName, "이름을 입력해주세요");
+    errorCheck(uName, "이름을 입력해주세요");
   } else {
-    nameOK = errorCheck(uName, "이름에는 한글이름만 입력할 수 있습니다");
+    errorCheck(uName, "이름에는 한글이름만 입력할 수 있습니다");
   }
 
   // ID
   if (regExpID(uID.value.trim())) {
     idOK = successCheck(uID);
   } else if (regExpID(uID.value.trim())) {
-    idOK = errorCheck(
+    errorCheck(
       uID,
       "아이디는 영어 소문자, 영어 대문자, 숫자 조합만 가능합니다"
     );
   } else {
-    idOK = errorCheck(uID, "아이디를 8자 이상 11자 미만으로 입력해주세요");
+    errorCheck(uID, "아이디를 8자 이상 11자 미만으로 입력해주세요");
   }
 
   //PW
   if (uPW.value.trim().length > 11) {
     pwOK = successCheck(uPW);
   } else {
-    pwOK = errorCheck(uPW, "비밀번호는 12자 이상 입력해주세요");
+    errorCheck(uPW, "비밀번호는 12자 이상 입력해주세요");
   }
 
   //PW2
   if (uPW2.value.trim() == "" || uPW2.value.trim() === null) {
-    pw2OK = errorCheck(uPW2, "비밀번호 확인을 입력해주세요");
+    errorCheck(uPW2, "비밀번호 확인을 입력해주세요");
   } else if (uPW.value.trim() == uPW2.value.trim()) {
     pw2OK = successCheck(uPW2);
   } else {
-    pw2OK = errorCheck(uPW2, "비밀번호가 다릅니다");
+    errorCheck(uPW2, "비밀번호가 다릅니다");
   }
 
   /* 회원가입 폼 첫 제출 후 keyup에 따른 error or success 변화 */
@@ -146,23 +116,19 @@ function validateCheck() {
     if (regExpName(e.currentTarget.value)) {
       nameOK = successCheck(uName);
     } else if (e.currentTarget.value.length == "") {
-      nameOK = errorCheck(uName, "이름을 입력해주세요");
+      errorCheck(uName, "이름을 입력해주세요");
     } else {
-      nameOK = errorCheck(uName, "이름에는 글자만 입력할 수 있습니다");
+      errorCheck(uName, "이름에는 글자만 입력할 수 있습니다");
     }
   });
 
   //ID
   uID.addEventListener("keyup", (e) => {
-<<<<<<< HEAD
-    dupOK = false;
-=======
     console.log('키업');
->>>>>>> 2cb7d3837d1a223b3d4bad09900594cf24f889d2
     if (regExpID(e.currentTarget.value)) {
       idOK = successCheck(uID);
     } else if (regExpID(e.currentTarget.value)) {
-      idOK = errorCheck(
+      errorCheck(
         uID,
         "아이디는 영어 소문자, 영어 대문자, 숫자 조합만 가능합니다"
       );
@@ -176,7 +142,7 @@ function validateCheck() {
     if (e.currentTarget.value.length > 11) {
       pwOK = successCheck(uPW);
     } else {
-      pwOK = errorCheck(uPW, "비밀번호는 12자리 이상 입력해주세요");
+      errorCheck(uPW, "비밀번호는 12자리 이상 입력해주세요");
     }
   });
 
@@ -186,16 +152,16 @@ function validateCheck() {
     if (uPW.value.trim() == pw2Event.trim()) {
       pw2OK = successCheck(uPW2);
     } else if (pw2Event.trim() === null || pw2Event.trim() == "") {
-      pw2OK = errorCheck(uPW2, "비밀번호 확인을 입력해주세요");
+      errorCheck(uPW2, "비밀번호 확인을 입력해주세요");
     } else {
-      pw2OK = errorCheck(uPW2, "비밀번호가 다릅니다");
+      errorCheck(uPW2, "비밀번호가 다릅니다");
     }
   });
 
   if (email.value === null || email.value == "") {
-    emailOK = errorCheck(email, "이메일을 입력해주세요");
+    errorCheck(email, "이메일을 입력해주세요");
   } else if (!isEmail(email.value.trim())) {
-    emailOK = errorCheck(email, "올바른 이메일 형식이 아닙니다.");
+    errorCheck(email, "올바른 이메일 형식이 아닙니다.");
   } else {
     emailOK = successCheck(email);
   }
@@ -207,9 +173,9 @@ function validateCheck() {
     //@ 체크
     //@ 뒤에 .있으면 true 없으면 false
     if (e.currentTarget.value === null || e.currentTarget.value == "") {
-      emailOK = errorCheck(email, "이메일을 입력해주세요");
+      errorCheck(email, "이메일을 입력해주세요");
     } else if (!isEmail(val)) {
-      emailOK = errorCheck(email, "올바른 이메일 형식이 아닙니다.");
+      errorCheck(email, "올바른 이메일 형식이 아닙니다.");
     } else {
       emailOK = successCheck(email);
     }
@@ -218,6 +184,7 @@ function validateCheck() {
   //gender validation
 
   genders.forEach((gender) => {
+
     if (gender.checked) {
       genderOK = true;
     }
@@ -263,20 +230,11 @@ function validateCheck() {
   }
 
   hobbies.forEach((hobby) => {
+    console.log('hi');
+
     hobby.addEventListener("change", () => {
       if (hobby.checked) {
         leastChecked++;
-<<<<<<< HEAD
-      } else leastChecked--;
-    });
-  });
-  if (leastChecked == 1)
-    errorCheck(
-      document.querySelector(".hobby-wrap"),
-      "취미를 하나 이상 선택해주세요"
-    );
-  else hobbyOK = successCheck(document.querySelector(".hobby-wrap"));
-=======
       } else {
         if (leastChecked != 0)
           leastChecked--;
@@ -295,7 +253,6 @@ function validateCheck() {
   leastChecked = 0;
 
 
->>>>>>> 2cb7d3837d1a223b3d4bad09900594cf24f889d2
 
   //self-introduce validation
   const selfValue = selfIntro.value.trim();
@@ -309,12 +266,8 @@ function validateCheck() {
     if (e.currentTarget.value.length > 10) {
       selfIntroOK = successCheck(selfIntro);
     } else {
-<<<<<<< HEAD
-      errorCheck(selfText, "자기소개를 10자 이상 입력해주세요");
-=======
       errorCheck(selfIntro, "자기소개를 10자 이상 입력해주세요");
       selfIntroOK = false;
->>>>>>> 2cb7d3837d1a223b3d4bad09900594cf24f889d2
     }
   });
 }
@@ -349,7 +302,6 @@ function errorCheck(input, msg) {
 
   formControl.className = "form-control error";
   small.innerHTML = msg;
-  return false;
 }
 
 function successCheck(input) {
@@ -362,35 +314,6 @@ function successCheck(input) {
 document.getElementById("frm").addEventListener("submit", (e) => {
   e.preventDefault();
   validateCheck();
-<<<<<<< HEAD
-  if (dupOK) {
-    if (
-      nameOK &&
-      idOK &&
-      pwOK &&
-      pw2OK &&
-      emailOK &&
-      genderOK &&
-      locationOK &&
-      hobbyOK &&
-      selfOK
-    ) {
-      location.href = "./login.html";
-      console.log("hi");
-    } else {
-      console.log(nameOK);
-      console.log(idOK);
-      console.log(pwOK);
-      console.log(pw2OK);
-      console.log(emailOK);
-      console.log(genderOK);
-      console.log(locationOK);
-      console.log(hobbyOK);
-      console.log(selfOK);
-    }
-  } else {
-    alert("아이디 중복확인을 해주세요");
-=======
   if (!duplicateOK) {
     alert('아이디 중복확인을 해주세요');
   } else if (
@@ -406,16 +329,7 @@ document.getElementById("frm").addEventListener("submit", (e) => {
   ) {
     location.href = "./login.html";
   } else {
-    console.log('dupOK=' + duplicateOK);
-    console.log('idOK=' + idOK);
-    console.log('pwOK=' + pwOK);
-    console.log('pw2OK=' + pw2OK);
-    console.log('emailOK=' + emailOK);
-    console.log('genderOK=' + genderOK);
-    console.log('locationOK=' + locationOK);
-    console.log('hobbyOK=' + hobbyOK);
-    console.log('selfOK=' + selfOK);
->>>>>>> 2cb7d3837d1a223b3d4bad09900594cf24f889d2
+    return false;
   }
 });
 

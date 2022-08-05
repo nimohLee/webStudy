@@ -34,6 +34,8 @@ body.fade {
 
 h1 {
   font-size: 2.5em;
+  color: #3700b3;
+  font-weight: bold;
 }
 
 .login-main {

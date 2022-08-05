@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+            1. 여러개의 객체 생성
+            2. 객체생성 : 변수명 - users_create
+              - 세부정보 : email(s)-이메일, passwd(s)-비밀번호, gender(s)-성별
+            3. stringify(), parse()
+            4. print : console.log();
+       */
+
+      const users_create = [
+        {
+          email: "spaker38@naver.com",
+          passwd: "1234",
+          gender: "male",
+        },
+        {
+          email: "spasdzz@naver.com",
+          passwd: "1234",
+          gender: "female",
+        },
+        {
+          email: "april@sss.com",
+          passwd: "1234",
+          gender: "male",
+        },
+      ];
+
+      console.log(users_create);
+      const result = JSON.stringify(users_create, null, 2);
+      console.log("JSON = " + result);
+      console.log(JSON.parse(result));
+      console.log(users_create == JSON.parse(result));
+    </script>
+  </body>
+</html>

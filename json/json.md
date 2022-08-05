@@ -29,20 +29,26 @@
 ## 3. json(Javascript Object Notation)
 
 - {} : 객체 하나
-- {"key":value}
+- `{"key":value}`
 
   - "별명":값
   - "변수":값
 
-    - ex) const user = {
-      "username" : "홍길동",
-      "age" : 15,
-      "isActive" : false,
-      "introduce" : null
-      };
+    - ex)
+
+    ```js
+    const user = {
+      username: "홍길동",
+      age: 15,
+      isActive: false,
+      introduce: null,
+    };
+    ```
 
     - [{},{},{}] : 객체 여러 개
-      ex) const users = [
+      ex)
+      ```js
+      const users = [
       {
       "userid" : "busanit",
       "age" : 22
@@ -56,6 +62,7 @@
       "age" : 20
       }
       ];
+      ```
 
 ## 4. json 사용하는 이유 : 인터넷으로 데이터를 주고받을 때 사용
 
@@ -64,10 +71,10 @@
 - 사용자 -> 데이터 전송 -> json 변환 -> 서버
 
   - Header값에 json을 설정해서 보냄
-    - (Content-Type:application/json)
-  - 'JSON.stringify()'으로 변환
+    - (`Content-Type:application/json`)
+  - '`JSON.stringify()`'으로 변환
     - 사용자 <- 데이터 전송 <- json 변환 <- 서버
-      - JSON.parse();
+      - `JSON.parse();`
 
 - Node.js : Server Javascript
   - 사용자가 javascript로 프로그래밍 -> json 변환 -> 서버로 전송

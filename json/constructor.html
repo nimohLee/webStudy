@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+      클래스 작성 규칙
+      1. 클래스 작성(파일과 동일)
+      2. 생성자
+      3. method() - 동작
+      4. 출력코드(print)
+    */
+      class Sum {
+        // javascript constructor's name is 'constructor'
+        constructor(num1, num2) {
+          this.num1 = num1;
+          this.num2 = num2;
+        }
+
+        add() {
+          return this.num1 + this.num2;
+        }
+        mul() {
+          console.log(this.num1 * this.num2);
+        }
+      }
+      const sum = new Sum(3, 4);
+      console.log(sum.add());
+      sum.mul();
+    </script>
+  </body>
+</html>

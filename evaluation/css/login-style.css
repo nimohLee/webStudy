@@ -1,0 +1,121 @@
+@charset "utf-8";
+
+/* reset.css import */
+@import "reset.css";
+
+body {
+  width: 100vw;
+  background-color: rgb(228, 225, 245);
+  overflow: hidden;
+  opacity: 1;
+  transition-duration: 0.5s;
+  transition-property: opacity;
+}
+body.fade {
+  opacity: 0;
+}
+
+.login-wrap {
+  position: absolute;
+  top: calc(50% - 200px); /* calc(50% - (height + padding) */
+  left: calc(50% - 240px); /* calc(50% - (width + padding) */
+
+  background-color: white;
+  width: 400px;
+  height: 300px;
+  padding: 40px 50px;
+  box-shadow: 0 0 10px 3px rgba(185, 173, 255, 0.589);
+  border: 1px solid rgb(228, 225, 245);
+  border-radius: 7px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 2.5em;
+  color: #3700b3;
+  font-weight: bold;
+}
+
+.login-main {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+label {
+  font-size: 1em;
+  margin-bottom: 10px;
+}
+
+input {
+  height: 20px;
+  border-radius: 5px;
+  font-size: 1.1em;
+  border: solid 1px #dadada;
+  padding: 10px;
+}
+
+input::placeholder {
+  font-size: 0.8em;
+}
+.login-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: purple;
+}
+button {
+  cursor: pointer;
+  background-color: #6200ee;
+  color: white;
+  border-radius: 5px;
+  width: 60px;
+  height: 30px;
+  transition: 0.3s;
+}
+button:hover {
+  background-color: #6200eec4;
+  transition: 0.3s;
+}
+small {
+  font-size: 0.8em;
+  display: none;
+}
+
+i {
+  position: absolute;
+  top: 40px;
+  right: 15px;
+  color: rgba(0, 0, 0, 0.329);
+}
+
+.form-control {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+.form-control small {
+  display: none;
+  color: red;
+}
+
+.form-control.error small {
+  display: block;
+}
+
+.form-control.error input {
+  border: 1.5px solid red;
+}
+
+.form-control.success input {
+}
+.form-control.success small {
+  display: none;
+}

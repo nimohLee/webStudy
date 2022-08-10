@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+          1. 회원가입 객체생성 : 여러 명 -> user_insert
+            - 세부정보 : html 작업할 때 없어도 id 설정(primary key)
+                      - 중복되면 x, 숫자 형태
+              - userid(s) - 사용자 아이디
+              - passwd(s) - 사용자 비밀번호
+              - username(s) - 사용자 이름
+        */
+
+      /* html 폼에서 넘어 오는 변수 값 */
+
+      const user = {
+        name: "이호민",
+        age: "20",
+        print: function () {
+          console.log(`이름은 ${user.name}이고 나이는 ${user.age}입니다`);
+        },
+      };
+
+      const user_insert = {
+        id: 1,
+        userid: "busanit",
+        passwd: "12345",
+        username: "이호민",
+        add: function (a, b) {
+          console.log(a + b);
+        },
+        homin: user,
+      };
+
+      const objectArray = [
+        {
+          id: 1,
+          userid: "busanit",
+          passwd: "00000",
+        },
+        {
+          id: 2,
+          userid: "seoulit",
+          passwd: "11111",
+        },
+      ];
+
+      console.log(objectArray);
+      console.dir(objectArray);
+
+      /* 데이터 전체 출력 */
+
+      objectArray.forEach((object) => {
+        console.log(object);
+      });
+
+      for (let i = 0; i < objectArray.length; i++) {
+        console.log(objectArray[i].id);
+      }
+
+      const { id, passwd } = objectArray[1];
+      console.log(`아이디는 ${id} - 비밀번호는 ${passwd}`);
+      console.log(JSON.stringify(objectArray, null, 2));
+    </script>
+  </body>
+</html>

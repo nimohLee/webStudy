@@ -1,0 +1,109 @@
+1. mysql 접속
+ cmd 창 
+ - mysql -uroot -p
+
+2. 
+데이터베이스(폴더) > 테이블(파일)
+
+데이터베이스 보기
+show databases;
+
+데이터베이스를 선택하는 명령어는
+- use 데이터베이스이름
+
+데이터베이스 안에 있는 테이블 확인
+- show tables;
+
+테이블(파일) 내용 확인
+- SELECT user FROM user;
+
+서버는 절대 관리자 계정으로 작업 X
+-> 사용자 계정을 만들어서 사용
+ex) 프로젝트 쇼핑몰
+    shop/1234 계정을 생성한 후 작업
+
+계정 생성
+CREATE user shop@'localhost' identified by '1234';
+
+사용자 제거
+DROP user shop@'localhost';
+
+권한 설정
+grant all privileges on shop.* to shop@'localhost' with grant option;
+flush privileges;
+
+exit;
+mysql -ushop -p
+show databases;
+
+CREATE database shopping;
+show databases;
+
+use shop;
+
+CREATE(생성), ALTER(수정), DROP(제거)
+ 
+- SELECT(자료를 보여주는 명령어) 
+- INSERT(자료를 입력하는 명령어)
+- UPDATE(자료의 내용을 바꾸는 명령어)
+- DELETE(자료를 삭제)
+
+------------------------------------------------------------------>
+0. 관리자 계정으로 접속
+1. 계정생성(busanit/....)
+   - CREATE user busanit@'%' identified by '1111';
+
+2. 권한설정
+   - grant all privileges on busanit.* to busanit@'%' with grant option;
+   - flush privileges;
+
+3. exit
+   생성한 계정으로 접속
+
+4. show databases; - 사용할 데이터베이스가 있는 지
+
+5. CREATE DATABASE busanit;
+   - 폴더 안에 회원가입, 게시판, 상품관리, 상품카트... => DATABASE
+
+6. show databases;
+
+7. use busanit;
+
+7. 회원가입 테이블(파일) 만들기
+   - 테이블 : register
+     - 사용자 아이디 : 변수명(uid) 타입(글자) 길이(20) 값이 없어도 되나요?
+     - 비밀번호 : 변수명(pwd) 타입(글자) 길이(15) 값이 없어도 되나요?
+     - 이메일 : 변수명(email) 타입(글자) 길이(50) 값이 없어도 되나요?
+     - 이름 : 변수명(uname) 타입(글자) 길이(20) 값이 없어도 되나요?
+     - 성별 : 변수명(gender) 타입(글자) 고정길이(1) 값이 없어도 되나요?
+     -  가입일 : 변수명(regdate) 타입(날짜)
+
+8. desc register; -- 테이블 구조 확인
+
+9. drop table register; -- 테이블 제거
+
+10. 데이터 입력(변수)
+
+INSERT INTO register 
+VALUES('busanit', '12345', 'email@email.com', '부산', 'F', NOW());
+
+SELECT * FROM register;
+
+목록
+SELECT uid, email, uname, regdate FROM register;
+
+상세보기
+SELECT * FROM register;
+
+전체개수
+SELECT COUNT(*) as 전체회원수 FROM register;
+
+
+
+
+
+
+
+
+
+

@@ -44,6 +44,8 @@ app.use(express.json());
 /* REST API */
 
 
+/* GET */
+
 app.get("/register", (req, res) => {
     res.render("register", {
         title: "Home > Register"
@@ -58,11 +60,34 @@ app.get("/", (req, res) => {
 });
 
 app.get("/list", (req, res) => {
-    res.render("list", {
-        title: "Home > List"
-    });
+    const sql = "SELECT * FROM tb_users ORDER BY num DESC";
+    connection.query(sql, (err, results) => {
+        console.log(results);
+        res.render('list', {
+            title: 'HOME > LIST',
+            users: results
+        });
+
+    })
 });
 
+/* POST */
+
+app.post('/register', (req, res) => {
+
+    const sql = "INSERT INTO tb_users VALUES(null,?,?,?,now())";
+
+    connection.query(sql, [req.body.userid, req.body.passwd, req.body.username], (err) => {
+        if (!err) {
+            console.log('회원가입이 완료되었습니다');
+            res.redirect('/list');
+        } else {
+            console.log(err);
+            console.log('관리자에 문의하세요');
+            res.redirect('/register');
+        }
+    });
+})
 /* 6. end --------------------------------------------------------------- */
 
 /* 2. -------------------------  서버에서 사용할 포트 설정  ---------------------------*/

@@ -20,13 +20,15 @@ connection.connect((err) => { // db connect 에러 예외처리
     }
 }); //connect mysql connection
 
+//import ejs
+const ejs = require('ejs');
+
 
 /* app set */
 app.set('view engine', 'ejs');
 
 
-
-/* app user */
+/* --------app use (express' methods)-------- */
 app.use(express.urlencoded({
     extended: false
 }));
@@ -37,8 +39,8 @@ app.use(express.json());
 // express에서 root를 설정해주는 middleware
 app.use(express.static("views"));
 
-//import ejs
-const ejs = require('ejs');
+/* --------app use (express' methods)-------- */
+
 
 
 /* app get */

@@ -5,6 +5,9 @@ const uName = document.getElementById("name");
 const uID = document.getElementById("userid");
 const validBtn = document.getElementById("btn");
 const uPW = document.getElementById("passwd");
+
+
+
 const uPW2 = document.getElementById("passwd2");
 const email = document.getElementById("email");
 

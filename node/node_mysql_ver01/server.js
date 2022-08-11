@@ -12,7 +12,8 @@ const connection = mysql.createConnection({
     port: 3306,
     user: 'busanit',
     password: '1234',
-    database: 'busanit'
+    database: 'busanit',
+    dateStrings: "date"
 });
 
 /* 에러 예외처리 */

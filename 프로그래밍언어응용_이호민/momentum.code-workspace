@@ -1,0 +1,23 @@
+{
+	"folders": [
+		{
+			"path": "../../../momentum"
+		},
+		{
+			"path": "../dom"
+		},
+		{
+			"path": "../ui"
+		},
+		{
+			"path": "../evaluation"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"git.ignoreLimitWarning": true,
+		"liveServer.settings.multiRootWorkspaceName": "프로그래밍언어응용_이호민"
+	}
+}

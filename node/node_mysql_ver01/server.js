@@ -13,7 +13,7 @@ const connection = mysql.createConnection({
     user: 'busanit',
     password: '1234',
     database: 'busanit',
-    dateStrings: "date"
+    dateStrings: "date" // date String 출력 타입 설정
 });
 
 /* 에러 예외처리 */

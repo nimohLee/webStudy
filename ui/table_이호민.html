@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Home > 회원목록보기</title>
+
+    <!-- link style sheet -->
+    <link rel="stylesheet" href="/css/memberList-style.css" />
+
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="./favicon.png">
+
+    <!-- link fonts-->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Open+Sans:wght@400;700&display=swap"
+        rel="stylesheet" />
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+    border:none;
+    line-height: 2.5;
+    
+
+  width: 100%;
+
+  text-align: center;
+}
+
+body {
+  width: 100vw;
+
+  transition-duration: 0.5s;
+  transition-property: opacity;
+}
+
+.top-wrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    background-color: black;
+    height: 70px;
+}
+ul {
+    display: flex;
+    list-style: none;
+}
+
+ul li{
+    margin: 0 2em;
+}
+a{
+  text-decoration: none;
+  color: black;
+
+}
+a:hover{
+  text-decoration: underline;
+}
+
+th,td{
+    border: none;
+}
+
+th {
+  font-weight: bold;
+  color: white;
+  background-color: #2962FF;
+  width: 200px;
+}
+td {
+  width: 200px;
+}
+tr {
+  border-bottom: 1px solid rgb(212, 212, 212);
+}
+
+button {
+  cursor: pointer;
+}
+.tb {
+  display: none;
+}
+
+.hide {
+  display: none;
+}
+.show {
+  display: "";
+}
+.container {
+  margin: 100px auto;
+  width: 100vw;
+  padding: 0 20px;
+}
+
+.top-table {
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+i {
+  cursor: pointer;
+}
+
+.select {
+    border: 1px solid #d9d9d9;
+  padding: 10px;
+  background-color: #eaeaea;
+}
+
+.search {
+
+    border: none;
+    background-color: #eaeaea;
+    border: 1px solid #d9d9d9;
+    padding: 10px;
+  margin: 0px 10px;
+}
+
+.search-btn {
+  color: white;
+  
+  font-weight: bold;
+border: none;
+  padding: 11px;
+  background-color: tomato;
+}
+
+tr button{
+    width: 45px;
+    height: 30px;
+    border: none;
+    margin: 0 2px;
+
+}
+
+.bottom-wrap{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.paging-btn{
+  width: 50%;
+}
+
+.paging-btn button{
+    border: 1px solid #eaeaea;
+    padding : 10px 15px;
+}
+
+#username, #userid{
+    text-decoration: underline;
+}
+
+
+    </style>
+
+
+
+</head>
+
+<body class="gothic">
+
+    <header>
+        <div class="top-wrap">
+            <h1>Busanit Academy</h1>
+            <div class="menu-wrap">
+                <ul>
+                    <li>홈으로</li>
+                    <li>회원목록</li>
+                    <li>게시판 관리</li>
+                    <li>환경설정</li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="top-table">
+            <div class="path">
+                <i class="fa-solid fa-user"></i>Home> 회원목록
+            </div>
+            <p>전체회원수 : <strong>10명</strong></p>
+        </div>
+        <form  class="table-wrap">
+            <table border="1">
+                <thead>
+                    <th>번호</th>
+                    <th>회원이름</th>
+                    <th>아이디</th>
+                    <th>비밀번호</th>
+                    <th>이메일</th>
+                    <th>전화번호</th>
+                    <th>성별</th>
+                    <th>가입일</th>
+                    <th>비고</th>
+                </thead>
+                <tbody id="table">
+                    <!-- 1 페이지 -->
+                    <tr>
+                        <td id="num">5</td>
+                        <td id="username">부산아이디</td>
+                        <td id="userid">busanit</td>
+                        <td id="passwd">********</td>
+                        <td id="email">mail@email.com</td>
+                        <td id="phone">010.1234.5678</td>
+                        <td id="gender">여자</td>
+                        <td id="regDate">2022.08.12</td>
+                        <td><button><i class="fa-regular fa-square-check"></i> 수정</button><button><i class="fa-solid fa-trash-can"></i> 삭제</button></td>
+                    </tr>
+                    <tr>
+                        <td id="num">4</td>
+                        <td id="username">부산아이디</td>
+                        <td id="userid">busanit</td>
+                        <td id="passwd">********</td>
+                        <td id="email">mail@email.com</td>
+                        <td id="phone">010.1234.5678</td>
+                        <td id="gender">남자</td>
+                        <td id="regDate">2022.08.12</td>
+                        <td><button><i class="fa-regular fa-square-check"></i> 수정</button><button><i class="fa-solid fa-trash-can"></i> 삭제</button></td>
+                    </tr>
+                    <tr>
+                        <td id="num">3</td>
+                        <td id="username">부산아이디</td>
+                        <td id="userid">busanit</td>
+                        <td id="passwd">********</td>
+                        <td id="email">mail@email.com</td>
+                        <td id="phone">010.1234.5678</td>
+                        <td id="gender">여자</td>
+                        <td id="regDate">2022.08.12</td>
+                        <td><button><i class="fa-regular fa-square-check"></i> 수정</button><button><i class="fa-solid fa-trash-can"></i> 삭제</button></td>
+                    </tr>
+                    <tr>
+                        <td id="num">2</td>
+                        <td id="username">부산아이디</td>
+                        <td id="userid">busanit</td>
+                        <td id="passwd">********</td>
+                        <td id="email">mail@email.com</td>
+                        <td id="phone">010.1234.5678</td>
+                        <td id="gender">여자</td>
+                        <td id="regDate">2022.08.12</td>
+                        <td><button><i class="fa-regular fa-square-check"></i> 수정</button><button><i class="fa-solid fa-trash-can"></i> 삭제</button></td>
+                    </tr>
+                    <tr>
+                        <td id="num">1</td>
+                        <td id="username">부산아이디</td>
+                        <td id="userid">busanit</td>
+                        <td id="passwd">********</td>
+                        <td id="email">mail@email.com</td>
+                        <td id="phone">010.1234.5678</td>
+                        <td id="gender">남자</td>
+                        <td id="regDate">2022.08.12</td>
+                        <td><button><i class="fa-regular fa-square-check"></i> 수정</button><button><i class="fa-solid fa-trash-can"></i> 삭제</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="bottom-wrap">
+                <div class="paging-btn">
+                    <button><<</button>
+                    <button><</button>
+                    <button id="pBtn" class="btn1">1</button>
+                    <button id="pBtn" class="btn2">2</button>
+                    <button id="pBtn" class="btn3">3</button>
+                    <button id="pBtn" class="btn4">4</button>
+                    <button id="pBtn" class="btn5">5</button>
+                    <button>></button>
+                    <button>>></button>
+                </div>
+                <div class="search-wrap">
+                   
+                    <select name="select" class="select" id="select">
+                        <option>회원이름</option>
+                        <option>아이디</option>
+                        <option>이메일</option>
+                        
+                    </select>
+                    <input type="text" name="search" id="search" class="search" required />
+                    <button type="submit" class="search-btn" id="search-btn">검색</button>
+                </div>
+            </div>
+        </form>
+       
+    </div>
+
+    <!-- link script -->
+    <script src="./js/memberList.js"></script>
+    <!-- <script type="module" src="./js/memberList.js"></script> -->
+</body>
+
+</html>

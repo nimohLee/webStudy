@@ -32,7 +32,7 @@ table {
 th {
   font-weight: bold;
   color: white;
-  background-color: #3700b3;
+  background-color: #2962FF;
   width: 200px;
 }
 td {
@@ -62,6 +62,7 @@ button {
 
 .top-table {
   display: flex;
+  justify-content: space-between;
 }
 
 .search-wrap {
@@ -95,6 +96,17 @@ i {
 .btn {
   border: 1px solid purple;
   border-radius: 3px;
+}
+
+.bottom-wrap{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+
+.paging-btn{
+  width: 150px;
 }
 
 #pBtn {

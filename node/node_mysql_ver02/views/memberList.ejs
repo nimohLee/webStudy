@@ -26,7 +26,61 @@
 <body class="gothic fade">
     <div class="container">
         <div class="top-table">
-            <a href="/login">Login></a><a href="memberList">MemberList></a>
+            <div class="path">
+                <a href="/login">Home></a>
+                <a href="memberList">MemberList></a>
+            </div>
+
+            <% let count= 0; 
+            users.forEach((user)=>{count++;}) %>
+
+            <p>전체 회원수 : <%= count%></p>
+        </div>
+        <div class="table-wrap">
+            <table border="1">
+                <thead>
+                    <th>번호</th>
+                    <th>이름</th>
+                    <th>아이디</th>
+                    <th>이메일</th>
+                    <th>성별</th>
+                    <th>지역</th>
+                    <th>취미</th>
+                    <th>비고</th>
+                </thead>
+                <tbody id="table">
+                    <!-- 1 페이지 -->
+
+                    <% if(users == ''){ %>
+                    <tr>
+                        <td colspan="6">멤버가 없습니다</td>
+                    </tr>
+                    <% 
+                    }else {
+                        users.forEach((user)=>{  
+                    %>
+                    <tr>
+                        <td id='no'><%= user.idx%></td>
+                        <td id="name"><%= user.userName%></td>
+                        <td id="id"><%= user.userId%></td>
+                        <td id="email"><%= user.userEmail%></td>
+                        <td id="gender"><%= user.userGender%></td>
+                        <td id="location"><%= user.userLocation%></td>
+                        <td id="hobby"><%= user.userHobby%></td>
+                        <td><button>수정</button><button id="delBtn">삭제</button></td>
+                    </tr>
+                    <% })} %>
+                </tbody>
+            </table>
+        </div>
+        <div class="bottom-wrap">
+            <div class="paging-btn">
+                <button id="pBtn" class="btn1">1</button>
+                <button id="pBtn" class="btn2">2</button>
+                <button id="pBtn" class="btn3">3</button>
+                <button id="pBtn" class="btn4">4</button>
+                <button id="pBtn" class="btn5">5</button>
+            </div>
             <div class="search-wrap">
                 <i id="refresh" class="fa-solid fa-arrow-rotate-right">&nbsp;&nbsp;</i>
                 <select name="select" class="select" id="select">
@@ -42,52 +96,11 @@
                 <button type="submit" class="search-btn" id="search-btn">검색</button>
             </div>
         </div>
-        <div class="table-wrap">
-            <table border="1">
-                <thead>
-                    <th>번호</th>
-                    <th>이름</th>
-                    <th>아이디</th>
-                    <th>이메일</th>
-                    <th>성별</th>
-                    <th>지역</th>
-                    <th>취미</th>
-                </thead>
-                <tbody id="table">
-                    <!-- 1 페이지 -->
-
-                    <% if(users == ''){ %>
-                    <tr>
-                        <td colspan="6">멤버가 없습니다</td>
-                    </tr>
-                    <% 
-                    }else {
-                        users.forEach((user)=>{  
-                    %>
-                    <tr>
-                        <td><%= user.idx%></td>
-                        <td><%= user.userName%></td>
-                        <td><%= user.userId%></td>
-                        <td><%= user.userEmail%></td>
-                        <td><%= user.userGender%></td>
-                        <td><%= user.userLocation%></td>
-                        <td><%= user.userHobby%></td>
-                    </tr>
-                    <% })} %>
-                </tbody>
-            </table>
-        </div>
-        <div class="paging-btn">
-            <button id="pBtn" class="btn1">1</button>
-            <button id="pBtn" class="btn2">2</button>
-            <button id="pBtn" class="btn3">3</button>
-            <button id="pBtn" class="btn4">4</button>
-            <button id="pBtn" class="btn5">5</button>
-        </div>
     </div>
 
     <!-- link script -->
     <script src="./js/memberList.js"></script>
+    <!-- <script type="module" src="./js/memberList.js"></script> -->
 </body>
 
 </html>

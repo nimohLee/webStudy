@@ -1,5 +1,29 @@
 "use strict";
 
+
+// import mySQL
+const mysql = require('mysql');
+const connection = mysql.createConnection({ // mysql connection 생성
+  host: 'localhost',
+  user: 'busanit',
+  password: '1234',
+  database: 'busanit',
+  dateStrings: "date"
+
+});
+connection.connect((err) => { // db connect 에러 예외처리
+  if (!err) {
+    console.log("DB Connected");
+  } else {
+    console.log(err);
+  }
+});
+
+
+
+
+
+
 // Table값 객체로 모두 가져오기
 const nos = document.querySelectorAll("#no");
 let names = document.querySelectorAll("#name");
@@ -13,6 +37,21 @@ const reBtn = document.querySelector("#refresh");
 const sel = document.querySelector("#select");
 const text = document.querySelector("#search");
 const btn = document.querySelector("#search-btn");
+const delBtn = document.querySelector('#delBtn');
+
+delBtn.addEventListener('click', deleteRecord);
+
+function deleteRecord() {
+
+  const delTr = deleteRecord.parentElement.parentElement;
+  let delNo = delTr.querySelector('#no');
+
+  const sql = `DELETE FROM login WHERE idx = ${delNo}`;
+  connection.query(sql);
+  location.reload();
+}
+
+
 
 //첫번쨰 루프인지
 let isFirstLoop = true;
@@ -26,6 +65,7 @@ for (let i = 0; i < 5; i++) {
 for (let i = 0; i < 5; i++) {
   pBtn[i] = document.querySelector(`.btn${i + 1}`);
 }
+
 
 //페이징버튼 클릭 시 tr 5개씩 끊어져있는 테이블을 show & hide하며 페이지 이동하는 것 처럼 보이게 하는 function
 function makeHide(input, a) {
@@ -54,7 +94,10 @@ function searchLoop(input) {
   const tds = tr.querySelectorAll("td");
   const para = document.createElement("tr");
   para.innerHTML = `<td>${tds[0].textContent}</td><td>${tds[1].textContent}</td><td>${tds[2].textContent}</td><td>${tds[3].textContent}</td><td>${tds[4].textContent}</td><td>${tds[5].textContent}</td><td>${tds[6].textContent}</td>`;
-  if (input.textContent == text.value) {
+  console.log(tr);
+  console.log(tds);
+  console.log(para.innerHTML);
+  if (input.textContent.indexOf(text.value) != -1) {
     if (isFirstLoop) {
       table.innerHTML = "";
       table.appendChild(para);
@@ -65,10 +108,12 @@ function searchLoop(input) {
 
 // 검색버튼 클릭 시 switch-case문을 통해 select 값에 따라 검색
 function search() {
+
   switch (sel.value) {
     case "sel-name":
       names.forEach((name) => {
         searchLoop(name);
+        console.log('hi');
       });
       isFirstLoop = true;
       break;

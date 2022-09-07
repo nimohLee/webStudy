@@ -29,6 +29,14 @@ fs.mkdir(yymmdd,(err)=>{
 
 /* 파일 생성 : 시간 */
 function UNIX_TIMESTAMP(){
-    return new Date().getTime();
+
+    // 1/1000초 단위로 변환
+    return Math.floor(new Date().getTime()); // Math.floor() 소수점 버림
 }
 console.log(UNIX_TIMESTAMP());
+
+let str = "HTML, CSS, JAVASCRIPT, NODEJS, REACTJS";
+fs.writeFile(path.join(__dirname,UNIX_TIMESTAMP()+".txt"),str,(err)=>{
+    if(err) throw err;
+    console.log('로그작성완료');
+})

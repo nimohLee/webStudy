@@ -18,3 +18,17 @@ const fs = require('fs');
             throw err
         console.log("파일작성 완료");
  });
+
+ let appendStr = "\nJava, Spring Framework, Mysql";
+ fs.appendFile("./files.txt",appendStr,(err)=>{
+    if(err)
+        throw err;
+    console.log('파일append 완료');
+ })
+ 
+/* fs.unlink(지울파일이름, 콜백); */
+fs.unlink('files.txt',(err)=>{
+    if(err)
+        throw err;
+    console.log("files.txt 파일지움");
+});

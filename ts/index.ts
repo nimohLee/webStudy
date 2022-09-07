@@ -1,1 +1,2 @@
-let 이름 :string= 3;
+
+let 이름 : number | string = '하이';

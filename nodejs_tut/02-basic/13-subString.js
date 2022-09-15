@@ -28,4 +28,4 @@ console.log(result01);
 
  // ext.slice(-개수)
  const result03 = ext.slice(-4);
- console.log(result03);
+ console.log(result03); 

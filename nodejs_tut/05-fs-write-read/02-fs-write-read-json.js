@@ -61,5 +61,6 @@ fs.readFile(path.join(__dirname, "db", "users.json"), json, (err, result) => {
     /* 기존 + 새자료 : spread operator(전개연산자) = 연결하고 출력 or 쓰기 */
     fs.writeFile(path.join(__dirname,'db','users.json'),jsonObj,(err)=>{
         if(err) throw err;
+        const addResult = [...jsonObj, users];
     })
 });

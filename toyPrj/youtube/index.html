@@ -5,62 +5,94 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <header></header>
+    <header>
+        <div class="header__logo">
+            <h1>Youtube</h1>
+            
+        </div>
+        <div class="header__search">
+            <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+        </div>
+        
+    </header>
     <main>
-        <div class="player"></div>
-        <div class="describe">
-            <p class="tag"></p>
-            <h2 class="title"></h2>
-            <p class="views"></p>
-            <div class="like-btn btn">
-                <i class="fa-regular fa-thumbs-up"></i>
-                1K
-            </div>
-            <div class="hate-btn btn">
-                <i class="fa-regular fa-thumbs-down"></i>
-                0
-            </div>
-            <div class="share-btn btn">
-                <i class="fa-solid fa-share"></i>
-                Share
-            </div>
-            <div class="save-btn btn">
-                <i class="fa-solid fa-plus"></i>
-            </div>
-            <div class="report-btn btn">
-                <i class="fa-solid fa-flag"></i>
-            </div>
+        <div class="player">
+            <video controls width="250">
+                <source src="https://www.youtube.com/watch?v=67stn7Pu7s4"
+                       \>
+            
+                Sorry, your browser doesn't support embedded videos.
+            </video>
         </div>
-        <div class="uploader">
-            <div class="uploader__profile">
-                <i class="fa-solid fa-user"></i>
-                <h3>드림코딩 by 엘리</h3>
-                <p>1M subscribers</p>
+        <div class="main-wrap">
+            <div class="describe">
+                <p class="tag">
+                #DreamCoding #DreamCoders #Ellie
+                </p>
+                <h2 class="title">Clone Coding: Youtube Mobile Website 유튭, 모바일 웹사이트 따라 만들기 | 프론트엔드 개발자</h2>
+                <p class="views">
+                    1M views 1 month ago
+                </p>
+                <div class="btn-wrap">
+                    <div class="like-btn btn">
+                        <i class="fa-regular fa-thumbs-up"></i>
+                        1K
+                    </div>
+                    <div class="hate-btn btn">
+                        <i class="fa-regular fa-thumbs-down"></i>
+                        0
+                    </div>
+                    <div class="share-btn btn">
+                        <i class="fa-solid fa-share"></i>
+                        Share
+                    </div>
+                    <div class="save-btn btn">
+                        <i class="fa-solid fa-plus"></i>
+                        Save
+                    </div>
+                    <div class="report-btn btn">
+                        <i class="fa-solid fa-flag"></i>
+                        Report
+                    </div>
+                </div>
+                <hr>
+            <div class="uploader">
+                <div class="uploader__profile">
+                    <i class="fa-solid fa-user"></i>
+                    <h3>드림코딩 by 엘리 <br><p style="font-weight: 400; font-size: 0.8rem;">1M subscribers</p></h3>
+            
+                </div>
+                <h4>SUBSCRIBE</h4>
             </div>
-            <h4>SUBSCRIBE</h4>
-        </div>
-        <div class="up-next">
-            <ul>
-                <li>
-                    <img src="" alt="">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores impedit maxime nihil quia neque cupiditate rerum inventore, laborum deleniti unde.</p>
-                    <i class="fa-solid fa-ellipsis-vertical"></i>
-                </li>
-                <li>
-                    <img src="" alt="">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, eius!</p>
-                    <i class="fa-solid fa-ellipsis-vertical"></i>
-                </li>
-                <li>
-                    <img src="" alt="">
-                    <p>Lorem ipsum dolor sit amet.</p>
-                    <i class="fa-solid fa-ellipsis-vertical"></i>
-                </li>
-            </ul>
+            <hr>
+            </div>
+            
+            <div class="up-next">
+                <ul>
+                    <li>
+                        <img src="" alt="">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores impedit maxime nihil quia neque cupiditate rerum inventore, laborum deleniti unde.</p>
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </li>
+                    <li>
+                        <img src="" alt="">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, eius!</p>
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </li>
+                    <li>
+                        <img src="" alt="">
+                        <p>Lorem ipsum dolor sit amet.</p>
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </li>
+                </ul>
+            </div>
         </div>
     </main>
+    <script src="app.js"></script>
 </body>
 </html>

@@ -42,7 +42,6 @@
 
     @media(max-width : 768px) {}
 
-
     @media (max-width : 320px) {}
   </style>
 
@@ -50,6 +49,8 @@
 
 <body class="fade">
   <div class="container">
+    
+    <!-- Header -->
     <header>
       <div class="header-wrap">
         <div class="logo">
@@ -64,8 +65,8 @@
             <li class="login-menu-btn">Member</a>
               <div class="login-menu">
                 <ul>
-                  <li><a href="/work/hotel/html/login.html" data-transition="fade">Log in</a></li>
-                  <li><a href="/work/hotel/html/sign-up.html" data-transition="fade">Sign up</a></li>
+                  <li><a href="./login.html" data-transition="fade">Log in</a></li>
+                  <li><a href="./sign-up.html" data-transition="fade">Sign up</a></li>
                 </ul>
               </div>
 
@@ -116,7 +117,7 @@
         <div class="article-wrap">
           <h2 class="reveal" style="text-align: center; font-size: 3em; margin-bottom: 1.2em;">Facilities</h2>
           <article class="reveal">
-            <img src="/work/hotel/images/restaurant.jpg" class="res-img">
+            <img src="../images/restaurant.jpg" class="res-img">
             <div class="description">
               <h2>Restaurant</h2>
               <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore, quis ullam! Soluta commodi esse
@@ -133,7 +134,7 @@
                 odio
                 voluptatibus iure, illo reiciendis, sapiente numquam illum, consectetur aliquid quibusdam.</p>
             </div>
-            <img src="/work/hotel/images/gym.jpg" class="gym-img">
+            <img src="../images/gym.jpg" class="gym-img">
           </article>
       </section>
       <section class="map-section">
@@ -162,167 +163,9 @@
   <!-- scroll trigger -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/loadPage.js"></script>
 
-  <script>
-    gsap.registerPlugin(ScrollTrigger); //gsap plugin 등록(ScrollTrigger)
-
-    if (window.matchMedia("(min-width: 768px)").matches) {
-      gsap.to(".intro-text", {
-        scrollTrigger: {
-          trigger: ".intro-text",
-          toggleActions: "play reverse play",
-
-          end: "top center",
-          // scrub : true,
-        },
-        xPercent: 140,
-        pin: true,
-        duration: 1.5
-      })
-    }
-  </script>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      window.setTimeout(() => {
-        document.body.classList.remove('fade');
-      });
-    });
-  </script>
-
-
-  <script>
-    const img = document.querySelector('.bg');
-    const m = window.matchMedia("screen and (max-width: 768px)");
-    const reveal = () => {
-      var reveals = document.querySelectorAll(".reveal");
-
-      for (var i = 0; i < reveals.length; i++) {
-        var windowHeight = window.innerHeight;
-        var elementTop = reveals[i].getBoundingClientRect().bottom; // getBoundigClientRect() - 
-        var elementVisible = 0;
-
-        if (elementTop < windowHeight - elementVisible) {
-          reveals[i].classList.add("active");
-          img.classList.add("opacity");
-        } else {
-
-          reveals[i].classList.remove("active");
-          img.classList.remove("opacity");
-        }
-      }
-
-
-
-    }
-
-    if (!m.matches)
-      window.addEventListener("scroll", reveal);
-  </script>
-
-  <!-- 네이버 지도 api script -->
-  <script type="text/javascript">
-    var mapOptions = {
-      center: new naver.maps.LatLng(35.14846063861386, 129.11349699731272),
-      zoom: 20
-    };
-    var map = new naver.maps.Map('map', {
-      center: new naver.maps.LatLng(35.14846063861386, 129.11349699731272),
-      zoom: 20
-    });
-  </script>
-
-
-
-
-  <!-- 현재날짜 세팅 script -->
-  <script>
-    const dateClass = new Date();
-    const year = dateClass.getFullYear();
-    const month = (dateClass.getMonth() < 10) ? `0${dateClass.getMonth()+1}` : dateClass.getMonth() + 1;
-    const date = (dateClass.getDate() < 10) ? `0${dateClass.getDate()+1}` : dateClass.getDate() + 1;
-
-    document.getElementById('start').min = new Date().toISOString().substring(0, 10);
-    document.getElementById('end').min = `${year}-${month}-${date}`
-
-
-
-    function toReservation() {
-      const startDate = document.querySelector('#start');
-      const endDate = document.querySelector('#end');
-
-      if (startDate.value == '' || endDate.value == '') {
-        alert('체크인-체크아웃 날짜를 입력해주세요');
-        return false;
-      } else {
-        location.href = "./reservation.html";
-      }
-
-    }
-
-
-    document.querySelector('#frm').addEventListener('submit', (e) => {
-      e.preventDefault();
-      toReservation();
-    })
-  </script>
-
-
-
-
-
-  <!-- login menu block script -->
-  <script>
-    let loginBtn = document.querySelector('.login-menu-btn');
-    let loginMenu = document.querySelector('.login-menu');
-
-    const add = () => {
-      loginMenu.classList.add('blocked');
-    }
-    const remove = () => {
-      loginMenu.classList.remove('blocked');
-    }
-
-    loginBtn.addEventListener('mouseover', add);
-    loginBtn.addEventListener('mouseout', remove);
-  </script>
-
-
-  <!-- 한 페이지 내에 이동 시 부드럽게 스크롤 script-->
-  <script>
-    const button = document.getElementById('go-reservation');
-    const section = document.getElementById('reservation-section');
-
-    button.addEventListener('click', () => {
-      section.scrollIntoView({
-        behavior: 'smooth'
-      });
-    });
-  </script>
-
-  <script>
-    // let btn = document.getElementById('reservation-btn');
-    // let start = document.getElementById('start');
-    // let end = document.getElementById('end');
-
-    // const reserve = () => {
-    //   if (start.value !== "" && end.value !== "") {
-    //     // end를 start보다 적어도 1일이상 선택되게
-
-    //   } else {
-
-    //   }
-
-    // };
-
-    // document.addEventListener('DOMContentLoaded', () => {
-    //   window.setTimeout(() => {
-    //     document.body.classList.remove('fade');
-    //   });
-    // });
-
-    // btn.addEventListener('click', reserve)
-  </script>
 
 
 </body>

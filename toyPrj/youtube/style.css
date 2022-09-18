@@ -25,6 +25,7 @@ main{
     position: sticky;
     height: 300px;
     top:0;
+    background-color: black;
 }
 
 .tag{

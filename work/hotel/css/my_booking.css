@@ -1,321 +1,196 @@
 @charset 'utf-8';
 
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-time,
-figure,
-article,
-nav,
-header,
-footer,
-hgroup,
-video,
-audio,
-aside,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-font,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-weight: inherit;
-  font-style: inherit;
-  vertical-align: baseline;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-ul {
-  list-style-type: none;
-}
-a {
-  color: black;
-  text-decoration: none;
-}
-
-button{
-  border: none;
-  background-color: transparent;
-}
-
-/* ---------------------------------------------------- */
-/* --------------------- Reset Css -------------------- */
-/* ---------------------------------------------------- */
+@import "./reset.css";
 
 body {
-  overflow: hidden;
-  opacity: 1;
-  transition-duration: 0.5s;
-  transition-property: opacity;
-
+    overflow: hidden;
+    opacity: 1;
+    transition-duration: 0.5s;
+    transition-property: opacity;
 }
-body.fade{
-  opacity: 0;
+body.fade {
+    opacity: 0;
 }
 
 .container {
-  width: 100vw;
-  position: relative;
+    width: 100vw;
+    position: relative;
 
-  margin: 0 auto;
+    margin: 0 auto;
 }
 
 header {
-  width: 100%;
-  height: 80px;
-  background-color: white;
-  border:1px solid #4f4d4c71;
-  box-shadow: 0 0 1px 0px;
-  position: fixed;
-  display: flex;
-  align-items: center;
-  z-index: 1;
+    width: 100%;
+    height: 80px;
+    background-color: white;
+    border: 1px solid #4f4d4c71;
+    box-shadow: 0 0 1px 0px;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    z-index: 1;
 }
 
 .header-wrap {
-  width: 100%;
-  padding: 0 10em;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    width: 100%;
+    padding: 0 10em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-
-.ul-wrap>ul {
-  display: flex;
+.ul-wrap > ul {
+    display: flex;
 }
 
-.ul-wrap>ul>li {
-  font-size: 1.2em;
-  margin-left: 30px;
+.ul-wrap > ul > li {
+    font-size: 1.2em;
+    margin-left: 30px;
 }
 
 .ul-wrap a {
-  transition-duration: .5s;
+    transition-duration: 0.5s;
 }
 
-.ul-wrap a:hover , .login-menu-btn:hover{
-  color: tomato;
-  transition-duration: .5s;
+.ul-wrap a:hover,
+.login-menu-btn:hover {
+    color: tomato;
+    transition-duration: 0.5s;
 }
 
 /* 햄버거 버튼 없애고, login 에 커서 올리면  sign in과 log in 선택 메뉴 니오게 하기. */
 
-main {
-  font-family: 'Montserrat', sans-serif;
-  position: relative;
-
-  /* main이 자기 자리를 지키는 relative를 사용함으로써 footer가 그 밑으로 감 */
-  top: 60px;
-  z-index: 0;
-  padding-bottom: 2.5em;
-}
 
 .logo {
-  font-family: 'Josefin Sans', sans-serif;
-  font-weight: 700;
-  color: #4F4D4C;
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 700;
+    color: #4f4d4c;
 }
 
-.logo a{
-  cursor: pointer;
+.logo a {
+    cursor: pointer;
 }
 
 .ul-wrap {
-  font-family: 'Dosis', sans-serif;
+    font-family: "Dosis", sans-serif;
 }
 
-.login-menu{
-    
-  visibility: hidden;
-  opacity: 0;
+.login-menu {
+    visibility: hidden;
+    opacity: 0;
 
-  transition-duration: .5s;
-  position: absolute;
-  padding-top: 10px;
-  font-size: 1em;
-  top:60px;
-  
-  height: 90px;
-  width: 70px;
-  text-align: center;
-  background-color: white;
+    transition-duration: 0.5s;
+    position: absolute;
+    padding-top: 10px;
+    font-size: 1em;
+    top: 60px;
+
+    height: 90px;
+    width: 70px;
+    text-align: center;
+    background-color: white;
 }
 
-.login-menu li{
-  margin: 10px 0;  
+.login-menu li {
+    margin: 10px 0;
 }
 
-.login-menu-btn{
-  cursor: pointer;
+.login-menu-btn {
+    cursor: pointer;
 }
 
-.blocked{
-  visibility: visible;
-  opacity: 1;
+.blocked {
+    visibility: visible;
+    opacity: 1;
 
-  transition-duration: .5s;
+    transition-duration: 0.5s;
 }
 
 /* main part */
 
+
+main {
+    font-family: "Montserrat", sans-serif;
+    position: relative;
+
+    /* main이 자기 자리를 지키는 relative를 사용함으로써 footer가 그 밑으로 감 */
+    top: 60px;
+    z-index: 0;
+    padding-bottom: 2.5em;
+}
+
 .bg {
-  background-image: url(/work/hotel/images/bed_image.jpg);
+  background-image: url(../images/bed_image.jpg);
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
   opacity: 0.5;
   position: relative;
-
   z-index: -1;
   width: 100vw;
-  height: 60vw;
-
+  height: 100vh;
 }
-main {
-    font-family: 'Montserrat', sans-serif;
-    position: relative;
-  
-    /* main이 자기 자리를 지키는 relative를 사용함으로써 footer가 그 밑으로 감 */
-    top: 60px;
-    z-index: 0;
-    padding-bottom: 2.5em;
-  }
-  
-  .logo {
-    font-family: 'Josefin Sans', sans-serif;
+.logo {
+    font-family: "Josefin Sans", sans-serif;
     font-weight: 700;
-    color: #4F4D4C;
-  }
-  
-  .logo a{
+    color: #4f4d4c;
+}
+
+.logo a {
     cursor: pointer;
-  }
-  
-  .ul-wrap {
-    font-family: 'Dosis', sans-serif;
-  }
-  
-  .login-menu{
-      
+}
+
+.ul-wrap {
+    font-family: "Dosis", sans-serif;
+}
+
+.login-menu {
     visibility: hidden;
     opacity: 0;
-  
-    transition-duration: .5s;
+
+    transition-duration: 0.5s;
     position: absolute;
     padding-top: 10px;
     font-size: 1em;
-    top:60px;
-    
+    top: 60px;
+
     height: 90px;
     width: 70px;
     text-align: center;
     background-color: white;
-  }
-  
-  .login-menu li{
-    margin: 10px 0;  
-  }
-  
-  .login-menu-btn{
+}
+
+.login-menu li {
+    margin: 10px 0;
+}
+
+.login-menu-btn {
     cursor: pointer;
-  }
-  
-  .blocked{
+}
+
+.blocked {
     visibility: visible;
     opacity: 1;
-  
-    transition-duration: .5s;
-  }
-  
-  /* main part */
-  
-  .bg {
-    background-image: url(/work/hotel/images/bed_image.jpg);
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-    opacity: 0.5;
-    position: relative;
-  
-    z-index: -1;
-    width: 100vw;
-    height: 150vw;
-  
-  }
-  
-  /* Login part */
- 
 
-  section{
-      position: absolute;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100vw;
-      height: 80vh;
-      top: 20vh;
+    transition-duration: 0.5s;
+}
+
+
+/* Login part */
+
+section {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 80vh;
+    top: 20vh;
     left: 0;
-      z-index: 1;
-      
-  }
-  .notice-wrap{
+    z-index: 1;
+}
+.notice-wrap {
     display: flex;
     width: 60vw;
     height: 50vh;
@@ -324,44 +199,37 @@ main {
     flex-direction: column;
     align-items: center;
     border: 1px solid rgba(34, 36, 38, 0.2);
-    box-shadow: 0 0 10px 3px #4F4D4C;
+    box-shadow: 0 0 10px 3px #4f4d4c;
     border-radius: 10px;
     padding: 10px;
-  }
+}
 
-  .notice-wrap h2{
+.notice-wrap h2 {
     font-size: 3em;
     margin-bottom: 20px;
-  }
-  .notice-wrap p{
+}
+.notice-wrap p {
     font-size: 1.3em;
-  }
+}
 
+@media (max-width: 960px) {
+    .header-wrap {
+        padding: 0 30px;
+    }
+    .bg {
+        height: 100vh;
+    }
+}
 
-  @media (max-width : 960px) {
-    
-    .header-wrap{
-      padding: 0 30px;
-      
+@media (max-width: 816px) {
+    .notice-wrap h2 {
+        font-size: 1.5em;
+        margin-bottom: 20px;
     }
-    .bg{
-      height: 100vh;
+    .notice-wrap p {
+        font-size: 1em;
     }
-
-  }
-
-
-  @media(max-width:816px){
-    .notice-wrap h2{
-      font-size: 1.5em;
-      margin-bottom: 20px;
+    .bg {
+        height: 200vh;
     }
-    .notice-wrap p{
-      font-size: 1em;
-    }
-    .bg{
-      height: 200vh;
-    }
-  }
-  
-  
+}

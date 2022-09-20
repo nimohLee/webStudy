@@ -1,8 +1,11 @@
+const loginForm = document.querySelector('#login-form');
+const loginInput = document.querySelector('#login-form input');
+const loginButton = document.querySelector('#login-form button');
 
-const h1 = document.querySelector('h1');
-
-function handleTitleMouseClick(){
-    h1.classList.toggle('active');
+function onLoginSubmit(event){
+    event.preventDefault();
+    const username = loginInput.value;
+    loginForm.classList.add('hidden');
 }
 
-h1.addEventListener('click',handleTitleMouseClick);
+loginForm.addEventListener('submit',onLoginSubmit);

@@ -1,27 +1,35 @@
-/* 
-1. npm init -y ( 프로젝트 폴더 당 한번만 하면 됨) : node_modules랑 package.json 있으면 할 필요 x)
-2. express module 설치
-3. require()
-4. port number 3000
-5. 주소설정후 html
-*/
 const express = require('express');
-const path = require('path');
-const app = express(); // express모듈을 app이라는 이름의 변수로 사용하기
+const app = express();
 
-app.get('/',(req,res)=>{
-    res.send("<h1>Welcome Busan it Website</h1>")
+//shopping : users, items
+//users : 전체보기 , 살제보기, 입력, 수정 , 삭제, 검색
+
+
+app.get('/users',(req, res)=>{
+    res.send("사용자 전체 보기");
+});
+
+app.get('/users/getOne/5', (req, res) =>{
+    res.send("5번 사용자 전체 보기");
 })
 
+app.get('/users/insert', (req, res) => {
+    res.send("사용자 등록하기");
+});
 
-// 주소/getBoardList 접속하면 ()=>{ 안에꺼 실행}
-app.get('/getBoardList',(req,res) => {
-    /* res.sendFile은 서버에 file 보낸다는 거 
-       여기서는 getBoardList.html 보냄 
-       path 모듈 사용해서 파일경로를 절대경로로 넣어줘야함 */
-    res.sendFile(path.join(__dirname,'getBoardList.html'));
-})
+app.get('/users/update/5', (req, res) => {
+    res.send("5번 사용자 수정하기");
+});
 
-const PORT = 3000;
-app.listen(PORT, () => {console.log(`Server Running PORT ${PORT}`)});
+app.get('/users/delete/5', (req, res) => {
+    res.send("5번 사용자 삭제하기");
+});
 
+app.get('/users/search/busanit', (req, res) => {
+    res.send("검색단어 busanit 검색하기");
+});
+
+
+//items : 전체보기, 상세보기, 입력, 수정, 삭제, 검색
+
+app.listen(3000);

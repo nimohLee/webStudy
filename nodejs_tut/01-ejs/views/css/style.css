@@ -1,0 +1,62 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin-top : 50px;
+    margin-left:50px;
+}
+
+a{
+    text-decoration: none;
+    color:black;
+    margin-right : 30px;
+}
+
+input[type="text"],
+input[type="password"]{
+    outline: 0;
+    border: 1px solid #ccc;
+    padding: 4px 8px;
+    margin-bottom: 10px;
+}
+
+input[type="submit"]{
+    outline: 0;
+    border: 0;
+    background-color: steelblue;
+    color: #fff;
+    padding: 6px 8px;
+    font-size: 14px;
+    cursor:pointer;
+}
+input[type="submit"]:hover{
+    transition: .3s ease-in-out;
+    background-color: rgba(70, 130, 180, 0.8);
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+tr:first-child{
+    background-color:#ccc;
+}
+
+tr{
+    height: 40px;
+    text-align: center;
+    font-weight: bold;
+}
+
+ button{
+    cursor: pointer;
+    font-family: "Roboto", sans-serif;
+    border: 0
+ }
+ button.update{
+    background-color: tomato;
+    color:#fff;
+ }
+ button.delete{
+    background-color: #ccc;
+    color:#000;
+ }

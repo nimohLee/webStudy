@@ -19,9 +19,9 @@
 // url 설정(주소 설정)
 // port 설정
 
-const { application } = require('express');
 const express = require('express');
 const app = express();
+const PORT = 3000;
 
 //서버를 실행시키고
 // 주소 설정(html 설정)
@@ -51,5 +51,5 @@ app.get('/updateUsers', ( req, res )=> {
 })
 
 /* 3000번 포트 열기 */
-app.listen(3000, () => console.log('3000번 포트로 접속'));
+app.listen(PORT, () => console.log('3000번 포트로 접속'));
 //port 번호가 정상적으로 동작하는 지를 나타내는 게 listen

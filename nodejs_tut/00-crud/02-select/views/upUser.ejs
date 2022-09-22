@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <title><%= title %> </title>
+    <title>update User </title>
     <style>
         body{
             font-family: 'Roboto', sans-serif;
@@ -22,11 +22,13 @@
     </style>
 </head>
 <body>
+    <h1>수정페이지</h1>
     <div class="container">
-        <form method = "post" action="/addUser" autocomplete="off">
-            Username <input type="text" name="username" id="" required maxlength="10" minlength="5">
-            Password <input type="password" name="passwd" id="" required minlength="6" maxlength="10">
-            <input type="submit" value="Register">
+        <form method = "post" action="/upUser" autocomplete="off">
+            <input type="hidden" name="regID" value="<%= result[0].regID %>">
+            Username <input type="text" name="username" id="" value=" <%= result[0].username %> " required maxlength="10" >
+            Password <input type="password" name="passwd" id="" value=" <%= result[0].passwd %> " required maxlength="10">
+            <input type="submit" value="Modify">
         </form>
     </div>
 </body>

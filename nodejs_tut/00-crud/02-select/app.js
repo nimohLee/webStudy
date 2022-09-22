@@ -4,6 +4,7 @@ const mysql = require("mysql");
 const app = express();
 const fs = require('fs');
 const alert = require('alert');
+const e = require('express');
 
 
 const PORT = 3000;
@@ -40,6 +41,18 @@ app.get('/userList',(req, res) => {
     });
 });
 
+app.get('/addUser',(req, res) => {
+        res.render("addUser");
+});
+
+app.post('/addUser',(req,res) => {
+    let addUserSql = 'INSERT INTO register VALUES(null, ?, ?, now());';
+    db.query(addUserSql,[req.body.username,req.body.passwd],(err)=>{
+        if(err) throw err;
+        else res.redirect('/userList');
+    })
+})
+
 app.get('/delUser/:id',(req, res)=>{
     //html form -> req.body.name
     // console.log(req.params.id);
@@ -50,7 +63,42 @@ app.get('/delUser/:id',(req, res)=>{
             throw err;
             else {console.log(id+"번 사용자가 삭제되었습니다"); res.redirect('/userList');}
     })
-})
+});
+
+app.get("/upUser/:id", (req, res) => {
+    let sql = 'SELECT * FROM register WHERE regID = ?;';
+    db.query(sql, [req.params.id], (err,result)=>{
+        if(err) throw err
+        else{res.render('upUser',{result}); 
+    console.log(result)}
+    })
+});
+
+app.post("/upUser", (req, res) => {
+    let sql = 'UPDATE register SET username = ?, passwd = ?, regdate = now() WHERE regID = ?;';
+
+    const user = {
+        id: req.body.regID,
+        name: req.body.username,
+        pw: req.body.passwd,
+    };
+
+    db.query(sql, [user.name,user.pw,user.id], (err)=>{
+        if(err) throw err
+        else{ 
+            console.log(req.body.regID + "번 회원이 수정되었습니다");
+            res.redirect('/userList');}
+    });
+});
+
+app.get('/userView/:id', (req, res) => {
+    let sql = 'SELECT * FROM register WHERE regID = ?;';
+    db.query(sql,[req.params.id], (err,result)=>{
+
+        if(err) throw err
+        else res.render("userView",{result});
+    });
+});
 
 app.listen(PORT, () =>
     console.log(`Server Running http://localhost:${PORT}...`)

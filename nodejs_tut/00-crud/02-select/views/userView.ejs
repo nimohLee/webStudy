@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <h1>회원 상세 보기 페이지</h1>
+        <p>회원 번호 : <%= result[0].regID %> </p>
+        <p>회원 이름 : <%= result[0].username %></p>
+        <p>회원 비밀번호 : <%= result[0].passwd %></p>
+        <p>회원 등록일 : <%= result[0].regDate %></p>
+        <a href="/userList">목록</a>
+        <a href="/addUser">추가</a>
+        <a href="/upUser/<%= result[0].regID %> ">수정</a>
+        <a href="/delUser/<%= result[0].regID %>" onclick="return confirm('삭제하시겠습니까?')">삭제</a>
+        
+</body>
+</html>

@@ -23,17 +23,19 @@
                         <% for( let i = 0 ; i < userSelectResult.length ; i++) {%>
                             <tr>
                                 <td><%= userSelectResult[i].regID %></td>
+                                <td><a href="/userView/<%= userSelectResult[i].regID %>"> <%= userSelectResult[i].username %></a></td>
                                 <td><%= userSelectResult[i].username %></td>
                                 <td><%= userSelectResult[i].passwd %></td>
                                 <td><%= userSelectResult[i].regDate%></td>
                                 <td>
-                                    <a href="updateUser/<%= userSelectResult[i].regID %>">수정</a>
+                                    <a href="upUser/<%= userSelectResult[i].regID %>">수정</a>
                                     /
                                     <a href="delUser/<%= userSelectResult[i].regID %>" onclick="return confirm('삭제하시겠습니까?')">삭제</a>
                                 </td>
                             </tr>
                     <% }}%>
             </table>
+            <a href="/addUser"><button>사용자 추가</button></a>
         </div>
     </body>
 </html>

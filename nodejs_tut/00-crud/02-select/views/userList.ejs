@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="/style.css" />
+    </head>
+    <body>
+        <div class="container">
+            <table border="1">
+                <tr>
+                    <td>no.</td>
+                    <td>name</td>
+                    <td>passwd</td>
+                    <td>regdate</td>
+                    <td>-</td>
+                </tr>
+                <% if(userSelectResult == "") { %>
+                    <td colspan="5">등록된 회원이 없습니다</td>
+                    <% } else{ %> 
+                        <% for( let i = 0 ; i < userSelectResult.length ; i++) {%>
+                            <tr>
+                                <td><%= userSelectResult[i].regID %></td>
+                                <td><%= userSelectResult[i].username %></td>
+                                <td><%= userSelectResult[i].passwd %></td>
+                                <td><%= userSelectResult[i].regDate%></td>
+                                <td>
+                                    <a href="updateUser/<%= userSelectResult[i].regID %>">수정</a>
+                                    /
+                                    <a href="delUser/<%= userSelectResult[i].regID %>" onclick="return confirm('삭제하시겠습니까?')">삭제</a>
+                                </td>
+                            </tr>
+                    <% }}%>
+            </table>
+        </div>
+    </body>
+</html>

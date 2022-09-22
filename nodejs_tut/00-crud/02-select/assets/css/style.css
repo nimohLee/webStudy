@@ -1,0 +1,19 @@
+@charset 'utf-8';
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+tr {
+    height: 40px;
+}
+tr:first-child{
+    background-color: #ccc;
+}
+td {
+    border: 1px solid #ccc;
+}

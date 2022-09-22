@@ -31,6 +31,10 @@ db.connect(function (err) {
 
 const date = new Date().toISOString().substring(0,10);
 
+app.get('/',(req, res) => {
+    res.render('index');
+})
+
 app.get('/userList',(req, res) => {
     let selectAllSql = "SELECT * FROM register ORDER BY regID DESC;";
     db.query(selectAllSql,(err,results)=>{

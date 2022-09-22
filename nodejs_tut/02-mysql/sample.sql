@@ -4,3 +4,5 @@ CREATE login(
     passwd VARCHAR(20),
     regdate DATETIME
 );
+
+IF EXISTS TABLE login

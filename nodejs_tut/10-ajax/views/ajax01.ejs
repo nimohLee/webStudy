@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX 01</title>
+</head>
+<body>
+    <br action="/addUser" method="post">
+        userid : <input type="text" name="userid" id="userid" class="userid" />
+        <button type="button" onclick="checkID()">checkID</button>
+        <span>아이디를 입력하세요</span><br/>
+        passwd : <input type="password" name="passwd" id="passwd"/><br/>
+        username : <input type="text" name="username" id="username"><br/>
+        <input type="submit" value="제출">
+    </form>
+
+    <script>
+        function checkID(){
+            const useridInput = document.querySelector('#userid');
+            // if(useridInput.value == ""){
+            //     alert('아이디 입력해주세요');
+            //     useridInput.focus();
+            //     return false;
+            // }
+
+            if($(".userid").val() == ""){
+                alert("아이디를 입력해주세요");
+                $(".userid").focus();
+                return false;
+            }else{
+                const jsObj = {
+                    uid: $('#userid').val(),
+                    passwd: $('#passwd').val(),
+                    name: $('#username').val()
+                };
+                $.ajax({
+                    url: "/checkID",
+                    method:"post",
+                    contentType: "application/json",
+                    data: JSON.stringify(jsObj),
+                    success: function(result){
+                        if( result == "No"){
+                            $("span").html("사용할 수 없는 아이디입니다");
+                        }else
+                            $("span").html("사용할 수 있는 아이디입니다");
+                    }
+                });
+            }
+                }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+</body>
+</html>

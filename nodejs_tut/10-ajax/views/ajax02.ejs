@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select name="" id="siSelect">
+        <option value="">도시를 선택하세요</option>
+        
+    </select>
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script>
+        let getSiResult = "";
+        window.onload = function(){
+            $.ajax({
+                url: "/getSi",
+                method: "get",
+                contentType : "application/json",
+                success: function(result){
+                    getSiResult = JSON.parse(result);
+                    console.log(getSiResult);
+                    for(let i = 0; i < getSiResult.length; i++){
+                          $('#siSelect').append($('<option>', {value:i, text:getSiResult[i].si}));
+                            console.log('hi');
+                        }
+                }
+            });
+         
+        }
+
+        $(document).ready(function(){
+
+        })
+    </script>
+</body>
+</html>

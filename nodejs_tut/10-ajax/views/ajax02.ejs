@@ -7,9 +7,11 @@
     <title>Document</title>
 </head>
 <body>
-    <select name="" id="siSelect">
-        <option value="">도시를 선택하세요</option>
-        
+    <select name="" id="siSelect" onchange="getGu(this.value)">
+        <option value="">도시를 선택하세요</option>    
+    </select>
+    <select name="" id="guSelect">
+        <option value="">구를 선택하세요</option>    
     </select>
     <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
     <script>
@@ -23,7 +25,7 @@
                     getSiResult = JSON.parse(result);
                     console.log(getSiResult);
                     for(let i = 0; i < getSiResult.length; i++){
-                          $('#siSelect').append($('<option>', {value:i, text:getSiResult[i].si}));
+                          $('#siSelect').append($('<option>', {value:getSiResult[i].si, text:getSiResult[i].si}));
                             console.log('hi');
                         }
                 }
@@ -31,9 +33,24 @@
          
         }
 
-        $(document).ready(function(){
-
-        })
+        function getGu(si){
+            let getGuResult;
+            console.log(si);
+            $.ajax({
+                url: "/getGu",
+                method: "post",
+                contentType : "application/json",
+                data: JSON.stringify({si}),
+                success: function(result){
+                    getGuResult = JSON.parse(result);
+                    for(let i = 0; i < getGuResult.length; i++){
+                          $('#guSelect').append($('<option>', {value:getGuResult[i].gu, text:getGuResult[i].gu}));
+                            
+                        }
+                }
+            });
+        }
+    
     </script>
 </body>
 </html>

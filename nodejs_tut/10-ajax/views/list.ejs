@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>회원목록</h3>
+    <a href="/addUser">사용자등록</a>
+    <table border="1" style="width: 100%; border-collapse: collapse;">
+        <tr>
+            <th>ID.</th>
+            <th>Userid.</th>
+            <th>Username.</th>
+            <th>Grade.</th>
+            <th>Regdate</th>
+            <th>Update/Delete</th>
+        </tr>
+        <% for( let i= 0; i < result.length; i++ ) { %>
+            <tr>
+                <td><%= result[i].id %> </td>
+                <td><%= result[i].userid %></td>
+                <td><a href="/detail/<%= result[i].id %> "><%= result[i].username %></a></td>
+                <td>
+                    <select name="" id="" onchange="grade(this.value , '<%= result[i].id %>');" >
+                    <option value="최고관리자" <% if (result[i].grade == '최고관리자') { %>selected <% } %>>최고관리자</option>
+                    <option value="사원" <% if (result[i].grade == '사원') { %>selected <% } %>>사원</option>
+                    <option value="일반" <% if (result[i].grade == '일반') { %>selected <% } %>>일반</option>
+                </select>
+                </td>
+                <td><%= result[i].regdate %></td>
+                <td><a href="/upUser/<%= result[i].id %> ">수정</a>/<a href="/delUser/<%= result[i].id%>" onclick="return confirm('삭제하시겠습니까?');">삭제</a></td>
+            </tr>
+        <% } %>
+    </table>
+    
+    <script>
+        function grade(value,idx){
+            $.ajax({
+                url :'/modifyGrade/'+idx,
+                method : 'post',
+                contentType : 'application/json',
+                data : JSON.stringify({value}),
+                success: function(){
+
+                }
+            });
+        }
+    </script>
+        <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+
+</body>
+</html>

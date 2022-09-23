@@ -30,6 +30,17 @@ app.get('/getSi',(req,res)=>{
             res.send(JSON.stringify(result));
         }
     });
+});
+
+app.post('/getGu',(req,res)=>{
+    console.log(req.body.si);
+    let getGuSQL = 'SELECT gu FROM gu WHERE si = ? ORDER BY id ASC;';
+    db.query(getGuSQL,[req.body.si],(err,result)=>{
+        if(err) throw err;
+        else{
+            res.send(JSON.stringify(result));
+        }
+    });
 })
 
 

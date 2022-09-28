@@ -1,6 +1,53 @@
-<%-include('../header.ejs') %> 
+<%-include('../header.ejs') %>
+<main>
+    <div id="board-wrap">
+        <section id="board-title" class="nanum">
+            <h2>회원관리</h2>
+        </section>
+
+        <section id="board-main">
+            <article>
+                <table border="1">
+                    <thead>
+                        <th>No</th>
+                        <th>이름</th>
+                        <th>이메일</th>
+                        <th>가입기간</th>
+                    </thead>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </article>
+            <article id="board-body">
+                <div class="board-nav"><button><</button><button>1</button><button>2</button><button>3</button
+                    ><button>4</button><button>5</button><button>></button></div>
+                <div class="board-search">
+                    <select name="" id="">
+                        <option value="search-name">제목</option>
+                        <option value="search-writer">작성자</option>
+                        <option value="search-content">내용</option>
+                        <option value="search-date">작성기간</option>
+                    </select>
+                    <input type="text" placeholder="검색어를 입력하세요">
+                    <button>검색</button>
+                </div>   
+            </article>
+            
+        </section>
+    </div>
+</main>
+
 <script>
-    document.title = "BitTravel > Member > Main"
+    document.title = "BitTravel > Board > Main";
 </script>
-<%-include('../footer.ejs') %> 
-    
+<%-include('../footer.ejs') %>

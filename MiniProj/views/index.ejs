@@ -1,0 +1,44 @@
+<%-include('./header.ejs') %>
+
+<main>
+    <div class="main-title hans">
+        <h1 class="main-disappear title1">낭만을 여행하다</h1>
+        <h1 class="main-disappear title2">Bit Travel</h1>
+        <button class="start-btn main-disappear">
+            <h2>지금 놀러가기</h2>
+            <i class="fa-solid fa-arrow-right"></i>
+        </button>
+    </div>
+</main>
+
+<script>
+    document.title = "BitTravel > Main";
+
+    function setAppear(params) {
+        console.log(params);
+        params.classList.remove("main-disappear");
+        params.classList.add("main-appear");
+    }
+    setTimeout(() => {
+        const item = document.querySelector(".title1");
+        setAppear(item);
+    }, 100);
+
+    setTimeout(() => {
+        const item = document.querySelector(".title2");
+        setAppear(item);
+    }, 1000);
+
+    setTimeout(() => {
+        const item = document.querySelector(".start-btn");
+        setAppear(item);
+    }, 2000);
+
+    const arrowIcon = document.querySelector(".start-btn i");
+    setInterval(() => {
+        arrowIcon.classList.toggle("move-right");
+    }, 500);
+
+</script>
+
+<%-include('./footer.ejs') %>

@@ -1,0 +1,19 @@
+@charset "utf-8";
+
+
+
+#board-wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70vw;
+    height: 70vh;
+    background-color: rgba(255, 255, 255, 0.418);
+    border: 1px solid var(--summer-black2-color);
+    border-radius: 30px;
+}
+
+#board-title{
+    margin-top: 30px;
+    font-size: 1.5em;
+}

@@ -1,4 +1,5 @@
 const express = require('express');
+
 const db = require('../model/database');
 const router = express.Router();
 
@@ -41,16 +42,31 @@ router.post("/idVaild",(req,res)=>{
 })
 
 
-router.get("/list/:page",(req, res) =>{
-const page = req.params.page;
+let result;
 
-    const selectUserListSql = "SELECT * FROM member ORDER BY idx DESC";
-    db.query(selectUserListSql,(err,result)=>{
+/* QueryString을 사용해야하는 줄 몰라서 한참을 헤맴 */
+router.get("/list/:page",(req, res) =>{
+    const page = req.params.page;
+    const selected = req.query.select;
+    const searchTf = req.query.text;
+    let sql;
+    if(selected === undefined){
+        sql = "SELECT * FROM member ORDER BY idx DESC";     
+    }else{
+        sql = "SELECT * FROM member WHERE "+selected+"= '"+searchTf+"' ORDER BY idx DESC;";
+    }
+
+    db.query(sql,(err,result)=>{
         if(err) throw err;
         res.render("../views/member/memberList.ejs",{result : result, page: page, length: result.length-1, page_num:10,pass:true});
     })
     
 });
+
+router.get("/list/update",(req,res)=>{
+    res.render("../views/member/updatePopup");
+})
+
 
 router.get("/register",(req, res) =>{
     res.render("../views/member/memberRegister.ejs");

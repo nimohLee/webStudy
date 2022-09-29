@@ -141,9 +141,10 @@ small {
 /* 회원 관리 */
 .paging-btn {
     cursor: pointer;
-    width: 30px;
-    height: 25px;
-    background-color: blue;
+    width: 40px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: var(--sea-blue-color);
 }
 .paging-btn a {
     width: 100%;
@@ -171,11 +172,13 @@ small {
     color: white;
     border-bottom: 1px solid #222831;
     text-align: center;
-}
-#member-table th {
     padding: 10px 0;
     height: 30px;
 }
 
 #member-table tr {
+}
+
+.icon{
+    cursor:pointer;
 }

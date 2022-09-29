@@ -1,5 +1,6 @@
 <%-include('../header.ejs') %>
 <link rel="stylesheet" href="/css/memberStyle.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <main>
     <div id="member-wrap">
         <section id="member-title" class="nanum">
@@ -15,17 +16,24 @@
                         <th>이름</th>
                         <th>이메일</th>
                         <th>가입기간</th>
+                        <th>-</th>
                     </thead>
+                    
+                    <% const date = new Date().toISOString().substring(0,10); %> 
                     <% for( let i = (page * page_num) - page_num ; i < (page *
-                    page_num); i++ ) { if(i > length){ i++; }else{ let data =
-                    result[i]; %>
+                    page_num); i++ ) { if(i > length){ i++; }else{ 
+                        let data =
+                    result[i]; 
+                    %>
                     <tr>
                         <td><%=data.idx %></td>
                         <td><%=data.id %></td>
                         <td><%=data.name %></td>
                         <td><%=data.email %></td>
-                        <td><%=data.regDate %></td>
-                    </tr>
+                        <td><%=data.regDate %> ~ <%=date%></td>
+                        <td><i class="fa-solid fa-pencil icon" onclick= "updateUser('<%=data.idx %>')"> &nbsp;&nbsp;
+                             <i class="fa-solid fa-trash icon" onclick= "deleteUser('<%=data.idx%>')"></i></i></td>
+                    </tr> 
                     <% } 
                 }%>
                     <tr>
@@ -39,14 +47,16 @@
             </article>
             <article id="member-body">
                 <div class="member-search">
-                    <select name="" id="">
-                        <option value="search-name">제목</option>
-                        <option value="search-writer">작성자</option>
-                        <option value="search-content">내용</option>
-                        <option value="search-date">작성기간</option>
-                    </select>
-                    <input type="text" placeholder="검색어를 입력하세요" />
-                    <button>검색</button>
+                    <form action="" method="get">
+                        <select name="select" id="search-select">
+                            <option value="name">이름</option>
+                            <option value="id">아이디</option>
+                            <option value="email">이메일</option>
+                            <option value="regDate">가입기간</option>
+                        </select>
+                        <input type="text" placeholder="검색어를 입력하세요" name="text" id="search-text" />
+                       <input type="submit" value="검색"></input>
+                    </form>
                 </div>
             </article>
         </section>
@@ -54,7 +64,18 @@
 </main>
 
 <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+<script>
+      function updateUser(idx){
+            const url = "./update"  ;
+            const name = "updatePopup test";
+            const option = "width = 500, height = 500, top = 100, left = 200, location = no"
+            window.open(url, name, option);
+      }
+      function deleteUser(idx){
 
+      }
+    </script>
+    
 <script>
     document.title = "BitTravel > Member > List";
 </script>

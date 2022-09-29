@@ -39,7 +39,7 @@
                     <tr>
                         <td colspan="6">
                             <% for(let j = 0; j < result.length / page_num; j++){ %>
-                                <button class="paging-btn"><a href="/member/list/<%= j + 1 %>"><%= j + 1 %></a></button>
+                                <button class="paging-btn"><a href="/member/list/page/<%= j + 1 %>"><%= j + 1 %></a></button>
                             <% } %>
                         </td>
                     </tr>
@@ -66,10 +66,10 @@
 <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
 <script>
       function updateUser(idx){
-            const url = "./update"  ;
-            const name = "updatePopup test";
-            const option = "width = 500, height = 500, top = 100, left = 200, location = no"
-            window.open(url, name, option);
+            const url = "../update"  ;
+            const name = "_blank";
+            const option = "width = 500, height = 500, top = 100, left = 200"
+            window.open(url, name,option);
       }
       function deleteUser(idx){
 

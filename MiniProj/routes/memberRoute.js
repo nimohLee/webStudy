@@ -45,7 +45,7 @@ router.post("/idVaild",(req,res)=>{
 let result;
 
 /* QueryString을 사용해야하는 줄 몰라서 한참을 헤맴 */
-router.get("/list/:page",(req, res) =>{
+router.get("/list/page/:page",(req, res) =>{
     const page = req.params.page;
     const selected = req.query.select;
     const searchTf = req.query.text;
@@ -68,9 +68,6 @@ router.get("/list/update",(req,res)=>{
 })
 
 
-router.get("/register",(req, res) =>{
-    res.render("../views/member/memberRegister.ejs");
-});
 
 
 module.exports = router;

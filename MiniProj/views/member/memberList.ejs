@@ -31,8 +31,8 @@
                         <td><%=data.name %></td>
                         <td><%=data.email %></td>
                         <td><%=data.regDate %> ~ <%=date%></td>
-                        <td><i class="fa-solid fa-pencil icon" onclick= "updateUser('<%=data.idx %>')"> &nbsp;&nbsp;
-                             <i class="fa-solid fa-trash icon" onclick= "deleteUser('<%=data.idx%>')"></i></i></td>
+                        <td><i class="fa-solid fa-pencil icon" onclick= "updateUser('<%=data.idx %>')"></i> &nbsp;&nbsp;
+                             <i class="fa-solid fa-trash icon" onclick= "deleteUser('<%=data.idx%>')"></i></td>
                     </tr> 
                     <% } 
                 }%>
@@ -61,33 +61,35 @@
             </article>
         </section>
     </div>
-    <form name="frmPopup">
-    <input type="hidden" name="arg1">
-    </form>
+  
 </main>
 
-
 <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
-<script>
-      function updateUser(idx){
-            const frmPop = document.frmPopup;
-            const url = "../update"  ;
-            const name = "_blank";
-            const option = "width = 500, height = 500, top = 100, left = 200"
-            window.open('', name,option);
 
-            frmPop.action = url;
-            frmPop.target = 'popupView';
-            frmPop.arg1.value = idx;
-            
-            frmPop.submit();
-      }
-      function deleteUser(idx){
-
-      }
-</script>
-    
 <script>
     document.title = "BitTravel > Member > List";
+      function updateUser(idx){
+            const frmPop = document.frmPopup;
+            const url = "../update?idx="+idx;
+            const name = "update user";
+            const option = "width = 300, height = 300, top = 100, left = 200";
+            window.open(url, '_blank', option);
+      }
+      function deleteUser(idx){
+            if(confirm("삭제하시겠습니까?")){
+                console.log("네");
+                $.ajax({
+                    method: "post",
+                    url:"../../deleteProc",
+                    contentType: "application/json",
+                    data: JSON.stringify({idx}),
+                });
+                location.reload();
+            }
+      }
+</script>
+
+<script>
+   
 </script>
 <%-include('../footer.ejs') %>

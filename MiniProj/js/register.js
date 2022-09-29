@@ -223,3 +223,6 @@ document.addEventListener("DOMContentLoaded", () => {
         document.body.classList.remove("fade");
     });
 });
+
+module.exports = regExpID;
+module.exports = regExpName;

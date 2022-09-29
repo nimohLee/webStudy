@@ -1,8 +1,6 @@
 const express = require('express');
-
 const db = require('../model/database');
 const router = express.Router();
-
 
 router.get("/",(req, res) =>{
     res.render("../views/member/memberMain.ejs");
@@ -22,6 +20,10 @@ router.post("/",(req,res)=>{
     });
     res.redirect("/member");
 });
+
+router.get("/register",(req,res)=>{
+    res.render("../views/member/memberRegister");
+})
 
 router.post("/idVaild",(req,res)=>{
     const user = {
@@ -60,24 +62,46 @@ router.get("/list/page/:page",(req, res) =>{
         if(err) throw err;
         res.render("../views/member/memberList.ejs",{result : result, page: page, length: result.length-1, page_num:10,pass:true});
     })
-    
 });
 
 router.get("/list/update",(req,res)=>{
-    const sql ="SELECT * FROM member WHERE idx = "+ req.body.arg1;
+    console.log(req.query.idx);
+    const sql ="SELECT * FROM member WHERE idx = "+ req.query.idx+";";
     console.log(sql);
-    // db.query(sql,(err,result)=>{
-    //     if(err) throw err;
-    //     else{
-    //         res.render("../views/member/updatePopup",result);
-    //         console.log(result);
-    //     }
-    // });
-
-   
+    db.query(sql,(err,result)=>{
+        if(err) throw err;
+        else{
+            res.render("../views/member/updatePopup",{result});
+        
+        }
+    });
 });
 
+router.post("/updateProc",(req,res)=>{
+    const user = {
+        idx : req.body.idx,
+        id : req.body.id,
+        pw : req.body.pw,
+        name : req.body.name,
+        email : req.body.email 
+    };
+    
+    const sql = "UPDATE member SET id = ?, pw = ?, name = ?, email = ? WHERE idx = ?;"
 
+    db.query(sql,[user.id,user.pw,user.name,user.email,user.idx],(err)=>{
+        if(err) throw err;
+    })
+})
 
+router.get("/deleteProc",(req,res)=>{
+
+})
+
+router.post("/deleteProc",(req,res)=>{
+    const deleteSql = "DELETE FROM member WHERE idx = "+req.body.idx;
+    const alterSql = "ALTER TABLE member AUTO_INCREMENT=1";
+    console.log(sql);
+    db.query(sql,(err) => {if(err) throw err;});
+});
 
 module.exports = router;

@@ -7,6 +7,37 @@
     <title>Document</title>
 </head>
 <body>
-    Hi
+    <form action="../updateProc" method="post" name="updateFrm">
+        아이디 : <input type="text" value="<%=result[0].id%>" name="id" id="id"/>
+        비밀번호 : <input type="password" value="<%=result[0].pw%>" name="pw" id="pw"/>
+        이름 : <input type="text" value="<%=result[0].name%>" name="name" id="name"/>
+        이메일 : <input type="text" value="<%=result[0].email%>" name="email" id="email"/>
+        <input type="hidden" value="<%=result[0].idx%>" name="idx">
+        <button onclick="showConfirm()">수정</button>
+        <input type="button" value="닫기" onclick="window.close()">
+    </form>
+
+    <script>
+        const {regExpID, regExpName} = require("/js/register");
+        function submitFrm(){
+            const frm = document.updateFrm;
+            console.log(frm);
+            frm.submit();
+        }
+        function showConfirm(){
+            if(confirm("수정하시겠습니까?")){
+                submitFrm();
+                /* submitFrm에서 post 요청보다 window.close()가 먼저 실행됨.
+                setTimeout으로 submitFrm 먼저 실행 */
+                setTimeout(() => {
+                    window.close(); 
+                }, 1);
+            }else{
+                window.close();
+            };   
+        }
+
+
+    </script>
 </body>
 </html>

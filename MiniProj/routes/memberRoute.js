@@ -64,8 +64,18 @@ router.get("/list/page/:page",(req, res) =>{
 });
 
 router.get("/list/update",(req,res)=>{
-    res.render("../views/member/updatePopup");
-})
+    const sql ="SELECT * FROM member WHERE idx = "+ req.body.arg1;
+    console.log(sql);
+    // db.query(sql,(err,result)=>{
+    //     if(err) throw err;
+    //     else{
+    //         res.render("../views/member/updatePopup",result);
+    //         console.log(result);
+    //     }
+    // });
+
+   
+});
 
 
 

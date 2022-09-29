@@ -1,53 +1,61 @@
 <%-include('../header.ejs') %>
+<link rel="stylesheet" href="/css/memberStyle.css">
 <main>
-    <div id="board-wrap">
-        <section id="board-title" class="nanum">
+    <div id="member-wrap">
+        <section id="member-title" class="nanum">
             <h2>회원관리</h2>
         </section>
 
-        <section id="board-main">
-            <article>
-                <table border="1">
+        <section id="member-table-section">
+            <article id="member-table-article">
+                <table border="1" id="member-table">
                     <thead>
                         <th>No</th>
+                        <th>아이디</th>
                         <th>이름</th>
                         <th>이메일</th>
                         <th>가입기간</th>
                     </thead>
+                    <% for( let i = (page * page_num) - page_num ; i < (page *
+                    page_num); i++ ) { if(i > length){ i++; }else{ let data =
+                    result[i]; %>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td><%=data.idx %></td>
+                        <td><%=data.id %></td>
+                        <td><%=data.name %></td>
+                        <td><%=data.email %></td>
+                        <td><%=data.regDate %></td>
+                    </tr>
+                    <% } 
+                }%>
+                    <tr>
+                        <td colspan="6">
+                            <% for(let j = 0; j < result.length / page_num; j++){ %>
+                                <button class="paging-btn"><a href="/member/list/<%= j + 1 %>"><%= j + 1 %></a></button>
+                            <% } %>
+                        </td>
                     </tr>
                 </table>
             </article>
-            <article id="board-body">
-                <div class="board-nav"><button><</button><button>1</button><button>2</button><button>3</button
-                    ><button>4</button><button>5</button><button>></button></div>
-                <div class="board-search">
+            <article id="member-body">
+                <div class="member-search">
                     <select name="" id="">
                         <option value="search-name">제목</option>
                         <option value="search-writer">작성자</option>
                         <option value="search-content">내용</option>
                         <option value="search-date">작성기간</option>
                     </select>
-                    <input type="text" placeholder="검색어를 입력하세요">
+                    <input type="text" placeholder="검색어를 입력하세요" />
                     <button>검색</button>
-                </div>   
+                </div>
             </article>
-            
         </section>
     </div>
 </main>
 
+<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+
 <script>
-    document.title = "BitTravel > Board > Main";
+    document.title = "BitTravel > Member > List";
 </script>
 <%-include('../footer.ejs') %>

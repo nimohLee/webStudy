@@ -16,6 +16,7 @@ app.set("view engine","ejs");
 app.use(express.static(path.join(__dirname,'views')));
 app.use('/assets/',express.static(path.join(__dirname,'assets')));
 app.use('/css',express.static(path.join(__dirname,'css')));
+app.use('/js',express.static(path.join(__dirname,'js')));
 app.use(express.json());
 app.use(express.urlencoded({extended : true}));
 
@@ -26,8 +27,5 @@ app.get("/",(req,res)=>{
 app.use('/board',boardRoute);
 app.use('/member',memberRoute); 
 
-app.get("/member",(req,res)=>{
-    res.render('member/memberList');
-});
 
 app.listen(PORT,()=>{console.log(`localhost:${PORT} is connected`)});

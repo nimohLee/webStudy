@@ -5,7 +5,6 @@ const uName = document.getElementById("name");
 const uID = document.getElementById("userid");
 const validBtn = document.getElementById("btn");
 const uPW = document.getElementById("passwd");
-const uPW2 = document.getElementById("passwd2");
 const email = document.getElementById("email");
 
 // declare radio
@@ -33,12 +32,7 @@ let genderOK = false;
 let hobbyOK = false;
 let selfIntroOK = false;
 let locationOK = false;
-<<<<<<< HEAD
 let dupOK = false;
-=======
-let duplicateOK = false;
-
->>>>>>> 2cb7d3837d1a223b3d4bad09900594cf24f889d2
 //hobbyIsChecked?
 let leastChecked = 0;
 let isSecond = false;
@@ -50,7 +44,6 @@ function popupOpen(url, nick, width, height) {
     let left = (screen.availWidth - width) / 2;
     let top = (screen.availHeight - height) / 2;
     screen =
-<<<<<<< HEAD
       "left=" +
       left +
       ", top=" +
@@ -71,34 +64,12 @@ uID.addEventListener("keyup", (e) => {
   if (regExpID(e.currentTarget.value)) {
     idOK = true;
   } else if (!regExpID(e.currentTarget.value)) {
-=======
-      "left=" + left + ", top=" + top + ", width=" + width + ", height=" + height;
-    window.open(url, nick, screen);
-    duplicateOK = true;
-  } else {
-    alert('아이디를 8자 이상 11자 이하 소문자/숫자로 입력해주세요');
-    duplicateOK = false;
-  }
-}
-
-// ID 중복확인(최초 keyUP에 따른 idOK의 참 거짓을 분리해주기 위한 eventListener 
-uID.addEventListener("keyup", (e) => {
-  console.log('키업');
-  if (regExpID(e.currentTarget.value)) {
-    idOK = true;
-  } else if (regExpID(e.currentTarget.value)) {
->>>>>>> 2cb7d3837d1a223b3d4bad09900594cf24f889d2
     idOK = false;
   } else {
     idOK = false;
   }
 });
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 2cb7d3837d1a223b3d4bad09900594cf24f889d2
 // 유효성 검사 function
 function validateCheck() {
   /* -------- 회원가입 폼 제출 시 초기 validate 출력  -------*/
@@ -154,11 +125,7 @@ function validateCheck() {
 
   //ID
   uID.addEventListener("keyup", (e) => {
-<<<<<<< HEAD
     dupOK = false;
-=======
-    console.log('키업');
->>>>>>> 2cb7d3837d1a223b3d4bad09900594cf24f889d2
     if (regExpID(e.currentTarget.value)) {
       idOK = successCheck(uID);
     } else if (regExpID(e.currentTarget.value)) {
@@ -266,7 +233,6 @@ function validateCheck() {
     hobby.addEventListener("change", () => {
       if (hobby.checked) {
         leastChecked++;
-<<<<<<< HEAD
       } else leastChecked--;
     });
   });
@@ -276,26 +242,6 @@ function validateCheck() {
       "취미를 하나 이상 선택해주세요"
     );
   else hobbyOK = successCheck(document.querySelector(".hobby-wrap"));
-=======
-      } else {
-        if (leastChecked != 0)
-          leastChecked--;
-
-      }
-
-
-      if (leastChecked == 0)
-        errorCheck(
-          document.querySelector(".hobby-wrap"),
-          "취미를 하나 이상 선택해주세요"
-        );
-      else hobbyOK = successCheck(document.querySelector(".hobby-wrap"));
-    });
-  });
-  leastChecked = 0;
-
-
->>>>>>> 2cb7d3837d1a223b3d4bad09900594cf24f889d2
 
   //self-introduce validation
   const selfValue = selfIntro.value.trim();
@@ -309,12 +255,7 @@ function validateCheck() {
     if (e.currentTarget.value.length > 10) {
       selfIntroOK = successCheck(selfIntro);
     } else {
-<<<<<<< HEAD
       errorCheck(selfText, "자기소개를 10자 이상 입력해주세요");
-=======
-      errorCheck(selfIntro, "자기소개를 10자 이상 입력해주세요");
-      selfIntroOK = false;
->>>>>>> 2cb7d3837d1a223b3d4bad09900594cf24f889d2
     }
   });
 }
@@ -362,7 +303,6 @@ function successCheck(input) {
 document.getElementById("frm").addEventListener("submit", (e) => {
   e.preventDefault();
   validateCheck();
-<<<<<<< HEAD
   if (dupOK) {
     if (
       nameOK &&
@@ -390,32 +330,6 @@ document.getElementById("frm").addEventListener("submit", (e) => {
     }
   } else {
     alert("아이디 중복확인을 해주세요");
-=======
-  if (!duplicateOK) {
-    alert('아이디 중복확인을 해주세요');
-  } else if (
-    duplicateOK &&
-    idOK &&
-    pwOK &&
-    pw2OK &&
-    emailOK &&
-    genderOK &&
-    locationOK &&
-    hobbyOK &&
-    selfIntroOK
-  ) {
-    location.href = "./login.html";
-  } else {
-    console.log('dupOK=' + duplicateOK);
-    console.log('idOK=' + idOK);
-    console.log('pwOK=' + pwOK);
-    console.log('pw2OK=' + pw2OK);
-    console.log('emailOK=' + emailOK);
-    console.log('genderOK=' + genderOK);
-    console.log('locationOK=' + locationOK);
-    console.log('hobbyOK=' + hobbyOK);
-    console.log('selfOK=' + selfOK);
->>>>>>> 2cb7d3837d1a223b3d4bad09900594cf24f889d2
   }
 });
 

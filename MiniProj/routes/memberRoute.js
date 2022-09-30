@@ -99,9 +99,10 @@ router.get("/deleteProc",(req,res)=>{
 
 router.post("/deleteProc",(req,res)=>{
     const deleteSql = "DELETE FROM member WHERE idx = "+req.body.idx;
-    const alterSql = "ALTER TABLE member AUTO_INCREMENT=1";
-    console.log(sql);
-    db.query(sql,(err) => {if(err) throw err;});
+    const updateSql = "UPDATE member SET idx = idx-1 WHERE idx > "+req.body.idx;
+    
+    db.query(deleteSql,(err) => {if(err) throw err;});
+    db.query(updateSql,(err) => {if(err) throw err;});
 });
 
 module.exports = router;

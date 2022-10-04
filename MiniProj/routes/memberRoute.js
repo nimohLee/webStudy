@@ -14,10 +14,27 @@ router.post("/",(req,res)=>{
         email: req.body.email
     };
     const addUserSql = "INSERT INTO member VALUES(NULL,?,?,?,?,?);";
+    const selectCount = "SELECT * FROM member;";
     
+    
+              /* member 테이블의 AUTO_INCREMENT 값을 현재 row의 개수+1로 초기화 
+               초기화 하지않으면 삭제 후 새로 삽입되는 row는 idx값이 계속 올라감 */
+
+    db.query(selectCount,(err,result)=>{
+        if(err) throw err;
+        else{
+            const rowsCount = result.length;
+            const alterIdx = "ALTER TABLE member AUTO_INCREMENT = "+(rowsCount+1); 
+            db.query(alterIdx,(err)=>{
+                if(err) throw err;
+            });
+
     db.query(addUserSql,[user.name,user.id,user.pw,user.email,new Date()],(err)=>{
         if(err) throw err;
     });
+        }
+    });
+  
     res.redirect("/member");
 });
 

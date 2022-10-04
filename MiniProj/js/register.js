@@ -170,7 +170,7 @@ function errorCheck(input, msg) {
 
 function successCheck(input) {
     let wrapInput = input.parentElement.parentElement;
-    wrapInput.className = "wrapInput success";
+    wrapInput.className = "wrap-input success";
     return true;
 }
 
@@ -224,5 +224,4 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-module.exports = regExpID;
-module.exports = regExpName;
+

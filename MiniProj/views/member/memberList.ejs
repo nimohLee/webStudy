@@ -20,7 +20,18 @@
                     </thead>
                     
                     <% const date = new Date().toISOString().substring(0,10); %> 
-                    <% for( let i = (page * page_num) - page_num ; i < (page *
+                   <tbody>
+                   <% if(result[0]==null){
+                        for(let i = 0 ; i < 10 ; i++){%>
+                    <tr class="nbsp-tr">
+                        <td >&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td >&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                        <%} }else{
+                    for( let i = (page * page_num) - page_num ; i < (page *
                     page_num); i++ ) { if(i > length){ i++; }else{ 
                         let data =
                     result[i]; 
@@ -34,16 +45,16 @@
                         <td><i class="fa-solid fa-pencil icon" onclick= "updateUser('<%=data.idx %>')"></i> &nbsp;&nbsp;
                              <i class="fa-solid fa-trash icon" onclick= "deleteUser('<%=data.idx%>')"></i></td>
                     </tr> 
-                    <% } 
+                    <% } }
                 }%>
-                    <tr>
-                        <td colspan="6">
-                            <% for(let j = 0; j < result.length / page_num; j++){ %>
+             </tbody>
+                </table>
+                <div id="paging-btn-wrap">
+                <% for(let j = 0; j < result.length / page_num; j++){ %>
                                 <button class="paging-btn"><a href="/member/list/page/<%= j + 1 %>"><%= j + 1 %></a></button>
                             <% } %>
-                        </td>
-                    </tr>
-                </table>
+                        </div>
+                        
             </article>
             <article id="member-body">
                 <div class="member-search">
@@ -68,12 +79,17 @@
 
 <script>
     document.title = "BitTravel > Member > List";
+        
+
       function updateUser(idx){
             const frmPop = document.frmPopup;
             const url = "../update?idx="+idx;
             const name = "update user";
             const option = "width = 300, height = 300, top = 100, left = 200";
-            window.open(url, '_blank', option);
+            const popup = window.open(url, '_blank', option);
+            popup.addEventListener('beforeunload', function() {
+                location.reload();
+            })
       }
       function deleteUser(idx){
             if(confirm("삭제하시겠습니까?")){

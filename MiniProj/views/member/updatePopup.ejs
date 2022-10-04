@@ -29,9 +29,12 @@
                 submitFrm();
                 /* submitFrm에서 post 요청보다 window.close()가 먼저 실행됨.
                 setTimeout으로 submitFrm 먼저 실행 */
+                alert("수정이 완료되었습니다.");
                 setTimeout(() => {
                     window.close(); 
+                    
                 }, 1);
+                
             }else{
                 window.close();
             };   

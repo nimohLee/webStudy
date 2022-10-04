@@ -1,6 +1,71 @@
 <%-include('../header.ejs') %> 
+<link rel="stylesheet" href="/css/boardListStyle.css">
+<main>
+    <section id="read-section">
+        <table border="1" id="board-table" class="nanum">
+            <thead>
+                <tr>
+                    <th colspan="2" scope="col" ><%= result[0].title%></th>
+                </tr>
+                <tr>
+                    <th scope="row">작성자</th>
+                    <td><%= result[0].writer%></td>
+                </tr>
+                <tr>
+                    <th scope="row">작성일</th>
+                    <td><%= result[0].writeDate%></td>
+                </tr>
+                <tr>
+                    <th scope="row">조회수</th>
+                    <td><%= result[0].views%></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="2"><%=result[0].content%></td>
+                </tr>
+            </tbody>
+             
+ 
+              
+        </table>
+        <article id="write-footer">
+            <button onclick="updateBoard('<%=result[0].idx%>');" class="write-btn">수정</button>
+            <button onclick="deleteBoard('<%=result[0].idx %>');" class="write-btn">삭제</button>
+            <a href="/board/page/1" ><button class="write-btn">목록</button></a>
+        </article>
+
+    </section>
+</main>
+
+
 <script>
     document.title = "BitTravel > Board > Detail"
+
+         
+
+    function updateBoard(idx){
+            const frmPop = document.frmPopup;
+            const url = "./update/"+idx;
+            const name = "update board";
+            const option = "width = 300, height = 300, top = 100, left = 200";
+            const popup = window.open(url, '_blank', option);
+            popup.addEventListener('beforeunload', function() {
+                location.reload();
+            })
+      } 
+      function deleteBoard(idx){
+            if(confirm("삭제하시겠습니까?")){
+                $.ajax({
+                    method: "post",
+                    url:"./deleteProc",
+                    contentType: "application/json",
+                    data: JSON.stringify({idx}),
+                    
+                });
+                location.href= "../page/1";
+            }
+      }
 </script>
 <%-include('../footer.ejs') %> 
     

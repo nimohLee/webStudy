@@ -83,19 +83,25 @@ router.post("/detail/deleteProc",(req,res)=>{
     db.query(deleteSql,(err) => {if(err) throw err;});
     db.query(updateSql,(err) => {if(err) throw err; else{
     }});
-})
+});
 
 router.get("/detail/update/:id",(req,res)=>{
     const id = req.params.id;
-    res.render("../views/board/boardUpdate",{id});
-})
+    const sql = "SELECT * FROM board WHERE idx = "+id;
+    db.query(sql,(err,result)=>{
+        if(err) throw err;
+        else{
+            res.render("../views/board/boardUpdate",{result});
+        }
+    })
+});
 
 router.post("/detail/update/:id",(req,res)=>{
-    const sql = "UPDATE board SET content = '"+req.body.content+"' WHERE idx = "+req.params.id;
-    db.query(sql,(err)=>{
+    const sql = "UPDATE board SET title = ?, writer = ?, content = ? WHERE idx = "+req.params.id;
+    db.query(sql,[req.body.title,req.body.writer,req.body.content],(err)=>{
         if(err) throw err;
     })
-})
+});
 
 
 module.exports = router;

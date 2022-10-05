@@ -1,6 +1,6 @@
 <%-include('../header.ejs') %> 
 <link rel="stylesheet" href="/css/boardListStyle.css">
-<main>
+<main id="write-main">
     <section id="write-section">
         <article id="write-title">
             글쓰기
@@ -20,7 +20,6 @@
                     <td>작성자</td>
                     <td>
                         <div class="write-input-wrap">
-                            
                             <input type="text" name="writer">
                         </div>
                     </td>
@@ -28,31 +27,20 @@
                 <tr>
                     <td>글쓰기</td>
                     <td>
-                        <textarea name="" id="" cols="30" rows="10"></textarea>
+                        <textarea name="content" id="content-area" ></textarea>
                     </td>
                 </tr>
             </table>    
-                <input type="button" value="등록" onclick="toSubmit()">
-                <input type="button" value="취소">
+                <div id="write-page-btns">
+                    <input type="button" value="등록" onclick="toSubmit()">
+                    <a href="/board/page/1"><input type="button" value="취소"></a>
+                </div>
             </form>
     </section>
 </main>
 <script>
     document.title = "BitTravel > Board > Write"
-    function toSubmit(){
-        const frm = document.writeForm;
-        const title = writeForm.title.value;
-        const writer = writeForm.writer.value;
-        const content = writeForm.content.value;
-        console.log(title);
-        if(title==""||writer==""||content==""){
-            alert("모두 작성해야합니다. 작성을 완료해주세요");
-        }
-        else{
-            frm.submit();
-        }
-    }
-
 </script>
+<script src="/js/board.js"></script>
 <%-include('../footer.ejs') %> 
     

@@ -8,23 +8,24 @@
 </head>
 <body>
     <form action="./<%=id%>" method="post" name="updateFrm">
+        <table>
+            <tr>
+                <td>제목</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>작성자</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>내용</td>
+                <td></td>
+            </tr>
+        </table>
         <input type="text" name="content">
         <button onclick="onConfirm();">수정</button>
         <button onclick="closeForm()">닫기</button>
     </form>
-    <script>
-        function onConfirm(){
-            if(confirm("수정하시겠습니까?")){
-                    document.updateFrm.submit();
-            }
-            setTimeout(() => {
-                window.close();    
-            }, 1);
-        }
-        function closeForm(){
-            if(confirm("수정을 취소하시겠습니까?"))
-                window.close();
-        }
-    </script>
+    <script src="/js/board.js"></script>
 </body>
 </html>

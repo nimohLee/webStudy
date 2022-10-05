@@ -79,33 +79,6 @@
 
 <script>
     document.title = "BitTravel > Member > List";
-        
-
-      function updateUser(idx){
-            const frmPop = document.frmPopup;
-            const url = "../update?idx="+idx;
-            const name = "update user";
-            const option = "width = 300, height = 300, top = 100, left = 200";
-            const popup = window.open(url, '_blank', option);
-            popup.addEventListener('beforeunload', function() {
-                location.reload();
-            })
-      }
-      function deleteUser(idx){
-            if(confirm("삭제하시겠습니까?")){
-                console.log("네");
-                $.ajax({
-                    method: "post",
-                    url:"../../deleteProc",
-                    contentType: "application/json",
-                    data: JSON.stringify({idx}),
-                });
-                location.reload();
-            }
-      }
 </script>
-
-<script>
-   
-</script>
+<script src="/js/member.js"></script>
 <%-include('../footer.ejs') %>

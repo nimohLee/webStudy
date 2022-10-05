@@ -17,30 +17,6 @@
         <input type="button" value="닫기" onclick="window.close()">
     </form>
 
-    <script>
-        const {regExpID, regExpName} = require("/js/register");
-        function submitFrm(){
-            const frm = document.updateFrm;
-            console.log(frm);
-            frm.submit();
-        }
-        function showConfirm(){
-            if(confirm("수정하시겠습니까?")){
-                submitFrm();
-                /* submitFrm에서 post 요청보다 window.close()가 먼저 실행됨.
-                setTimeout으로 submitFrm 먼저 실행 */
-                alert("수정이 완료되었습니다.");
-                setTimeout(() => {
-                    window.close(); 
-                    
-                }, 1);
-                
-            }else{
-                window.close();
-            };   
-        }
-
-
-    </script>
+    <script src="/js/member.js"></script>
 </body>
 </html>

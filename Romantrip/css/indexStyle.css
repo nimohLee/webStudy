@@ -93,11 +93,12 @@
         width: 100%;
         font-size: 3em;
         margin-left: 50px;
+        
     }
     
     .main-title h1{
         margin-bottom: 30px;
-        color: var(--summer-black2-color);
+        color: whitesmoke
     }
    
     .main-disappear{
@@ -118,7 +119,7 @@
         width: 250px;
         height: 50px;
         font-size: 0.5em;
-        background-color: var(--summer-blue-color);
+        background-color: #FF74B1;
         color: white;
         border-radius: 10px;
         cursor: pointer;

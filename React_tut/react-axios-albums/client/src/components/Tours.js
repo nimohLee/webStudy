@@ -11,6 +11,7 @@ function Tours({tours, deleteTour}) {
     tours.map((tour,key)=>{
         return(
             <div key={key}>
+                {/* 자식 컴포넌트인 Tour 로 또 delteTour를 내려줌 */}
                 <Tour tour={tour} key={key} deleteTour={deleteTour}/>
             </div>
             

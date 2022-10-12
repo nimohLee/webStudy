@@ -14,7 +14,8 @@ function Tour({ tour ,key, deleteTour}) {
                 <p>
                     {readMore ? tour.info : tour.info.substring(0, 20) + "..."}
                 </p>
-                <button onClick={() => setReadMore(!readMore)}> {/* 버튼 클릭시 readMore의 상태(state)를 반대로(!) -> false를 true로 혹은 true를 false로*/}
+                {/* 버튼 클릭시 값이 boolean 타입인 state의 토글기능(스위치)을 구현하기 위해서는 setReadMor(!readMore) -> false면 true로, true면 false로*/}
+                <button onClick={() => setReadMore(!readMore)}> 
                     {readMore ? "줄여서보기" : "자세히보기"}
                 </button>
                 <button onClick={()=>deleteTour(tour.id)}>삭제하기</button>

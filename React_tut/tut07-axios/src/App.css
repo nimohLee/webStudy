@@ -1,0 +1,9 @@
+.loading{
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 5px solid #ccc;
+  border-top : tomato;
+  animation: spinner 0.5s infinite;
+  
+}

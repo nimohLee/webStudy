@@ -25,7 +25,7 @@ function App() {
   
   
   return (
-    <div>
+    <div className='app-wrap'>
        {
         isLoading ? <h1>Loading...</h1> : <CulturalList culturalList = {culturalItems}/>
        }

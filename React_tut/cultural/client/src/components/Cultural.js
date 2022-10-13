@@ -25,10 +25,12 @@ function Cultural({ cultural }) {
         return(
             /* p 태그로 만들면 블록으로 되어 해당 블록 다른 곳을 클릭해도 작동
             --> span은 inline tag이므로 span으로 변경 */
-           <span onClick={() => setDetail(!detail)}>
+           <span onClick={(e) => {
+            setDetail(!detail);
+           } }>
             자세히보기 <FontAwesomeIcon icon={
                 detail ? faCaretUp : faCaretDown
-                } />                
+                }/>                
             </span>
         );
             

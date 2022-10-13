@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Roboto', sans-serif;
+}
+
+.nav-bar{
+  background-color: aliceblue;
+  padding:16px 32px;
+}
+
+.nav-bar a {
+  margin-right : 16px;
+  color: black;
+  transition: .3s;
+}
+
+.nav-bar a.active {
+  font-weight: 700;
+ 
+}
+.nav-bar a:hover{
+  font-size: 1.1em;
+  transition: .3s;
+}
+
+.link{
+  margin-right: 20px;
+}
+
+.product-container{
+  margin: 0 20px;
+}
+
+table{
+  width: 100%;
+  border-collapse: collapse;
+  border-bottom: 1px solid #eee;
+  margin-top: 10px;
+  text-align: center;
+}
+
+
+.featured table tr:first-child{
+  background-color: #f7f7f7;
+}
+
+.featured table tr td:nth-child(1){width: 10%;}
+
+.featured table tr{
+  padding: 10px 0;
+  display: grid;
+  grid-template-columns: 10% 10% auto 10% 10% 10% 10% 10%;
+  vertical-align: middle;
+  border-top:1px solid #eee;
+}
+
+select{
+  outline:0;
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  background-color: #f7f7f7;
+}
+.bottom{
+  display: flex;
+  justify-content: space-between;
+  margin-top:10px;
+}

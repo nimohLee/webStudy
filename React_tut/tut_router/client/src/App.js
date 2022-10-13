@@ -19,6 +19,8 @@ import News from './components/pages/News';
 import Products from './components/pages/Products';
 import Featured from './components/pages/Featured';
 import Admin from './components/pages/Admin';
+import Users from './components/pages/Users';
+import UserDetail from './components/pages/UserDetail';
 
 
 
@@ -35,10 +37,13 @@ function App() {
             <Route path="contact" element={<Contact/>}/>
             <Route path="orders" element={<Orders/>}/>
             <Route path="products" element={<Products/>}>
-                <Route path="featured" element={<Featured/>}/>
+                <Route index element={<Featured/>}/>
                 <Route path="news" element={<News/>}/>
             </Route>
-            <Route path="admin" element={<Admin/>}></Route>
+            <Route path="admin" element={<Admin/>}>
+                <Route index element={<Users/>}/>
+                <Route path="user/:id" element={<UserDetail/>}/>
+            </Route>
             <Route path="*" element={<NotFound/>}/>
           </Routes>
         </BrowserRouter>

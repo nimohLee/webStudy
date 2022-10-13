@@ -10,7 +10,7 @@ function Products() {
             <button>search</button>
         </div>   
         <div className="nested-navbar">
-            <Link to ="featured" className='link'>Featured Lists</Link>
+            <Link to ="/products" className='link'>Featured Lists</Link>
             <Link to ="news" className='link'>News</Link>
         </div>
         <section>
